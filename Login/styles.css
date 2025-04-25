@@ -1,0 +1,55 @@
+body {
+    background: #dce1e9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .neumorphic-card {
+    background: #e0e5ec;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #a3b1c6, -10px -10px 30px #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .neumorphic-card h1 {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .neumorphic-input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    background: #e0e5ec;
+    box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .neumorphic-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #e0e5ec;
+    box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .neumorphic-button:hover {
+    box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+  }
+  
