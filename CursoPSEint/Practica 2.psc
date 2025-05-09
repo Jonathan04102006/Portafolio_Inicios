@@ -1,0 +1,11 @@
+Algoritmo Hola_Mundo
+	Escribir "HOLA MUNDO"
+FinAlgoritmo
+
+
+
+TIPOS DE DATOS
+DATOS SIMPLES
+NUMEROS: 1 235 65 34.5 12.1 0.0001
+	LOGICOS Verdadero Falso (TRUE, FALSE)
+	CARACTERES 2 4 # @ % C V Q
