@@ -25,7 +25,7 @@ FinFuncion
 Algoritmo Ejercicio7Dimensiones
     Definir N, i Como Entero
     Definir numeros Como Entero 
-	Dimension numeros[1000]
+	Dimension numeros[1000000000]
     Definir contadorPares, contadorPrimos, contadorMultiplos Como Entero
 	
     contadorPares <- 0
