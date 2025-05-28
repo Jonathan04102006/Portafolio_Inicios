@@ -11,6 +11,7 @@ Algoritmo sin_titulo
 		Leer nums[x];
 		
 	Fin Para
+	
 	Escribir "El contenido del arreglo es: ";
 	Para i <- 1 Hasta tam Con Paso 1 Hacer
 		Escribir nums[i];
