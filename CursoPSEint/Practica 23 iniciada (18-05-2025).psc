@@ -1,8 +1,10 @@
 Algoritmo Operador_O
 	
-	num <- 100;
+	num <- 50;
+	num2 <- 19;
+	num3 <- 21;
 	
-	Si num < 20 || num > 5 Entonces
+	Si num2 < 20 | num2 > 50 | num3 < 30 Entonces
 		Escribir "Verdadero";
 	SiNo
 		Escribir "Falso";
