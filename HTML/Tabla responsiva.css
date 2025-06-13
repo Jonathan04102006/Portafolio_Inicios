@@ -11,7 +11,7 @@ h2 {
 }
 
 .table-container {
-  
+  overflow-x: auto;
   margin: auto;
   max-width: 1000px;
 }
@@ -35,12 +35,8 @@ th {
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
 tr:hover {
-  background-color: #e0f7fa;
+  background-color: #e3fbff;
 }
 
 @media (max-width: 600px) {
