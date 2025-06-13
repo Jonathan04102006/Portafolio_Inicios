@@ -43,7 +43,6 @@ tr:hover {
   background-color: #e0f7fa;
 }
 
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 600px) {
   table {
     font-size: 14px;
