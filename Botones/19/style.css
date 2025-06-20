@@ -1,0 +1,16 @@
+.button {
+  --c: #3639c7;
+  /* text color */
+  color: #0000;
+  border: none;
+  text-shadow:  -.01em 0   var(--c), .01em 2px #0004;
+  outline-offset: .1em;
+}
+
+.button {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: .1em .3em;
+}
