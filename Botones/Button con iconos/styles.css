@@ -1,0 +1,24 @@
+body {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.Button a {
+  width: 70px;
+  height: 70px;
+  display: block;
+  border-radius: 50%;
+  background-color: black;
+  color: #FFF;
+  text-decoration: none;
+  overflow: hidden;
+  text-align: center;
+  font-size: 2.2rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.Button a::before {
+  content: "\f2c6";
+  display: block;
+  margin: 19px 0;
+  transition: all .5s ease-in-out;
+}
