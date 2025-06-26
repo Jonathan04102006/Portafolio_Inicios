@@ -74,6 +74,7 @@ body {
     text-align: center;
     border: none;
     padding: 10px 8px;
+    font-size: 10px;
     cursor: pointer;
     border-radius: 6px;
     color: white;
@@ -85,5 +86,23 @@ body {
 .boton-4:hover {
     background-color: rgb(149, 0, 30);
     color: white;
+}
+
+/*BOTON-5*/
+.boton-5 {
+    color: white;
+    background-image:linear-gradient(to right, #214, #219) ;
+    border: none;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-size: 10px;
+    cursor: default;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+
+.boton-5:hover {
+    background-image: linear-gradient(to right, #219, #214);
 }
 
