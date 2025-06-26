@@ -1,0 +1,62 @@
+/*BOTON-0*/
+.boton-0 {
+    display: inline-block;
+    background-color: rgb(233, 233, 233);
+    color: rgb(47, 47, 47);
+    padding: 15px 10px;
+    margin: 2px;
+}
+
+/*BOTON-1*/
+.boton-1 {padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: black;
+    margin: 2px;
+}
+/*REACCION DEL BOTON-1*/
+.boton-1:hover {
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+    border-color: rgb(48, 48, 48);
+}
+
+/*BOTON-2*/
+.boton-2 {
+    background-color: rgb(120, 131, 255);
+    border: none;
+    color: #124;
+    padding: 14px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #124;
+    margin: 2px;
+}
+
+/*REACCION DEL BOTON-2*/
+.boton-2:hover {
+    background-color: #124;
+    color: rgb(120, 131, 255);
+    border-color: rgb(120, 131, 255);
+}
+
+/*BOTON-3*/
+.boton-3 {
+    width: 100%;
+    margin: 2px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 13px 26px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(215, 108, 0);
+    font-size: 30px;
+    display: block
+}
+
+.boton-3:hover {
+    background-color: rgb(113, 74, 1);
+    color: rgb(212, 255, 103);
+}
