@@ -11,6 +11,13 @@ body {
     margin: 2px;
 }
 
+/*REACCION DEL BOTON-0*/
+.boton-0:hover {
+    background-color: rgba(71, 71, 71, 0.939);
+    color: white;
+    border-color: rgb(255, 255, 255);
+}
+
 /*BOTON-1*/
 .boton-1 {padding: 10px 20px;
     background-color: rgb(0, 0, 0);
