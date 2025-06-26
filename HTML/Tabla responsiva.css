@@ -8,12 +8,15 @@ body {
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 4vw;
+  font-family: sans-serif;
 }
 
 .tabla-contenedora {
   overflow-x: auto;
   margin: auto;
   max-width: 1000px;
+  font-size: 4vw;
 }
 
 table {
@@ -22,12 +25,14 @@ table {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   min-width: 600px;
+  font-size: 4vw;
 }
 
 th, td {
   border: 1px solid #ccc;
   padding: 12px;
   text-align: center;
+  font-size: 4vw;
 }
 
 th {
@@ -37,21 +42,4 @@ th {
 
 tr:hover {
   background-color: #e3fbff;
-}
-
-@media (max-width: 600px) {
-  table {
-    font-size: 14px;
-    min-width: unset;
-  }
-
-  th, td {
-    padding: 10px 8px;
-  }
-}
-
-@media (max-width: 400px) {
-  table {
-    font-size: 12px;
-  }
 }

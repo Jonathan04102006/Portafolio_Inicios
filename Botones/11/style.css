@@ -15,7 +15,4 @@
   padding: 8px .8em;
   position: relative;
   text-align: center;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
 }
