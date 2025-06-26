@@ -90,6 +90,7 @@ body {
 
 /*BOTON-5*/
 .boton-5 {
+    width: 20%;
     color: white;
     background-image:linear-gradient(to right, #214, #219) ;
     border: none;
@@ -101,8 +102,27 @@ body {
     text-align: center;
     display: block;
 }
-
+/*REACCION DEL BOTON-5*/
 .boton-5:hover {
     background-image: linear-gradient(to right, #219, #214);
 }
 
+/*BOTON-6*/
+.boton-6 {
+    margin: 4px 0;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    padding: 7px 3.5px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    background-color: rgb(13, 174, 13);
+}
+
+.boton-6:hover {
+    background-color: rgb(0, 162, 0);
+    color: white;
+}
