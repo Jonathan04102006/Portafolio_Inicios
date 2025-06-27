@@ -1,6 +1,5 @@
 .button {
   --c: #3639c7;
-  /* text color */
   color: #0000;
   border: none;
   text-shadow:  -.01em 0   var(--c), .01em 2px #0004;

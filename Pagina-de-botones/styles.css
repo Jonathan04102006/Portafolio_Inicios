@@ -345,7 +345,7 @@ body {
     border-width: 2px;
     box-shadow: rgb(0, 0, 0) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: gray;
+    color: rgb(60, 60, 60);
     font-family: sans-serif;
     font-size: 1rem;
     line-height: 23px;
@@ -361,4 +361,19 @@ body {
 
     border-bottom-left-radius: 15px 225px;
     border-bottom-right-radius: 225px 15px;
+}
+
+/*BOTON-18*/
+.boton-18 {
+    --c: #3639c7;
+    color: #000;
+    border: none;
+    text-shadow: -0.01em 0 var(--c), 0.01em 2px #0004;
+    outline-offset: 0.1em;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 6px 0;
+    cursor: default;
+    padding: 0.1em 0.3em;
+    border-radius: 10px;
 }
