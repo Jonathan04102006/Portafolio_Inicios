@@ -259,6 +259,7 @@ body {
     border: 0;
 }
 
+/*boton-13*/
 .boton-13 {
     margin: 5px 0;
     background-color: #000000;
@@ -275,5 +276,32 @@ body {
     line-height: 25px;
     max-width: 100%;
     padding: 2px 4px;
+}
+
+/*Boton-14*/
+.boton-14, .boton-14:after {
+  width: 12%;
+  height: 45px;
+  line-height: 10px;
+  font-size: 1vw;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 10%, #ff0000 7%);
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  box-shadow: 6px 0px 0px #4ed6ff;
+  margin: 8px 0;
+  padding: 4px 4px;
+}
+
+/*BOTON-15*/
+.boton-15 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #000;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
 }
 
