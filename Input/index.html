@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,178 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Input de correo electronico</h2>
-    <div><input type="email" id="email" name="email" /></div>
-    <h2>Input de correo electronico</h2>
-    <div><input type="email" id="email" name="email" multiple /></div>
-    <h2>Input de busqued y dirrecion de web</h2>
-    <div><input type="search" id="search" name="search" /></div>
+    <h2>
+        1-Input de correo electronico
+    </h2>
+        <div>
+        <input type="email" id="email" name="email" placeholder="Introduce tu correo electronico"/>
+        </div>
+
+    <h2>
+        2-Input de correo electronico multiple
+    </h2>
+        <div>
+            <input type="email" id="email" name="email" multiple placeholder="Introduce tu correo electronico"/>
+        </div>
+
+    <h2>
+        3-Input de busqued y dirrecion de web
+    </h2>
+        <div>
+            <input type="search" id="search" name="search" placeholder="Escribir busqueda o dirrecion de web"/>
+        </div>
+
+    <h2>
+        4-Input de numero de telefono
+    </h2>
+        <div>
+            <input type="tel" id="tel" name="tel" placeholder="Escribe tu numero de telefono"/>
+        </div>
+
+    <h2>
+        5-Input de url
+    </h2>
+        <div>
+            <input type="url" id="url" name="url" placeholder="Introduce la dirrecion url"/>
+        </div>
+
+    <h2>
+        6-Input de rango
+    </h2>
+        <div>
+            <label for="price">
+                (Ejemplo) Elija un precio máximo de vivienda:
+            </label>
+                <input 
+                type="range" 
+                name="price" 
+                id="price" 
+                min="50000" 
+                max="500000" 
+                step="100" 
+                value="250000" />
+                    <output class="price-output" for="price">
+                    </output>
+                </div>
+
+    <h2>
+        7-Input de calendario
+    </h2>
+    <div>
+        <input type="datetime-local" name="datetime" id="datetime" />
+    </div>
+
+    <h2>
+        8-Input de calendario (Mes)
+    </h2>
+    <div>
+        <input type="month" name="month" id="month" />
+    </div>
+
+    <h2>
+        9-Input de calendario (Tiempo)
+    </h2>
+    <div>
+        <input type="time" name="time" id="time" />
+    </div>
+
+    <h2>
+        10-Input de calendario (Semana)
+    </h2>
+    <div>
+        <input type="week" name="week" id="week" />
+    </div>
+
+    <h2>
+        11-Input de calendario (Semana)
+    </h2>
+    <div>
+        <label for="myDate">(Ejemplo) ¿Cuando estás disponible este verano?-</label>
+        <input
+        type="date"
+        name="myDate"
+        min="2013-06-01"
+        max="2013-08-31"
+        step="7"
+        id="myDate" />
+    </div>
+
+    <h2>
+        12-Input de color
+    </h2>
+    <div>
+        <input type="color" name="color" id="color"/>
+    </div>
+
+    <h2>
+        13-Input de Boton
+    </h2>
+    <div>
+        <input type="button" name="boton" id="boton"/>
+    </div>
+    
+    <h2>
+        14-Input de caja o chequesito
+    </h2>
+    <div>
+        <input type="checkbox" name="caja" id="caja"/>
+    </div>
+
+    <h2>
+        15-Input de Archivo
+    </h2>
+    <div>
+        <input type="file" name="Archivo" id="Archivo"/>
+    </div>
+
+    <h2>
+        16-Input de ocultar
+    </h2>
+    <div>
+        <input type="hidden" name="ocultar" id="ocultar"/>
+    </div>
+
+    <h2>
+        17-Input de imagen
+    </h2>
+    <div>
+        <input type="image" name="imagen" id="imagen"/>
+    </div>
+
+    <h2>
+        18-Input de numero
+    </h2>
+    <div>
+        <input type="number" name="numero" id="numero" placeholder="Ingrese su edad o cantidad"/>
+    </div>
+
+    <h2>
+        19-Input de contraseña
+    </h2>
+    <div>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Introduce tu contraseña"/>
+    </div>
+
+    <h2>
+        20-Input de boton-radio
+    </h2>
+    <div>
+        <input type="radio" name="boton-radio" id="boton-radio"/>
+    </div>
+
+    <h2>
+        21-Input de restablecer
+    </h2>
+    <div>
+        <input type="reset" name="restablecer" id="restablecer"/>
+    </div>
+
+    <h2>
+        22-Input de entregar
+    </h2>
+    <div>
+        <input type="submit" name="entregar" id="entregar"/>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
