@@ -7,6 +7,13 @@ body {
   color: #000;
 }
 
+/* Titulo INPUTS */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Títulos */
 h2 {
   font-size: 18px;
