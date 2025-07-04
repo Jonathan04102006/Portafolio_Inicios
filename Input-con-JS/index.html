@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>INPUTS</h1>
+    <h2>1 - Input de correo electrónico</h2>
+  <div>
+    <input type="email" id="correo" placeholder="ejemplo@.com" oninput="validarCorreo()">
+    <div id="mensaje"></div>
+  </div>
+
+    <h2>2 - Input de correo electrónico múltiple</h2>
+  <div>
+    <input type="email" id="correoMultiple" name="email" multiple placeholder="ejemplo@.com" oninput="validarCorreosMultiples()">
+    <div id="mensaje-multiple"></div>
+  </div>
+
+    <h2>3 - Input de búsqueda y dirección de web</h2>
+  <div>
+    <input type="search" id="search" name="search" placeholder="Escribir búsqueda o dirección de web" oninput="validarBusqueda()">
+    <div id="mensaje-busqueda"></div>
+  </div>
+
+    <h2>4 - Input de número de teléfono</h2>
+  <div>
+    <input type="tel" id="tel" name="tel" placeholder="Escribe tu número de teléfono" oninput="validarTelefono()">
+    <div id="mensaje-telefono"></div>
+  </div>
+
+    <h2>5 - Input de URL</h2>
+  <div>
+    <input type="url" id="url" name="url" placeholder="Introduce la dirección URL" oninput="validarURL()">
+    <div id="mensaje-url"></div>
+  </div>
+
+    <h2>6 - Input de rango</h2>
+  <div>
+    <label for="price">
+      (Ejemplo) Elija un precio de venta:
+    </label><br>
+    <input 
+      type="range" 
+      name="price" 
+      id="price" 
+      min="50000" 
+      max="500000" 
+      step="100" 
+      value="250000"
+      oninput="actualizarRango()"
+    />
+    <output class="price-output" id="output-price">250000</output>
+    <div id="mensaje-rango"></div>
+  </div>
+
+    <h2>7 - Input de calendario</h2>
+  <div>
+    <input type="datetime-local" name="datetime" id="datetime" oninput="validarFechaHora()">
+    <div id="mensaje-fecha"></div>
+  </div>
+
+    <h2>8 - Input de calendario (Mes)</h2>
+  <div>
+    <input type="month" name="month" id="month" oninput="validarMes()">
+    <div id="mensaje-mes"></div>
+  </div>
+
+    <h2>9 - Input de calendario (Tiempo)</h2>
+  <div>
+    <input type="time" name="time" id="time" oninput="validarHora()">
+    <div id="mensaje-hora"></div>
+  </div>
+
+    <h2>10 - Input de calendario (Semana)</h2>
+  <div>
+    <input type="week" name="week" id="week" oninput="validarSemana()">
+    <div id="mensaje-semana"></div>
+  </div>
+
+    <h2>11 - Input de calendario (Limitado o especificado)</h2>
+  <div>
+    <label for="myDate">(Ejemplo) ¿Cuándo estás disponible este verano?</label><br>
+    <input
+      type="date"
+      name="myDate"
+      min="2013-06-01"
+      max="2013-08-31"
+      step="7"
+      id="myDate"
+      oninput="validarFechaLimitada()"
+    />
+    <div id="mensaje-fecha-limitada"></div>
+  </div>
+
+    <h2>12 - Input de color</h2>
+  <div>
+    <input type="color" name="color" id="color" value="#000000" oninput="validarColor()">
+    <div id="mensaje-color"></div>
+  </div>
+
+    <h2>
+        13-Input de Boton
+    </h2>
+    <div>
+        <input type="button" name="boton" id="boton"/>
+    </div>
+    
+    <h2>14 - Input de caja o chequesito</h2>
+  <div id="grupo-cajas">
+    <input type="checkbox" name="caja" id="caja1">
+    <input type="checkbox" name="caja" id="caja2">
+    <input type="checkbox" name="caja" id="caja3">
+    <input type="checkbox" name="caja" id="caja4">
+    <input type="checkbox" name="caja" id="caja5">
+    <div id="mensaje-checkbox"></div>
+  </div>
+
+    <h2>15 - Input de Archivo</h2>
+  <div>
+    <input type="file" name="Archivo" id="Archivo" onchange="validarArchivo()">
+    <div id="mensaje-archivo"></div>
+  </div>
+
+    <h2>
+        16-Input de ocultar
+    </h2>
+    <div>
+        <input type="hidden" name="ocultar" id="ocultar"/>
+    </div>
+
+    <h2>
+        17-Input de imagen
+    </h2>
+    <div>
+        <input type="image" name="imagen" id="imagen"/>
+    </div>
+
+    <h2>18 - Input de número</h2>
+  <div>
+    <input 
+      type="number" 
+      name="numero" 
+      id="numero" 
+      placeholder="Ingrese su edad o cantidad" 
+      oninput="validarNumero()"
+    >
+    <div id="mensaje-numero"></div>
+  </div>
+
+    <h2>19 - Input de contraseña</h2>
+  <div>
+    <input 
+      type="password" 
+      name="contraseña" 
+      id="contraseña" 
+      placeholder="Introduce tu contraseña"
+      oninput="validarContraseña()"
+    >
+    <div id="mensaje-pass"></div>
+  </div>
+
+    <h2>20 - Input de botón-radio</h2>
+  <div id="grupo-radio">
+    <input type="radio" name="boton-radio" id="radio1">
+    <input type="radio" name="boton-radio" id="radio2">
+    <input type="radio" name="boton-radio" id="radio3">
+    <input type="radio" name="boton-radio" id="radio4">
+    <input type="radio" name="boton-radio" id="radio5">
+    <div id="mensaje-radio"></div>
+  </div>
+
+    <h2>
+        21-Input de restablecer
+    </h2>
+    <div>
+        <input type="reset" name="restablecer" id="restablecer"/>
+    </div>
+
+    <h2>
+        22-Input de entregar
+    </h2>
+    <div>
+        <input type="submit" name="entregar" id="entregar"/>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
