@@ -503,6 +503,66 @@ function validarFechaHora() {
 </div>
 
 <!--INPUT 8-->
+<div class="card">
+  <h2>8 - Input de calendario (Mes)</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo8')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html8')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css8')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js8')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo8" class="tab-content active">
+    <input type="month" name="month" id="month" oninput="validarMes()">
+    <div id="mensaje-mes" class="mensaje"></div>
+  </div>
+
+  <div id="html8" class="tab-content">
+    <pre>
+&lt;input type="month" name="month" id="month" oninput="validarMes()"&gt;
+&lt;div id="mensaje-mes"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css8" class="tab-content">
+    <pre>
+input[type="month"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js8" class="tab-content">
+    <pre>
+function validarMes() {
+  const mesInput = document.getElementById('month');
+  const mensaje = document.getElementById('mensaje-mes');
+
+  if (mesInput.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido. Seleccione un mes.';
+    mesInput.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    mesInput.classList.remove('error');
+  }
+}
+    </pre>
+  </div>
+</div>
+
 <!--INPUT 9-->
 <!--INPUT 10-->
 <!--INPUT 11-->

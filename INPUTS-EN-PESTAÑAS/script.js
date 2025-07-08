@@ -123,3 +123,16 @@ function validarFechaHora() {
     calendario.classList.remove('error');
   }
 }
+
+function validarMes() {
+  const mesInput = document.getElementById('month');
+  const mensaje = document.getElementById('mensaje-mes');
+
+  if (mesInput.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido. Seleccione un mes.';
+    mesInput.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    mesInput.classList.remove('error');
+  }
+}
