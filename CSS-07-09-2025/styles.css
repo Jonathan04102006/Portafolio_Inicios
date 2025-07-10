@@ -1,0 +1,59 @@
+/*USO-DEL-OUTLINE*/
+.link-1 {
+    color: green;
+    font-size: 30px
+}
+
+.link-1:hover {
+    outline: red 2px solid;
+}
+
+/*USO-DEL-HOVER*/
+.link-2 {
+    color: green;
+    font-size: 30px;
+}
+
+.link-2:hover {
+    border: red 2px solid;
+}
+
+/*USO-DEL-FOCUS*/
+.link-3 {
+    color: green;
+    font-size: 30px;
+}
+
+.link-3:focus {
+    border: red 2px solid;
+}
+
+h6 {
+    font-size: 30px;
+}
+
+/*USO-ENCADENA*/
+strong {
+    font-size: 30px;
+}
+
+p {
+    font-size: 36px;
+}
+
+.descripcion .bold {
+    color: green;
+}
+
+.secundario .bold {
+    color: red;
+}
+
+/**/
+article {
+    font-size: 30px;
+}
+
+article > p {
+    color: green;
+}
