@@ -1,8 +1,9 @@
-console.log( miNobre );
+console.log( miNombre );
 let color = "Rojo";
+
 if (true) {
-    var miMobre = "Javi";
+    var miNombre="Ari"
     let color = "Azul";
+    console.log(color);
 }
-console.log( miNobre );
-console.log( color );
+console.log( miNombre );
