@@ -1,0 +1,1 @@
+document.getElementById("seccion").innerHTML=`UNO`
