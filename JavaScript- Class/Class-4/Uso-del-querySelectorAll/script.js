@@ -1,1 +1,1 @@
-document.querySelector(".caja").innerHTML=`UNO`
+document.querySelectorAll("div")[2].innerHTML=`UNO`

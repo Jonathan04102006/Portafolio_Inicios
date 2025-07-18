@@ -1,1 +1,1 @@
-document.getElementsByClassName("caja")[1].innerHTML=`UNO`
+document.getElementById("seccion").innerHTML=`UNO`

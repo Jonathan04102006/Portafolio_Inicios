@@ -1,0 +1,1 @@
+document.getElementsByClassName("caja")[1].innerHTML=`UNO`
