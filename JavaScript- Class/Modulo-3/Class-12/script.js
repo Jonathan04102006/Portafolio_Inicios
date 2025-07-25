@@ -54,6 +54,7 @@ function unaMas(e){
 
 function insertar(){
     const TITULO=document.querySelector("#titulo").value.trim();
+    limpiar();
     fecch('insertar.php',{
         method:'POST',
         Headers:{
