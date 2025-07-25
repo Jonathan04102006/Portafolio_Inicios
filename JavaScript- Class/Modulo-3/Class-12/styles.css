@@ -1,0 +1,75 @@
+body{
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.linea{
+    display: flex;
+    align-items: center;
+}
+
+.linea img, .estrellas img{
+    width: 25px;
+    cursor: pointer;
+}
+
+.listaeditar{
+    margin-top: 8px;
+}
+
+.lineaAbierta, .linea{
+    font-size: 1.2em;
+}
+
+.bloque{
+    position: relative;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 4px 10px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.listainsertar{
+    margin-top: 8px;
+    width: 370px;
+}
+
+button{
+    margin-top: 20px;
+    padding: 6px 14px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+button:hover{
+    background-color: royalblue;
+}
+
+section{
+    display: flex;
+}
+
+fieldset{
+    position: relative;
+    width: 280px;
+    height: 92vh;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.insertar{
+    width: 300px;
+}
+
+legend{
+    padding: 0 8px;
+    font-size: 1.1em;
+}
