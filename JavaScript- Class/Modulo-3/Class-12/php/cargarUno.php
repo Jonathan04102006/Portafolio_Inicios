@@ -2,7 +2,7 @@
     include 'datosConexion.php';
     $data=json_decode(file_get_contents("php://input"));
     $id=$data->id;
-    $sql="SELECT datos,titulo FROM mitabla WHERE id= $id";
+    $sql="SELECT datos,titulo FROM mitabla WHERE id=$id";
     $result = $conn->query($sql);
 
     if($result->num_rows > 0){

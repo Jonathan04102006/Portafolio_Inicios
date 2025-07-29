@@ -33,7 +33,7 @@ function escribir(valor){
         <div class="linea" jab="${DATOS.length-1}">
             <div class="nombre">${valor}</div>
             <div class="estrellas">
-                <img src="img/estrellas.png" onclick="unaMas(this)">
+                <img src="img/estrella.png" onclick="unaMas(this)">
             </div>
         </div>
         `)
@@ -43,19 +43,19 @@ function unaMas(e){
     let hay=e.parentNote.querySelectorAll("img").length;
     if (hay>=6){
         hay=0;
-        e.parentNote.inserAdjacenHTML=`<img src="img/estrellas.png" onclick="unaMas(this)">`;
+        e.parentNote.inserAdjacenHTML=`<img src="img/estrella.png" onclick="unaMas(this)">`;
     }
     let indice=e.parentNote.parentNote.getAtribute("jab");
     DATOS[indice].estrellas=++hay;
     e.parentNote.inserAdjacenHTML("beforeend",`
-    ,<img src="img/estrellas.png" onclick="unaMas(this)">
+    ,<img src="img/estrella.png" onclick="unaMas(this)">
     `);
 }
 
 function insertar(){
     const TITULO=document.querySelector("#titulo").value.trim();
     limpiar();
-    fecch('insertar.php',{
+    fetch('php/insertar.php',{
         method:'POST',
         Headers:{
             'Content-Type':'json'
@@ -72,7 +72,7 @@ function insertar(){
 
 function cargarTodos(){
     document.querySelector(".listaCargar").innerHTML="";
-    fetch("cargarTodos.php")
+    fetch("php/cargarTodos.php")
     .then(a=>a.json())
     .then(data=> {
         registros=data;
@@ -82,7 +82,7 @@ function cargarTodos(){
 
 function escribirLista(registros){
     registros.map((valor,i)=>{
-        document.querySelector(".listaCargar").insertAdjacentHTML("beforeed",
+        document.querySelector(".listaCargar").insertAdjacentHTML("beforeend",
             `
             <div class="bloque" jab"${valor.id}" onclick="ver(this)">
                 <strong>${JSON.parse(valor.titulo)}</strong>
@@ -95,7 +95,7 @@ function escribirLista(registros){
 
 function ver(e){
     elId=e.getAtribute("jab");
-    fetch("cargarUno.php",
+    fetch("php/cargarUno.php",
     {
         method:"POST",
         Headers: {
@@ -115,7 +115,7 @@ function ver(e){
 function eliminar(e,event){
     event.stopPropagation();
     const id=e.parentNote.getAtribute("jab");
-    fetch("eliminar.php",{
+    fetch("php/eliminar.php",{
         method:'POST',
         headers: {
             'Content-Type':'json'
@@ -132,14 +132,14 @@ function escribirTodo(titulo, valores){
     document.querySelector(".listaEditar").inserAdjacenHTML="";
     document.querySelector("#tituloEditar").value=titulo;
     valores.map((valor,indice)=>{
-        document.querySelector(".listaEditar").inserAdjacenHTML("beforeed", `
+        document.querySelector(".listaEditar").inserAdjacenHTML("beforeend", `
             <div class="linea" jab="${indice}">
             <div class="nombre">${valor.estrellas}</div>
             <div class="estrellas"></div>
             </div>`)
             for (let k=0;k<valor.estrellas;k++){
-                document.querySelectorAll(".estrellas")[indice].inserAdjacenHTML("beforeed", `
-                    <img src="img/estrellas.ong" alt"" onclick="unaMas(this)>`)
+                document.querySelectorAll(".estrellas")[indice].inserAdjacenHTML("beforeend", `
+                    <img src="img/estrella.png" alt"" onclick="unaMas(this)>`)
     }
 })
 }
@@ -147,7 +147,7 @@ function escribirTodo(titulo, valores){
 function editar(){
     const TITULO=document.querySelector("#tituloEditar").value.trim();
     limpiar();
-    fetch("editar.php",{
+    fetch("php/editar.php",{
         method:'POST',
         headers: {
             'Content-Type':'json'
