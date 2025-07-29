@@ -80,7 +80,7 @@ function cargarTodos(){
     })
 }
 
-function escribitLista(registros){
+function escribirLista(registros){
     registros.map((valor,i)=>{
         document.querySelector(".listaCargar").insertAdjacentHTML("beforeed",
             `

@@ -1,7 +1,7 @@
 <?php
 $servidor="localhost";
 $usuario="root";
-$pasword="";
+$password="";
 $bbs="valores";
 $conn = new mysqli($servidor,$usuario,$password,$bbs);
 if ($conn->connect_error){
