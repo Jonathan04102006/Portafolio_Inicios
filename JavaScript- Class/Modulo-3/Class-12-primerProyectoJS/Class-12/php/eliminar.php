@@ -1,11 +1,11 @@
 <?php
     include 'datosConexion.php';
     $data=json_decode(file_get_contents("php://input"));
-    if ($data){
+    if($data){
         $id=$data->id;
         $sql="DELETE FROM mitabla WHERE id=$id";
         $conn->query($sql);
     }
-    echo"ok";
+    echo "ok";
     $conn->close();
 ?>
