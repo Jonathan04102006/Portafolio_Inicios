@@ -73,6 +73,7 @@ function unaMas(e) {
 function insertar() {
     const tituloTexto = TITULO.value.trim();
     limpiar();
+    debugger;
     if (tituloTexto === "" || DATOS.length === 0) {
         alert("Debes escribir un título y al menos un producto.");
         return;
