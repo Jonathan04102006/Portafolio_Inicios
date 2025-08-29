@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArrelSinBugs</title>
+  <style>
+    body {
+      background-color: #0d0221;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .logo {
+      position: relative;
+      width: 130px; /* Aumenté el ancho */
+      height: 124px; /* Aumenté el alto */
+      margin-bottom: px;
+    }
+
+    .chevron {
+      position: absolute;
+      width: 80px; /* Más anchas */
+      height: 30px; /* Más altas */
+      background: linear-gradient(45deg, #ff7bac, #8338ec);
+      border-radius: 20px; /* Más redondeado */
+    }
+
+    /* Parte izquierda */
+    .chevron.left-top {
+      top: 0;
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: left center;
+    }
+
+    .chevron.left-bottom {
+      bottom: 0;
+      left: 0;
+      transform: rotate(-45deg);
+      transform-origin: left center;
+    }
+
+    /* Parte derecha */
+    .chevron.right-top {
+      top: 0;
+      right: 0;
+      transform: rotate(-45deg);
+      transform-origin: right center;
+    }
+
+    .chevron.right-bottom {
+      bottom: 0;
+      right: 0;
+      transform: rotate(45deg);
+      transform-origin: right center;
+    }
+
+    .text-main {
+      font-size: 56px; /* Aumenté tamaño de texto */
+      font-weight: 900;
+      text-align: center;
+      color: white;
+    }
+
+    .text-sub {
+      font-size: 18px;
+      letter-spacing: 5px;
+      color: #9f8df5;
+      text-align: center;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <div class="chevron left-top"></div>
+    <div class="chevron left-bottom"></div>
+    <div class="chevron right-top"></div>
+    <div class="chevron right-bottom"></div>
+  </div>
+
+  <div class="text-main">ArrelSinBugs</div>
+  <div class="text-sub">Programemos</div>
+
+</body>
+</html>
