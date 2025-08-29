@@ -1,0 +1,252 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a3d3aa;
+  padding: 40px;
+  display: block;
+  gap: 30px;
+  color: #000;
+}
+
+/* Titulo INPUTS */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Títulos */
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1e4d2b;
+}
+
+/* Contenedor de cada input */
+div {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Inputs */
+input {
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Botones */
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: #72b76f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #5c9e5a;
+}
+
+/* Estilo especial para tipo color */
+input[type="color"] {
+  padding: 0;
+  height: 40px;
+  width: 100%;
+}
+
+/* Estilo para tipo range */
+input[type="range"] {
+  accent-color: #72b76f;
+}
+
+/* Estilo para checkbox y radio */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+}
+
+/* Estilo para imagen (placeholder) */
+input[type="image"] {
+  width: 100px;
+  height: auto;
+}
+
+/* Etiquetas */
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/*INPUT-ERROR-JS*/
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+input.error {
+  border-color: red;
+}
+
+/*1-INPUT-CORREO-ELECTRONICO*/
+#mensaje {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  } 
+
+/*2-INPUT-CORREO-ELECTRONICO-MULTIPLE*/
+#mensaje-multiple {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*3-INPUT-BUSQUEDA-O-DIRECCION-WEB*/
+#mensaje-busqueda {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*4-INPUT-NUMERO-DE-TELEFONO*/
+#mensaje-telefono {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*5-INPUT-URL*/
+#mensaje-url {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*6-INPUT-RANGO*/
+:root {
+      --valor: 50%;
+    }
+
+    input[type="range"] {
+      width: 300px;
+      background: linear-gradient(to right, #4caf50 var(--valor), #ccc var(--valor));
+      height: 8px;
+      border-radius: 4px;
+      appearance: none;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4caf50;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    input.error {
+      outline: 2px solid red;
+    }
+
+    .price-output {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    #mensaje-rango {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+
+/*7-INPUT-CALENDARIO*/
+#mensaje-fecha {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*8-INPUT-MES*/
+#mensaje-mes {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*9-INPUT-HORA*/
+#mensaje-hora {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*10-INPUT-SEMANA*/
+#mensaje-semana {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*11-INPUT-FECHALIMITADA*/
+#mensaje-fecha-limitada {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*12-INPUT-COLOR*/
+#mensaje-color {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*14-INPUT-CHEQUESITOS*/
+#mensaje-checkbox {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*15-INPUT-ARCHIVO*/
+#mensaje-archivo {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*18-INPUT-NUMERO*/
+#mensaje-numero {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*19-INPUT-CONTRASEÑA*/
+#mensaje-pass {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+/*20-INPUT-BOTON-RADIO*/
+#mensaje-radio {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }

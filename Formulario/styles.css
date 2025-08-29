@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(blue-pc-wallpaper-7fx4xn4t9jyducvb.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.Logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+.navegador a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navegador .Loguiador-push {
+    width: 130px;
+    height: 50px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .4s;
+}
+
+.navegador .Loguiador-push:hover {
+    background-color: white;
+    color: rgb(26, 116, 158);
+}
+
+.navegador a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: .5s;
+}
+
+.navegador a:hover::after {
+    transform: scaleX(1);
+}
+
+.icono-0 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("ios-mail.svg");
+    background-size: cover;
+}
+
+.icono-1 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("ios-lock.svg");
+    background-size: cover;
+}
+
+.borde {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(74, 127, 148);
+    border-radius: 20px;
+    backdrop-filter: (20px);
+    box-shadow: 0 0 30px rgb(68, 68, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borde .formulario-caja {
+    width: 100%;
+    padding: 40px;
+}
+
+.formulario-caja h2 {
+    font-size: 2em;
+    color: rgb(0, 14, 34);
+    text-align: center;
+}
+
+.entrada-caja {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 35px 0;
+}
+
+.entrada-caja label{
+    position: absolute;
+    top: 2%;
+    left: 5px;
+    bottom: 200px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.entrada-caja input:focus~label,
+.entrada-caja input:valid~label {
+    top: -5px;
+}
+
+.entrada-caja input {
+    font-size: 15px;
+    width: 100%;
+    height: 60%;
+    border: 2px solid blac;
+    outline: none;
+    background: transparent;
+}
+
+.entrada-caja .icono-0{
+    position: relative;
+    right: -298px;
+    bottom: -4px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 5px;
+}
+
+.entrada-caja .icono-1{
+    position: relative;
+    right: -298px;
+    bottom: -4px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 5px;
+}
+
+.recordar-olvidar {
+    font-size: .9em;
+    color: white;
+    font-weight: 500;
+    margin: -5px 0 15px;
+}
+
+.recordar-olvidar label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.recordar-olvidar a {
+    color: rgb(76, 249, 255);
+    text-decoration: none;
+}
+
+.recordar-olvidar a:hover {
+    text-decoration: underline;
+}
+
+.boton {
+    width: 100%;
+    height: 45px;
+    background: #082b46;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+}
+
+.boton:hover {
+    background: #062135;
+}
+
+.Registrarse {
+    font-size: .9em;
+    color:  white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.Registrarse p a {
+    color: rgb(76, 249, 255);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.Registrarse p a:hover {
+    text-decoration: underline;
+}

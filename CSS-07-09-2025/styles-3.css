@@ -1,0 +1,380 @@
+body {
+    background: rgb(188, 228, 255);
+}
+
+/*<!--EJERCICIO-1-->*/
+.cubo-0 {
+    border: 5px solid #00087c;
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container-0 {
+    background: #09f;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*<!--EJERCICIO-2-->*/
+.cubo-1 {
+    border: 5px solid #ff0000;
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container-1 {
+    background: rgb(255, 81, 0);
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 200px;
+}
+
+/*<!--EJERCICIO-3-->*/
+.cubo-2 {
+    border: 5px solid #ff0000;
+    width: 250px;
+    height: 500px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container-2 {
+    background: rgb(54, 128, 32);
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+/*<!--EJERCICIO-4-->*/
+.parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 4px solid #000;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.item {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 100px;
+    height: 100px;
+    background: #09f;
+}
+
+.item:first-child {
+    background: yellow;
+}
+
+.item:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-5-->*/
+.parent-1 {
+    display: flex;
+    flex-flow: row nowrap;
+    border: 4px solid #000;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.items {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 100px;
+    flex: 1;
+}
+
+.items:first-child {
+    background: yellow;
+    flex: 4;
+    order: 3;
+}
+
+.items:nth-child(2) {
+    background: blue;
+    flex: 2;
+    order: 1;
+}
+
+.items:last-child {
+    background: red;
+    flex: 1;
+    order: 2;
+}
+
+/*<!--EJERCICIO-6-->*/
+.parent-2 {
+    display: flex;
+    flex-flow: row;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 200px;
+    justify-content: space-between;
+}
+
+.item-1 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-1:first-child {
+    background: yellow;
+}
+
+.item-1:nth-child(2) {
+    background: blue;
+}
+
+.item-1:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-7-->*/
+.parent-3 {
+    display: flex;
+    flex-flow: row;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 200px;
+    justify-content: space-around;
+}
+
+.item-2 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-2:first-child {
+    background: yellow;
+}
+
+.item-2:nth-child(2) {
+    background: blue;
+}
+
+.item-2:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-8-->*/
+.parent-4 {
+    display: flex;
+    flex-flow: row;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 200px;
+    justify-content: space-evenly;
+}
+
+.item-3 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-3:first-child {
+    background: yellow;
+}
+
+.item-3:nth-child(2) {
+    background: blue;
+}
+
+.item-3:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-9-->*/
+.parent-5 {
+    display: flex;
+    flex-flow: row nowrap;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.item-4 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-4:first-child {
+    background: yellow;
+}
+
+.item-4:nth-child(2) {
+    background: blue;
+}
+
+.item-4:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-10-->*/
+.parent-6 {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.item-5 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-5:first-child {
+    background: yellow;
+}
+
+.item-5:nth-child(2) {
+    background: blue;
+}
+
+.item-5:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-11-->*/
+.parent-7 {
+    display: flex;
+    flex-flow: row wrap;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    gap: 16px;
+}
+
+.item-6 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-6:first-child {
+    background: yellow;
+}
+
+.item-6:nth-child(2) {
+    background: blue;
+}
+
+.item-6:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-12-->*/
+.parent-8 {
+    display: flex;
+    flex-flow: row wrap;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 16px;
+}
+
+.item-7 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-7:first-child {
+    background: yellow;
+}
+
+.item-7:nth-child(2) {
+    background: blue;
+}
+
+.item-7:last-child {
+    background: red;
+}
+
+/*<!--EJERCICIO-13-->*/
+.parent-9 {
+    display: flex;
+    flex-flow: row wrap;
+    border: 4px solid #000;
+    width: 250px;
+    box-sizing: border-box;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+    gap: 16px;
+}
+
+.item-8 {
+    border: 1px solid;
+    box-sizing: border-box;
+    opacity: .9;
+    width: 50px;
+    height: 50px;
+}
+
+.item-8:first-child {
+    background: yellow;
+}
+
+.item-8:nth-child(2) {
+    background: blue;
+}
+
+.item-8:last-child {
+    background: red;
+}

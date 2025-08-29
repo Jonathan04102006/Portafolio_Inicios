@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla con 50 filas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Ciudad</th>
+        <th>Compañía</th>
+      </tr>
+    </thead>
+    <tbody><label for="limite">Mostrar:</label>
+<select id="limite">
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50" selected>50</option>
+</select>
+<div id="paginacion"></div>
+      <input type="text" id="buscador" placeholder="Buscar...">
+<tr><td>Ana Vidal</td><td>ana.vidal@zylab.io</td><td>Valencia</td><td>QbitSoft</td></tr>
+<tr><td>Andrés López</td><td>andrés.lópez@codextreme.dev</td><td>Málaga</td><td>Zylab</td></tr>
+<tr><td>Andrés Sánchez</td><td>andrés.sánchez@qbitsoft.tech</td><td>Málaga</td><td>Zylab</td></tr>
+<tr><td>Camila Blanco</td><td>camila.blanco@zylab.io</td><td>Zaragoza</td><td>Cybernova</td></tr>
+<tr><td>Camila Martínez</td><td>camila.martínez@cybernova.com</td><td>Granada</td><td>QbitSoft</td></tr>
+<tr><td>Camila Reyes</td><td>camila.reyes@qbitsoft.tech</td><td>Barcelona</td><td>Devtopia</td></tr>
+<tr><td>Daniela Martínez</td><td>daniela.martínez@cybernova.com</td><td>Granada</td><td>Zylab</td></tr>
+<tr><td>Daniela Vidal</td><td>daniela.vidal@innoworks.net</td><td>Zaragoza</td><td>Codextreme</td></tr>
+<tr><td>Diego López</td><td>diego.lópez@devtopia.org</td><td>Valencia</td><td>AetherLabs</td></tr>
+<tr><td>Diego Ramírez</td><td>diego.ramírez@devtopia.org</td><td>Bilbao</td><td>Infowave</td></tr>
+<tr><td>Emilio López</td><td>emilio.lópez@qbitsoft.tech</td><td>Madrid</td><td>Cybernova</td></tr>
+<tr><td>Emilio Ríos</td><td>emilio.ríos@infowave.io</td><td>Barcelona</td><td>Zylab</td></tr>
+<tr><td>Felipe Sánchez</td><td>felipe.sánchez@qbitsoft.tech</td><td>Madrid</td><td>Devtopia</td></tr>
+<tr><td>Gabriel Vidal</td><td>gabriel.vidal@zylab.io</td><td>Granada</td><td>Devtopia</td></tr>
+<tr><td>Isabella Mendoza</td><td>isabella.mendoza@aetherlabs.ai</td><td>Barcelona</td><td>Skyzen</td></tr>
+<tr><td>Isabella Vidal</td><td>isabella.vidal@cybernova.com</td><td>Madrid</td><td>Skyzen</td></tr>
+<tr><td>Javier Vidal</td><td>javier.vidal@qbitsoft.tech</td><td>Granada</td><td>Devtopia</td></tr>
+<tr><td>Lucía Mendoza</td><td>lucía.mendoza@cybernova.com</td><td>Bilbao</td><td>Neuronate</td></tr>
+<tr><td>Lucía Ramírez</td><td>lucía.ramírez@aetherlabs.ai</td><td>Alicante</td><td>Cybernova</td></tr>
+<tr><td>Lucas Ramírez</td><td>lucas.ramírez@aetherlabs.ai</td><td>Valencia</td><td>Neuronate</td></tr>
+<tr><td>Lucas Vidal</td><td>lucas.vidal@devtopia.org</td><td>Zaragoza</td><td>Devtopia</td></tr>
+<tr><td>María Díaz</td><td>maría.díaz@qbitsoft.tech</td><td>Alicante</td><td>Codextreme</td></tr>
+<tr><td>María Vidal</td><td>maría.vidal@devtopia.org</td><td>Bilbao</td><td>Innoworks</td></tr>
+<tr><td>Mateo Vidal</td><td>mateo.vidal@zylab.io</td><td>Sevilla</td><td>Skyzen</td></tr>
+<tr><td>Paula Mendoza</td><td>paula.mendoza@codextreme.dev</td><td>Barcelona</td><td>Codextreme</td></tr>
+<tr><td>Paula Navarro</td><td>paula.navarro@aetherlabs.ai</td><td>Granada</td><td>Zylab</td></tr>
+<tr><td>Santiago Mendoza</td><td>santiago.mendoza@skyzen.co</td><td>Madrid</td><td>Devtopia</td></tr>
+<tr><td>Santiago Vidal</td><td>santiago.vidal@aetherlabs.ai</td><td>Valencia</td><td>Neuronate</td></tr>
+<tr><td>Sofía Mendoza</td><td>sofia.mendoza@infowave.io</td><td>Granada</td><td>Devtopia</td></tr>
+<tr><td>Tomás Mendoza</td><td>tomas.mendoza@qbitsoft.tech</td><td>Zaragoza</td><td>Codextreme</td></tr>
+<tr><td>Tomás Vidal</td><td>tomas.vidal@devtopia.org</td><td>Valladolid</td><td>Devtopia</td></tr>
+<tr><td>Valentina Mendoza</td><td>valentina.mendoza@infowave.io</td><td>Madrid</td><td>Skyzen</td></tr>
+<tr><td>Valentina Vidal</td><td>valentina.vidal@qbitsoft.tech</td><td>Barcelona</td><td>Cybernova</td></tr>
+<tr><td>Gabriel Ramírez</td><td>gabriel.ramírez@codextreme.dev</td><td>Zaragoza</td><td>Skyzen</td></tr>
+<tr><td>Mateo Díaz</td><td>mateo.díaz@infowave.io</td><td>Madrid</td><td>Codextreme</td></tr>
+<tr><td>Javier Ramírez</td><td>javier.ramírez@aetherlabs.ai</td><td>Sevilla</td><td>Neuronate</td></tr>
+<tr><td>Isabella Reyes</td><td>isabella.reyes@cybernova.com</td><td>Alicante</td><td>Codextreme</td></tr>
+<tr><td>Felipe Vidal</td><td>felipe.vidal@neuronate.com</td><td>Zaragoza</td><td>Infowave</td></tr>
+<tr><td>Lucas Mendoza</td><td>lucas.mendoza@devtopia.org</td><td>Barcelona</td><td>Zylab</td></tr>
+<tr><td>Gabriel Reyes</td><td>gabriel.reyes@neuronate.com</td><td>Sevilla</td><td>Codextreme</td></tr>
+<tr><td>Camila Mendoza</td><td>camila.mendoza@neuronate.com</td><td>Alicante</td><td>Infowave</td></tr>
+<tr><td>Daniela Herrera</td><td>daniela.herrera@devtopia.org</td><td>Madrid</td><td>Zylab</td></tr>
+<tr><td>Lucía Reyes</td><td>lucía.reyes@innoworks.net</td><td>Zaragoza</td><td>Skyzen</td></tr>
+<tr><td>Felipe Díaz</td><td>felipe.díaz@innoworks.net</td><td>Valencia</td><td>Infowave</td></tr>
+<tr><td>Tomás Ramírez</td><td>tomas.ramírez@infowave.io</td><td>Valencia</td><td>Cybernova</td></tr>
+<tr><td>Isabella Herrera</td><td>isabella.herrera@aetherlabs.ai</td><td>Sevilla</td><td>Skyzen</td></tr>
+<tr><td>Mateo Sánchez</td><td>mateo.sánchez@aetherlabs.ai</td><td>Barcelona</td><td>Cybernova</td></tr>
+<tr><td>Javier Díaz</td><td>javier.díaz@innoworks.net</td><td>Alicante</td><td>Neuronate</td></tr>
+<tr><td>Diego Vidal</td><td>diego.vidal@codextreme.dev</td><td>Madrid</td><td>Devtopia</td></tr>
+<tr><td>Emilio Torres</td><td>emilio.torres@innoworks.net</td><td>Valencia</td><td>Infowave</td></tr>
+    </tbody>
+  </table>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+body {
+    background-color: rgb(8, 95, 127);
+}
+
+/*BOTON-0*/
+.boton-0 {
+    display: inline-block;
+    background-color: rgb(233, 233, 233);
+    color: rgb(47, 47, 47);
+    padding: 15px 10px;
+    margin: 2px;
+}
+
+/*REACCION DEL BOTON-0*/
+.boton-0:hover {
+    background-color: rgba(71, 71, 71, 0.939);
+    color: white;
+    border-color: rgb(255, 255, 255);
+}
+
+/*BOTON-1*/
+.boton-1 {padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: black;
+    margin: 2px;
+}
+/*REACCION DEL BOTON-1*/
+.boton-1:hover {
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+    border-color: rgb(48, 48, 48);
+}
+
+/*BOTON-2*/
+.boton-2 {
+    background-color: rgb(120, 131, 255);
+    border: none;
+    color: #124;
+    padding: 14px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #124;
+    margin: 2px;
+}
+
+/*REACCION DEL BOTON-2*/
+.boton-2:hover {
+    background-color: #124;
+    color: rgb(120, 131, 255);
+    border-color: rgb(120, 131, 255);
+}
+
+/*BOTON-3*/
+.boton-3 {
+    width: 100%;
+    margin: 2px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(255, 128, 0);
+    font-size: 30px;
+    display: block
+}
+
+/*REACCION DEL BOTON-3*/
+.boton-3:hover {
+    background-color: rgb(220, 110, 0);
+    color: rgb(255, 255, 255);
+}
+
+/*BOTON-4*/
+.boton-4 {
+    width: 20%;
+    margin-bottom: 5px;
+    margin-left: auto;
+    text-align: center;
+    border: none;
+    padding: 10px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: white;
+    background-color: rgb(171, 11, 43);
+    display: block;
+}
+
+/*REACCION DEL BOTON-4*/
+.boton-4:hover {
+    background-color: rgb(149, 0, 30);
+    color: white;
+}
+
+/*BOTON-5*/
+.boton-5 {
+    width: 20%;
+    color: white;
+    background-image:linear-gradient(to right, #214, #219) ;
+    border: none;
+    border-radius: 6px;
+    padding: 15px 2px;
+    font-size: 10px;
+    cursor: default;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+/*REACCION DEL BOTON-5*/
+.boton-5:hover {
+    background-image: linear-gradient(to right, #219, #214);
+}
+
+/*BOTON-6*/
+.boton-6 {
+    margin: 4px 0;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    padding: 7px 3.5px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    background-color: rgb(13, 174, 13);
+}
+
+/*REACCION DEL BOTON-6*/
+.boton-6:hover {
+    background-color: rgb(0, 162, 0);
+    color: white;
+}
+
+/*BOTON-7*/
+.boton-7 {
+    background-color: rgb(255, 179, 255);
+    border: none;
+    font-size: 10px;
+    padding: 8px 4px;
+    color: black;
+    border-radius: 6px;
+    width: 20%;
+    cursor: default;
+    transition: 0.5s;
+    margin: 6px 0;
+}
+
+/*REACCION DEL BOTON-7*/
+.boton-7:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 108, 130);
+}
+
+.boton-7:active {
+    transform: scale(0.90);
+}
+
+/*RESPONSIVE H6 PARA EL BOTON-7*/
+.h6-push {
+    color: white;
+    font-size: 2vw;
+    font-family: sans-serif;
+    margin: 0;
+    ;
+}
+
+/*REACCION DEL H6*/
+.h6-push:hover {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);    
+}
+
+/*BOTON-8*/
+.boton-8 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin: 4px 0 0 0 ;
+    border: none;
+    cursor: default;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin: 6px 0px;
+    padding: 5px 15px;
+    transition: 0.3s;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(79, 79, 79);
+}
+
+
+/*REACCION DEL BOTON-8*/
+.boton-8:hover{
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/*BOTON-9*/
+.boton-9 {
+  background-color: #447857;
+  border-radius: 100px; 
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 7px 20px;
+  text-align: center;
+  border: 0;
+  font-size: 16px;
+  box-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px black;
+  margin: 5px 0 0 0;
+}
+
+.boton-9:hover {
+    background-color: #3a684b;
+    color: aliceblue;
+}
+
+/*BOTON-10*/
+.boton-10 {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+    color: #fff;
+    line-height: 20px;
+    margin: 6px 0;
+    padding: 2px 5px;
+    text-align: center
+}
+
+/*REACCION DEL BOTON-10*/
+.boton-10:hover {
+    background-color: rgb(52, 52, 52);
+    color: #ffffff;
+    border-color: darkgray;
+}
+
+/*BOTON-11*/
+.boton-11 {
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    display: block;
+    margin: 5px 0;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+/*BOTON-12*/
+.boton-12 {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: #4C43CD;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(2, 0, 107, 0.648) 0%, transparent 86.18%);
+    box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.395);
+    font-size: 10px;
+    border: 0;
+}
+
+/*boton-13*/
+.boton-13 {
+    margin: 5px 0;
+    background-color: #000000;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(255, 158, 158, 0.621) 0 3px 5px -1px,rgba(255, 81, 81, 0.58) 0 6px 10px 0,rgba(246, 161, 76, 0.515) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #b37e7e;
+    font-family:sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 25px;
+    max-width: 100%;
+    padding: 2px 4px;
+}
+
+/*Boton-14*/
+.boton-14, .boton-14:after {
+  width: 12%;
+  height: 45px;
+  line-height: 10px;
+  font-size: 1vw;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 10%, #ff0000 7%);
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  box-shadow: 6px 0px 0px #4ed6ff;
+  margin: 8px 0;
+  padding: 4px 4px;
+}
+
+/*BOTON-15*/
+.boton-15 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #000;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+}
+
+/*BOTON-16*/
+.boton-16 {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family:sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    margin: 20px 0;
+}
+
+/*PARTE TRASERA DEL BOTON-16*/
+.boton-16::before {
+    background-color: #de0202;
+    content: "";
+    height: calc(100% + 4px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    width: 100%;
+    z-index: -1;
+}
+
+/*BOTON-17*/
+.boton-17 {
+    align-self: center;
+    background-color: #FFF;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgb(0, 0, 0) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: rgb(60, 60, 60);
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    padding: 0.75rem;
+    margin: 2px 0 20px 0;
+}
+
+
+/*EFECTOS DEL BORDE DEL BOTON-17*/
+.boton-17 {
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px ;
+
+    border-bottom-left-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+}
+
+/*BOTON-18*/
+.boton-18 {
+    --c: #3639c7;
+    color: #000;
+    border: none;
+    text-shadow: -0.01em 0 var(--c), 0.01em 2px #0004;
+    outline-offset: 0.1em;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 6px 0;
+    cursor: default;
+    padding: 0.1em 0.3em;
+    border-radius: 10px;
+}

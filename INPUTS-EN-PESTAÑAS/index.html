@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Input de Correo Electrónico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--INPUT 1-->
+  <div class="card">
+    <h1>INPUTS</h1>
+    <h2>1 - Input de correo electrónico</h2>
+
+    <div class="tabs">
+      <div class="tab-button active" onclick="openTab(this, 'ejemplo1')">✅ Ejemplo</div>
+      <div class="tab-button" onclick="openTab(this, 'html1')">🧱 HTML</div>
+      <div class="tab-button" onclick="openTab(this, 'css1')">🎨 CSS</div>
+      <div class="tab-button" onclick="openTab(this, 'js1')">⚙️ JavaScript</div>
+    </div>
+
+    <div id="ejemplo1" class="tab-content active">
+      <input type="email" id="correo" placeholder="ejemplo@.com" oninput="validarCorreo()">
+      <div id="mensaje-correo" class="mensaje"></div>
+    </div>
+
+    <div id="html1" class="tab-content">
+      <pre>
+&lt;input type="email" id="correo" placeholder="ejemplo@.com" oninput="validarCorreo()"&gt;
+&lt;div id="mensaje-correo"&gt;&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div id="css1" class="tab-content">
+      <pre>
+input[type="email"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+      </pre>
+    </div>
+
+    <div id="js1" class="tab-content">
+      <pre>
+function validarCorreo() {
+  const input = document.getElementById('correo');
+  const mensaje = document.getElementById('mensaje-correo');
+  if (input.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido.';
+    input.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    input.classList.remove('error');
+  }
+}
+      </pre>
+    </div>
+  </div>
+
+
+<!--INPUT 2-->
+<div class="card">
+  <h2>2 - Input de correo electrónico múltiple</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo2')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html2')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css2')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js2')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo2" class="tab-content active">
+    <input type="email" id="correoMultiple" name="email" multiple placeholder="ejemplo@.com" oninput="validarCorreosMultiples()">
+    <div id="mensaje-multiple" class="mensaje"></div>
+  </div>
+
+  <div id="html2" class="tab-content">
+    <pre>
+&lt;input type="email" id="correoMultiple" name="email" multiple 
+       placeholder="ejemplo@.com" oninput="validarCorreosMultiples()"&gt;
+&lt;div id="mensaje-multiple"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css2" class="tab-content">
+    <pre>
+input[type="email"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js2" class="tab-content">
+    <pre>
+function validarCorreosMultiples() {
+  const input = document.getElementById('correoMultiple');
+  const mensaje = document.getElementById('mensaje-multiple');
+  if (input.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido.';
+    input.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    input.classList.remove('error');
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 3-->
+<div class="card">
+  <h2>3 - Input de búsqueda y dirección de web</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo3')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html3')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css3')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js3')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo3" class="tab-content active">
+    <input type="search" id="search" name="search" placeholder="Escribir búsqueda o dirección de web" oninput="validarBusqueda()">
+    <div id="mensaje-busqueda" class="mensaje"></div>
+  </div>
+
+  <div id="html3" class="tab-content">
+    <pre>
+&lt;input type="search" id="search" name="search" 
+       placeholder="Escribir búsqueda o dirección de web" 
+       oninput="validarBusqueda()"&gt;
+&lt;div id="mensaje-busqueda"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css3" class="tab-content">
+    <pre>
+input[type="search"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js3" class="tab-content">
+    <pre>
+function validarBusqueda() {
+  const input = document.getElementById('search');
+  const mensaje = document.getElementById('mensaje-busqueda');
+  const valor = input.value.trim();
+
+  const regexURL = /^(https?:\/\/)?(www\.)?[\w\-]+\.[a-z]{2,}(\S*)?$/i;
+
+  if (valor === "") {
+    mensaje.textContent = "Campo requerido.";
+    input.classList.add("error");
+  } else if (!regexURL.test(valor) && valor.length < 3) {
+    mensaje.textContent = "Ingrese una dirección web válida o una búsqueda más extensa.";
+    input.classList.add("error");
+  } else {
+    mensaje.textContent = "";
+    input.classList.remove("error");
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 4-->
+<div class="card">
+  <h2>4 - Input de número de teléfono</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo4')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html4')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css4')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js4')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo4" class="tab-content active">
+    <input type="tel" id="tel" name="tel" placeholder="Escribe tu número de teléfono" oninput="validarTelefono()">
+    <div id="mensaje-telefono" class="mensaje"></div>
+  </div>
+
+  <div id="html4" class="tab-content">
+    <pre>
+&lt;input type="tel" id="tel" name="tel" 
+       placeholder="Escribe tu número de teléfono" 
+       oninput="validarTelefono()"&gt;
+&lt;div id="mensaje-telefono"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css4" class="tab-content">
+    <pre>
+input[type="tel"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js4" class="tab-content">
+    <pre>
+function validarTelefono() {
+  const input = document.getElementById("tel");
+  const mensaje = document.getElementById("mensaje-telefono");
+  const valor = input.value.trim();
+
+  const regex = /^(\+?\d{1,3}[- ]?)?\d{8,14}$/;
+
+  if (valor === "") {
+    mensaje.textContent = "Campo requerido.";
+    input.classList.add("error");
+  } else if (!regex.test(valor)) {
+    mensaje.textContent = "Número de teléfono inválido. Ej: +503 71234567.";
+    input.classList.add("error");
+  } else {
+    mensaje.textContent = "";
+    input.classList.remove("error");
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 5-->
+<div class="card">
+  <h2>5 - Input de URL</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo5')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html5')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css5')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js5')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo5" class="tab-content active">
+    <input type="url" id="url" name="url" placeholder="Introduce la dirección URL" oninput="validarURL()">
+    <div id="mensaje-url" class="mensaje"></div>
+  </div>
+
+  <div id="html5" class="tab-content">
+    <pre>
+&lt;input type="url" id="url" name="url" 
+       placeholder="Introduce la dirección URL" 
+       oninput="validarURL()"&gt;
+&lt;div id="mensaje-url"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css5" class="tab-content">
+    <pre>
+input[type="url"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js5" class="tab-content">
+    <pre>
+function validarURL() {
+  const input = document.getElementById('url');
+  const mensaje = document.getElementById('mensaje-url');
+  const valor = input.value.trim();
+
+  const regex = /^(https?:\/\/)[^\s/$.?#].[^\s]*$/i;
+
+  if (valor === '') {
+    mensaje.textContent = 'Campo requerido.';
+    input.classList.add('error');
+  } else if (!regex.test(valor)) {
+    mensaje.textContent = 'Formato de URL inválido. Usa http:// o https://';
+    input.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    input.classList.remove('error');
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 6-->
+<div class="card">
+  <h2>6 - Input de rango</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo6')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html6')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css6')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js6')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo6" class="tab-content active">
+    <label for="price">(Ejemplo) Elija un precio de venta:</label><br>
+    <input 
+      type="range" 
+      name="price" 
+      id="price" 
+      min="50000" 
+      max="500000" 
+      step="100" 
+      value="250000"
+      oninput="actualizarRango()"
+    />
+    <output class="price-output" id="output-price">250000</output>
+    <div id="mensaje-rango" class="mensaje"></div>
+  </div>
+
+  <div id="html6" class="tab-content">
+    <pre>
+&lt;label for="price"&gt;(Ejemplo) Elija un precio de venta:&lt;/label&gt;&lt;br&gt;
+&lt;input 
+  type="range" 
+  name="price" 
+  id="price" 
+  min="50000" 
+  max="500000" 
+  step="100" 
+  value="250000"
+  oninput="actualizarRango()"
+/&gt;
+&lt;output class="price-output" id="output-price"&gt;250000&lt;/output&gt;
+&lt;div id="mensaje-rango"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css6" class="tab-content">
+    <pre>
+input[type="range"] {
+  width: 300px;
+  background: linear-gradient(to right, #4caf50 var(--valor), #ccc var(--valor));
+  height: 8px;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+input.error {
+  outline: 2px solid red;
+}
+.price-output {
+  font-weight: bold;
+  margin-left: 10px;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js6" class="tab-content">
+    <pre>
+const rango = document.getElementById("price");
+
+function actualizarRango() {
+  const salida = document.getElementById("output-price");
+  const mensaje = document.getElementById("mensaje-rango");
+  const valor = parseInt(rango.value);
+  salida.textContent = `$${valor.toLocaleString()}`;
+
+  const min = parseInt(rango.min);
+  const max = parseInt(rango.max);
+  const porcentaje = ((valor - min) / (max - min)) * 100;
+
+  rango.style.setProperty('--valor', `${porcentaje}%`);
+  if (valor &lt; 100000 || valor &gt; 400000) {
+    mensaje.textContent = "El valor debe estar entre $100,000 y $400,000.";
+    rango.classList.add("error");
+  } else {
+    mensaje.textContent = "";
+    rango.classList.remove("error");
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 7-->
+<div class="card">
+  <h2>7 - Input de calendario</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo7')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html7')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css7')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js7')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo7" class="tab-content active">
+    <input type="datetime-local" name="datetime" id="datetime" oninput="validarFechaHora()">
+    <div id="mensaje-fecha" class="mensaje"></div>
+  </div>
+
+  <div id="html7" class="tab-content">
+    <pre>
+&lt;input type="datetime-local" name="datetime" id="datetime" oninput="validarFechaHora()"&gt;
+&lt;div id="mensaje-fecha"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css7" class="tab-content">
+    <pre>
+input[type="datetime-local"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js7" class="tab-content">
+    <pre>
+function validarFechaHora() {
+  const calendario = document.getElementById('datetime');
+  const mensaje = document.getElementById('mensaje-fecha');
+
+  if (calendario.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido. Seleccione fecha y hora.';
+    calendario.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    calendario.classList.remove('error');
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 8-->
+<div class="card">
+  <h2>8 - Input de calendario (Mes)</h2>
+
+  <div class="tabs">
+    <div class="tab-button active" onclick="openTab(this, 'ejemplo8')">✅ Ejemplo</div>
+    <div class="tab-button" onclick="openTab(this, 'html8')">🧱 HTML</div>
+    <div class="tab-button" onclick="openTab(this, 'css8')">🎨 CSS</div>
+    <div class="tab-button" onclick="openTab(this, 'js8')">⚙️ JavaScript</div>
+  </div>
+
+  <div id="ejemplo8" class="tab-content active">
+    <input type="month" name="month" id="month" oninput="validarMes()">
+    <div id="mensaje-mes" class="mensaje"></div>
+  </div>
+
+  <div id="html8" class="tab-content">
+    <pre>
+&lt;input type="month" name="month" id="month" oninput="validarMes()"&gt;
+&lt;div id="mensaje-mes"&gt;&lt;/div&gt;
+    </pre>
+  </div>
+
+  <div id="css8" class="tab-content">
+    <pre>
+input[type="month"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+input.error {
+  border-color: red;
+}
+.mensaje {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+    </pre>
+  </div>
+
+  <div id="js8" class="tab-content">
+    <pre>
+function validarMes() {
+  const mesInput = document.getElementById('month');
+  const mensaje = document.getElementById('mensaje-mes');
+
+  if (mesInput.value.trim() === '') {
+    mensaje.textContent = 'Campo requerido. Seleccione un mes.';
+    mesInput.classList.add('error');
+  } else {
+    mensaje.textContent = '';
+    mesInput.classList.remove('error');
+  }
+}
+    </pre>
+  </div>
+</div>
+
+<!--INPUT 9-->
+<!--INPUT 10-->
+<!--INPUT 11-->
+<!--INPUT 12-->
+<!--INPUT 13-->
+<!--INPUT 14-->
+<!--INPUT 15-->
+<!--INPUT 16-->
+<!--INPUT 17-->
+<!--INPUT 18-->
+<!--INPUT 19-->
+<!--INPUT 20-->
+<!--INPUT 21-->
+<!--INPUT 22-->
+  <script src="script.js"></script>
+</body>
+</html>
