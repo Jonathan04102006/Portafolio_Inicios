@@ -1,0 +1,74 @@
+# Tarea constante revisar perfiles de Desarrollo web
+
+# Gestion de proyectos en Jira
+  Registrarse
+  Iniciar sesion  
+
+#-------------PSEINT
+# Ejercicio 1
+  Digitar Primer nombre y segundo nombre con sus respectivos saltos de linea.
+  Y Digitar la edad de la persona
+  Mostrar en pantalla el siguiente mensaje
+
+  Hola {nombre y segundo nombre}
+  Cual es tu edad?
+  Tu edad es {edad}
+
+# Ejercicio 2
+  Digitar la edad de una persona
+  y mostrar cuantos meses tiene de vida.
+  Entonces se mostrara en pantalla
+
+  Digita tu edad:
+  Los meses que tienes de vida son: {mesesResultado}  
+
+# Ejercicio 3
+  Digitar la edad de una persona
+  y mostrar cuantas semanas tiene de vida.
+  Entonces se mostrara en pantalla
+
+  Las semanas que tienes de vida son: {semanasResultado}
+
+# ---------------Dimensiones
+# Ejercicio 4 Dimensiones
+  Desarrollar una Array(Arreglo)
+  Con 5 registros, de numeros enteros
+  y con un loop identificar cuales numeros son mayor a 22
+  Entonces se mostrara en pantalla
+
+  La cantidad de numeros mayores a 22 son {totalNumerosMayores}
+
+# Ejercicio 5 Dimensiones
+  Desarrollar un Array(Arreglo)
+  Con 10 registros, de numeros enteros
+  y con un loop a identificar cuales numeros son mayores al valor digitado en pantalla
+  Entonces se mostrara en pantalla
+
+  Digite el limite para los numeros del Arreglo
+  La cantidad de numeros mayores a {valorIngresado} son {totalNumerosMayores}
+  
+# Ejercicio 6 Dimensiones
+  Desarrollar un Array(Arreglo)
+  Con del 1 al 200 registros de numeros enteros
+  y con un loop a identificar cuales numeros son pares, primos y utilizando el mismo Array
+  identificar cuales son multiplos de 5
+
+  Entonces se mostrara en pantalla la cantidad
+
+  Los numeros pares son: {numerosPares}
+  Los numeros primos son: {numerosPrimos}  
+  Los numeros divisibles son: {numerosDivisibles}
+
+# Ejercicio 7 Dimensiones
+  Desarrollar un Array(Arreglo)
+  Digital el limite de numeros desde el teclado
+  Con del 1 al N registros de numeros enteros
+  y con un loop a identificar cuales numeros son pares, primos y utilizando el mismo Array
+  identificar cuales son multiplos de 5
+
+  Entonces se mostrara en pantalla la cantidad
+
+  El limite ingresado por el usuario fue: {N}
+  Los numeros pares son: {numerosPares}
+  Los numeros primos son: {numerosPrimos}  
+  Los numeros divisibles son: {numerosDivisibles}
