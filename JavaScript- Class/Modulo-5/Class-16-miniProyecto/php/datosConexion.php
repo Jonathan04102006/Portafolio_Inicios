@@ -1,11 +1,13 @@
 <?php
-$servidor="localhost";
-$usuario="root";
-$password="";
-$database="compra";
+$servidor = "localhost";
+$usuario = "root";
+$password = "";
+$database = "compra";
 
-$conn = new mysql($servidor,$usuario,$password, $database);
-if ($conn->connect_error){
-    die("Conexión fallida");
+// Usa mysqli, no "mysql"
+$conn = new mysqli($servidor, $usuario, $password, $database);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 ?>
