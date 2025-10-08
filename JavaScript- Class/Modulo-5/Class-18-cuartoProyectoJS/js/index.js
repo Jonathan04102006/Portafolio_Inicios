@@ -49,7 +49,7 @@ function leerPokemon(foto){
     limpiarTodo()
     foto.style.color="red";
     let nombre=foto.querySelector(".pokemon").innerText;
-    let urlPokemon=`http://pokeapi.co/api/v2/pokemon/${nombre}`;
+    let urlPokemon= urlPosterior + `/${nombre}`;
     fetch(urlPokemon)
     .then(respuesta => respuesta.json())
     .then(valor =>mostrarImagen(valor,nombre))
