@@ -2,12 +2,12 @@
 class Animal{
 
     //Contructor: es un método especial que permite instanciar objetos basándose en la clase
-    constructor(nombre, edad, raza, sonido) {
+    constructor(nombre, edad, especie, sonido) {
         // Propiedad o características
         // this hace refencia a la
         this.nombre = nombre
         this.edad = edad
-        this.raza = raza
+        this.especie = especie
         this.sonido = sonido
 
 
