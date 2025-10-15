@@ -14,10 +14,10 @@ class Persona{
         //this.caracteristica2 = arg2
     }
 
+    
 }
 
 // De esta forma estamos instanciando un objeto basado en la clase (plantilla)
-
 const carolina = new Persona("carolina", 35, "Astronauta")
 const ricardo = new Persona("Ricardo", 18, "Estudiante de Programación")
 
