@@ -1,0 +1,9 @@
+section{
+    display: flex;
+}
+.linea{
+    cursor: pointer;
+}
+.caja{
+    margin-right: 40px;
+}
