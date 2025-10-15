@@ -2,12 +2,13 @@
 class Animal{
 
     //Contructor: es un método especial que permite instanciar objetos basándose en la clase
-    constructor(nombre, edad, raza) {
+    constructor(nombre, edad, raza, sonido) {
         // Propiedad o características
         // this hace refencia a la
         this.nombre = nombre
         this.edad = edad
         this.raza = raza
+        this.sonido = sonido
 
 
         //this.caracteristica1 = arg1
@@ -17,7 +18,11 @@ class Animal{
     // Método: es una función que representa un comportamiento propio de esta clase
     
     hacerSonido(){
-        console.log(sonido)
+        console.log(this.sonido)
+    }
+
+    decirNombre(){
+        console.log(`Hola, mi nombre es ${this.nombre}`)
     }
 
 }
@@ -25,4 +30,5 @@ class Animal{
 const manchita = new Animal("Manchita", 1, "Perro", "Guau")
 const pelusa = new Animal("Pelusa", 2, "Gato", "Miau")
 
-manchita.hacerSonido()
+manchita.decirNombre()
+pelusa.decirNombre()
