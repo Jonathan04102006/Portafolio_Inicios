@@ -56,6 +56,10 @@ const guitarra = new Guitarra()
 const bateria = new Bateria()
 const piano = new Piano()
 
+// guitarra.tocar()
+// bateria.tocar()
+// piano.tocar()
+
 showBanda(guitarra)
 showBanda(bateria)
 showBanda(piano)
