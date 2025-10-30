@@ -10,7 +10,7 @@ package estadoobjeto;
  */
 public class Auto {
     String patente;
-    String color = "Black";
+    String color;
     int kms;
     boolean conAire;
 }
