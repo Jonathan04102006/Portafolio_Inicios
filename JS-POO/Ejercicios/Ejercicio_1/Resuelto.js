@@ -1,3 +1,4 @@
+// Clase Estudiante: representa a un estudiante individual
 class Estudiante {
     constructor(nombre, edad, carrera, nota){
         this.nombre = nombre;
@@ -6,16 +7,19 @@ class Estudiante {
         this.nota = nota;
     }
 
+    // Método para obtener una representación
     toString(){
         return `${this.nombre} - ${this.carrera} (${this.nota})`;
     }
 }
 
+// Clase grupoEstudiantes: gestiona una colección de estudiantes
 class grupoEstudiantes{
     constructor(){
         this.estudiantes = [];
     }
 
+    //Agregar un estudiante al grupo
     agregarEstudiante(estudiante){
         if (estudiante instanceof Estudiante){
             this.estudiantes.push(estudiante);
@@ -24,6 +28,7 @@ class grupoEstudiantes{
         }
     }
 
+    // Mostrar todos los estudiantes
     mostrarEstudiante(){
         console.log("Listado de estudiantes");
         this.estudiantes.forEach(estudiante => {
@@ -31,6 +36,7 @@ class grupoEstudiantes{
         });
     }
 
+    // Calcular el promedio de notas del grupo
     calcularPromedio(){
         if (this.estudiantes.length === 0)
             return 0;
@@ -38,10 +44,12 @@ class grupoEstudiantes{
         return suma / this.estudiantes.length;
     }
 
+    // Buscar un estudiante por nombre (devuelva el primer que coincida)
     buscarPorNombre(nombre){
         return this.estudiantes.find(estudiante => estudiante.nombre === nombre) || null;
     }
 
+    //obtener el número total de estudiantes
     obtenerCantidad(){
         return this.estudiantes.length;
     }
