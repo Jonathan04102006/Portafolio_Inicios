@@ -10,13 +10,21 @@
         <?= "Bienvenido al curso más grande de PHP" ?>
         
         <?php
+            // Titular de la sección
             echo "<h3>Listado de videojuegos:</h3>";
+            
+            /*
+             * Esta es una lista
+             * de videojuegos
+             * moderno
+             */
             echo "<ul>"
                     . "<li>GTA</li>"
                     . "<li>Fifa</li>"
                     . "<li>Mario Bros</li>"
                     ."</ul>";
             
+            // Párrafo explicativo
             echo '<p>Esta es toda'.'-'.'lista de juegos</p>';
         ?>
         
