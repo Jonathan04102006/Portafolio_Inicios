@@ -55,6 +55,8 @@ class grupoEstudiantes{
     }
 }
 
+//Uso de código
+const grupo = new GrupoEstudiantes
 //Mostrar estudiantes (Listado)
 //Calcular y mostrar promedio
 //Buscar estudiante (resultados)
