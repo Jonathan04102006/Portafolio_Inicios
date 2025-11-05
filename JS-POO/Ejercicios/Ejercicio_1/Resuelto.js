@@ -62,13 +62,13 @@ grupo.agregarEstudiante(new Estudiante("Ana", "20 años", "Ingienería", 8.5));
 grupo.agregarEstudiante(new Estudiante("Carlos", "22 años", "Derecho", 6.9));
 grupo.agregarEstudiante(new Estudiante("María", "21 años", "Medicina", 9.1));
 
-//Mostrar estudiantes (Listado)
+//Mostrar estudiantes
 grupo.mostrarEstudiante();
 
 //Calcular y mostrar promedio
-console.log("Promedio general: ", grupo.calcularPromedio().toFixed(2));
+console.log("Promedio general: ", grupo.calcularPromedio().toFixed(1));
 
-//Buscar estudiante (resultados)
+//Buscar estudiante
 const estudianteBuscando = grupo.buscarPorNombre("Carlos");
 if (estudianteBuscando){
     console.log("Estudiante encontrado: ", estudianteBuscando.toString());
