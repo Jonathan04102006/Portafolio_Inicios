@@ -6,13 +6,17 @@
 define('nombre', 'Jonathan Pérez');
 define ('web', 'jl958329@gmail.com');
 
-echo '<h1>'.nombre.'</h1>';
+echo '<h1>'.'Constante'.'</h1>';
+echo '<h2>'.nombre.'</h2>';
+echo '<h2>'.web.'</h2>';
+
 echo '<br>';
-echo '<h1>'.web.'</h1>';
 
 // Variable
+
+echo '<h1>'.'Variable'.'</h1>';
 $web = "jonapere0406@gmail.com";
-echo '<h1>'.$web.'</h1>';
+echo '<h2>'.$web.'</h2>';
 
 $web = "jl958329@gmail.com";
-echo '<h1>'.$web.'</h1>';
+echo '<h2>'.$web.'</h2>';
