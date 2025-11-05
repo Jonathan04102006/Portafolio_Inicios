@@ -9,7 +9,7 @@ class Estudiante {
 
     // Método para obtener una representación
     toString(){
-        return `${this.nombre} - ${this.carrera} (${this.nota})`;
+        return `${this.nombre} - ${this.edad} - ${this.carrera} (${this.nota})`;
     }
 }
 
@@ -58,9 +58,9 @@ class GrupoEstudiantes{
 //Uso de código
 const grupo = new GrupoEstudiantes();
 
-grupo.agregarEstudiante(new Estudiante("Ana", 20, "Ingienería", 8.5));
-grupo.agregarEstudiante(new Estudiante("Carlos", 22, "Derecho", 6.9));
-grupo.agregarEstudiante(new Estudiante("María", 21, "Medicina", 9.1));
+grupo.agregarEstudiante(new Estudiante("Ana", "20 años", "Ingienería", 8.5));
+grupo.agregarEstudiante(new Estudiante("Carlos", "22 años", "Derecho", 6.9));
+grupo.agregarEstudiante(new Estudiante("María", "21 años", "Medicina", 9.1));
 
 //Mostrar estudiantes (Listado)
 grupo.mostrarEstudiante();
