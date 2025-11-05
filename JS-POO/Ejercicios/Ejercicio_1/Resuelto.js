@@ -13,8 +13,8 @@ class Estudiante {
     }
 }
 
-// Clase grupoEstudiantes: gestiona una colección de estudiantes
-class grupoEstudiantes{
+// Clase GrupoEstudiantes: gestiona una colección de estudiantes
+class GrupoEstudiantes{
     constructor(){
         this.estudiantes = [];
     }
@@ -56,7 +56,22 @@ class grupoEstudiantes{
 }
 
 //Uso de código
-const grupo = new GrupoEstudiantes
+const grupo = new GrupoEstudiantes();
+
+grupo.agregarEstudiante(new Estudiante("Ana", 20, "Ingienería", 8.5));
+grupo.agregarEstudiante(new Estudiante("Carlos", 22, "Derecho", 6.9));
+grupo.agregarEstudiante(new Estudiante("María", 21, "Medicina", 9.1));
+
 //Mostrar estudiantes (Listado)
+grupo.mostrarEstudiante();
+
 //Calcular y mostrar promedio
+console.log("Promedio general: ", grupo.calcularPromedio().toFixed(2));
+
 //Buscar estudiante (resultados)
+const estudianteBuscando = grupo.buscarPorNombre("Carlos");
+if (estudianteBuscando){
+    console.log("Estudiante encontrado: ", estudianteBuscando.toString());
+} else {
+    console.log("Estudiante no encontrado");
+}
