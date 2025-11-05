@@ -19,7 +19,7 @@ class GrupoEstudiantes{
         this.estudiantes = [];
     }
 
-    //Agregar un estudiante al grupo
+    // Agregar un estudiante al grupo
     agregarEstudiante(estudiante){
         if (estudiante instanceof Estudiante){
             this.estudiantes.push(estudiante);
@@ -49,27 +49,27 @@ class GrupoEstudiantes{
         return this.estudiantes.find(estudiante => estudiante.nombre === nombre) || null;
     }
 
-    //obtener el número total de estudiantes
+    // obtener el número total de estudiantes
     obtenerCantidad(){
         return this.estudiantes.length;
     }
 }
 
-//Uso de código
+// Uso de código
 const grupo = new GrupoEstudiantes();
 
 grupo.agregarEstudiante(new Estudiante("Ana", "20 años", "Ingienería", 8.5));
 grupo.agregarEstudiante(new Estudiante("Carlos", "22 años", "Derecho", 6.9));
 grupo.agregarEstudiante(new Estudiante("María", "21 años", "Medicina", 9.1));
 
-//Mostrar estudiantes
+// Mostrar estudiantes
 grupo.mostrarEstudiante();
 
-//Calcular y mostrar promedio
+// Calcular y mostrar promedio
 console.log("Promedio general: ", grupo.calcularPromedio().toFixed(1));
 
-//Buscar estudiante
-const estudianteBuscando = grupo.buscarPorNombre("Carlos");
+// Buscar estudiante
+const estudianteBuscando = grupo.buscarPorNombre("Ana");
 if (estudianteBuscando){
     console.log("Estudiante encontrado: ", estudianteBuscando.toString());
 } else {

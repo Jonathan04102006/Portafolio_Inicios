@@ -1,12 +1,13 @@
 // Clase Menú
 class Menu {
+    // Recibira un array de opciones (["Pizza", "Hamburguesa", "Ensalada"])
     constructor(opciones) {
         this._opciones = opciones;
     }
 
     mostrar() {
         this._opciones.forEach((opcion, index) => {
-            console.log('${index + 1}. ${opcion}');
+            console.log(`${index + 1}. ${opcion}`);
         });
     }
 
@@ -16,5 +17,4 @@ class Menu {
             return this._opciones[idx];
         }
     }
-
 }
