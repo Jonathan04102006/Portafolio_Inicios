@@ -30,4 +30,10 @@ public class CuentaBancaria {
     boolean saldoDisponible(double monto){
         return saldo >= monto;
     }
+    
+    void extraer (double monto){
+        if ( saldoDisponible(monto) ){
+            saldo = saldo - monto; // saldo -= monto
+        }
+    }
 }

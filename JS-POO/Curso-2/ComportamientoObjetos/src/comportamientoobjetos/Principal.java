@@ -28,9 +28,11 @@ public class Principal {
         System.out.println(cb.obtenerSaldo());
         cb.depositar(-50);
         System.out.println(cb.obtenerSaldo());
-        
-        System.out.println(cb.saldoDisponible(100));
-        System.out.println(cb.saldoDisponible(300));
+        cb.extraer(180);
+        System.out.println(cb.obtenerSaldo());
+        cb.extraer(100);
+        System.out.println(cb.obtenerSaldo());
+         
     }
     
 }
