@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package comportamientoobjetos;
+package Video_15_THIS_en_JAVA;
 
 /**
  *
@@ -14,6 +14,7 @@ public class CuentaBancaria {
     private double saldo;
     
     public void mostrarDatos (){
+        System.out.println(this);
         System.out.println(CBU + " " + alias + " " + saldo);
     }
 
@@ -51,3 +52,4 @@ public class CuentaBancaria {
         }
     }
 }
+

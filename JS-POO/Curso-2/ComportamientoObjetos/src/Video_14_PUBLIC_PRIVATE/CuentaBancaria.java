@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package comportamientoobjetos;
+package Video_14_PUBLIC_PRIVATE;
 
 /**
  *
@@ -17,18 +17,18 @@ public class CuentaBancaria {
         System.out.println(CBU + " " + alias + " " + saldo);
     }
 
-    public String getCBU() {
-        return CBU;
+    public double obtenerSaldo(){
+        return saldo;
     }
 
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        if (alias != null){
-            this.alias = alias;
+    public void establecerAlias(String nuevoAlias){
+        if (nuevoAlias != null) {
+            alias = nuevoAlias;
         }
+    }
+    
+    public String obtenerAlias() {
+        return alias;
     }
 
     public double setSaldo() {
@@ -45,7 +45,7 @@ public class CuentaBancaria {
         return saldo >= monto;
     }
     
-    void extraer (double monto){
+    public void extraer (double monto){
         if ( saldoDisponible(monto) ){
             saldo = saldo - monto; // saldo -= monto
         }

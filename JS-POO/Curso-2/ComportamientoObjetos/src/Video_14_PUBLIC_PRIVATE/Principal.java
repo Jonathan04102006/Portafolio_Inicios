@@ -1,8 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package comportamientoobjetos;
+package Video_14_PUBLIC_PRIVATE;
 
 /**
  *
@@ -10,20 +10,20 @@ package comportamientoobjetos;
  */
 public class Principal {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         CuentaBancaria cb = new CuentaBancaria();
         
         cb.mostrarDatos();
-        cb.setAlias("miNuevoAlias");
+        cb.establecerAlias("miNuevoAlias");
         cb.mostrarDatos();
-        cb.setAlias(null);
+        cb.establecerAlias(null);
         cb.mostrarDatos();
         
-        String a = cb.getAlias();
+        String a = cb.obtenerAlias();
         System.out.println(a);
+        
+        // se marca en rojo por que esta en private
+        // cb.saldoDisponible(500);
     }
     
 }
