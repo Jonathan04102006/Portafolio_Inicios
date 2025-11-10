@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante buen sabor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Restaurante buen sabor</h1>
+
+    <div id="formulario" class="menu">
+        <div id="menu-contenido">
+            <label for="comida">Menú de comidas:</label>
+            <select name="comida">
+                <option value="">--Seleccione un platillo--</option>
+                <option value="Pizza">Pizza</option>
+                <option value="Hamburguesa">Hamburguesa</option>
+                <option value="Ensalada">Ensalada</option>
+            </select>
+
+            <label for="bebida">Menú de bebidas:</label>
+            <select name="bebida">
+                <option value="">--Seleccione una bebida--</option>
+                <option value="Agua">Agua</option>
+                <option value="Refresco">Refresco</option>
+                <option value="Cafe">Café</option>
+            </select>
+
+            <button id="btn-pedir">Confirmar pedido</button>
+        </div>
+    </div>
+    
+    <div id="mensaje" class="oculto"></div>
+
+    <div id="agregar-mas" class="menu oculto">
+        <button id="btn-si">Sí, agregar más</button>
+        <button id="btn-no">No, gracias</button>
+    </div>
+
+    <script src="restaurante.js"></script>
+</body>
+</html>
