@@ -1,9 +1,19 @@
 const readline = require('readline');
+// const { console } = require('inspector');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-// Programa de toma de pedidos para un restaurante
-// Menú: Pizza, Hamburguesa, Ensalada
-// Bebidas: Agua, Refresco, Cafe
+console.log(
+    `
+    ==========================BIENVENIDO AL RESTAURANTE BUEN SABOR==========================
+    
+                                ==============================
+                                ||           MENÚ           ||                               
+                                ||                          ||
+                                ||PIZZA HAMBURGUESA ENSALADA||
+                                ||                          ||
+                                ||    AGUA REFRESCO CAFE    ||
+                                ==============================
+`);
+
+// Progrma de toma de pedidos para un restaurante
+// Platillos: Pizza, Hamburguesa y Ensalda
+// Bebidas: Agua, Refresco y Café
