@@ -1,5 +1,11 @@
+// Creare una interfaz para leer desde la consola
 const readline = require('readline');
 // const { console } = require('inspector');
+
+const readline = readline.createInterface({
+    input: ProcessingInstruction.stdin,
+    output: ProcessingInstruction.stdout
+});
 
 console.log(
     `
