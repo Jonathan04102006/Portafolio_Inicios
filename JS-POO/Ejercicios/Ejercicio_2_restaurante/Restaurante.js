@@ -2,9 +2,9 @@
 const readline = require('readline');
 // const { console } = require('inspector');
 
-const readline = readline.createInterface({
-    input: ProcessingInstruction.stdin,
-    output: ProcessingInstruction.stdout
+const rl = readline.createInterface({
+    input: Process.stdin,
+    output: Process.stdout
 });
 
 console.log(
