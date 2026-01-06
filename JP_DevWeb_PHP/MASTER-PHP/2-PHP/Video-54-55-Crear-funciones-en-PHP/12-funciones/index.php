@@ -57,7 +57,7 @@ for($i = 0; $i <= 10; $i++){
 
 // Ejemplo 3
 
-function calculadora($numero1, $numero2){
+function calculadora($numero1, $numero2, $negrita = false){
     
     // Conjunto de instrucciones a ejecutar
     $suma = $numero1 + $numero2;
@@ -65,13 +65,22 @@ function calculadora($numero1, $numero2){
     $multi = $numero1 * $numero2;
     $division = $numero1 / $numero2;
     
+    if($negrita){
+        echo "<h1>";
+    }
+    
     echo "Suma: $suma <br/>";
     echo "Resta: $resta <br/>";
     echo "Multiplicacion : $multi <br/>";
     echo "Division: $division <br/>";
     echo "<hr/>";
+    
+    if($negrita){
+        echo "</h1>";
+    }
+    
 }
 
-calculadora(10, 30);
-calculadora(12, 55);
-calculadora(15, 32);
+calculadora(10, 30, true);
+calculadora(12, 55, true);
+calculadora(15, 32, false);
