@@ -49,6 +49,29 @@ if(isset($_GET['numero'])){
 }
 */
 
+/*
 for($i = 0; $i <= 10; $i++){
     tabla($i);
 }
+ */
+
+// Ejemplo 3
+
+function calculadora($numero1, $numero2){
+    
+    // Conjunto de instrucciones a ejecutar
+    $suma = $numero1 + $numero2;
+    $resta = $numero1 - $numero2;
+    $multi = $numero1 * $numero2;
+    $division = $numero1 / $numero2;
+    
+    echo "Suma: $suma <br/>";
+    echo "Resta: $resta <br/>";
+    echo "Multiplicacion : $multi <br/>";
+    echo "Division: $division <br/>";
+    echo "<hr/>";
+}
+
+calculadora(10, 30);
+calculadora(12, 55);
+calculadora(15, 32);
