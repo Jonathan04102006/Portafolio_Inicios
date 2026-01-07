@@ -1,5 +1,5 @@
 <?php
-include 'includes/cabecera.php';
+include_once 'includes/cabecera.php';
 ?>
 
         <!--Contenido-->
