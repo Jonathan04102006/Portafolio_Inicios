@@ -25,3 +25,22 @@ function holaMundo(){
 
 echo holaMundo();
 
+// Funciones variables
+
+function buenasDias(){
+    return "<h1>Hola! Buenos dias :</h1>";
+}
+
+function buenasTardes(){
+    return "<h1>Hey!! Que tal ha ido la comida??</h1>";
+}
+
+function buenasNoches(){
+    return "<h1>¿Te vas a dormir ya? Buenas noches!!</h1>";
+}
+
+// $horario = $_GET['horario'];
+$horario = "Noches";
+
+$miFuncion = "buenas".$horario;
+echo $miFuncion();
