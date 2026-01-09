@@ -59,5 +59,5 @@ $contactos = array(
 // echo $contactos[2]['email'];
 
 foreach ($contactos as $key => $contacto){
-    var_dump($contacto['nombre']);
+    var_dump($contacto['nombre'], $contacto['email']);
 }
