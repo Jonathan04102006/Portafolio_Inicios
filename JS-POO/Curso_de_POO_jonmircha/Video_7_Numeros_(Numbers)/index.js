@@ -11,3 +11,7 @@ console.log(parseFloat(c));
 console.log(typeof c, typeof d);
 console.log(a + b);
 console.log(c + d);
+console.log(c + parseInt(d));
+console.log(c + parseFloat(d));
+console.log(c + Number.parseInt(d));
+console.log(c + Number.parseFloat(d));
