@@ -10,24 +10,29 @@
 <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-        // Ambito de bloque
-        console.log("***********var***********")
-        var musica = "Rock";
-        console.log("Variable Musica antes del bloque", musica);
-        {
-            var musica = "Pop";
-            console.log("Variable Musica dentro del bloque", musica);
-        }
-        console.log("Variable Musica despues del bloque", musica);
+        let a;
+        const PI = 3.141516;
+        // const NUEVE;
+        console.log(PI);
 
-        console.log("***********let***********")
-        let musica2 = "Rock";
-        console.log("Variable Musica antes del bloque", musica2);
-        {
-            let musica2 = "Pop";
-            console.log("Variable Musica dentro del bloque", musica2);
-        }
-        console.log("Variable Musica despues del bloque", musica2);
+        a = "kenai";
+        console.log(a);
+
+        let objeto = {
+            nombre: "Jonathan",
+            edad: 19
+        };
+
+        let colores = ["verde", "azul", "negro"];
+        
+        console.log(objeto);
+        console.log(colores);
+
+        objeto.correo = "jonaperez0406@gmail.com";
+        colores.push("morado");
+
+        console.log(objeto);
+        console.log(colores);
     </script>
 </body>
 </html>
