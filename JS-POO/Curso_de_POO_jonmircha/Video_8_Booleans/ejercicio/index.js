@@ -25,7 +25,7 @@ Boolean(e));
 console.log("*******************ejercicio 3 de booleans*******************");
 let edad = 19;
 if (edad >= 18){
-    console.log(`Es verdadero`);
+    console.log(`Es verdadero es mayor de edad.`);
 } else {
-    console.log(`Es falso`);
+    console.log(`Es falso es menor de edad.`);
 }
