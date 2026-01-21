@@ -41,4 +41,4 @@ const colores = ["negro", "blanco", "morado", "verde", "blanco"];
 
 colores.forEach(function(index, el) {
     console.log(`<li id=${el}>${index}</li>`)
-})
+});
