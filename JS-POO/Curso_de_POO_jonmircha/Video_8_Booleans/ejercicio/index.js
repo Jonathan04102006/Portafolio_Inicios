@@ -23,7 +23,7 @@ Boolean(e));
 /* Escribe una condición que evalúe una variable booleana y muestre un mensaje distinto en consola según si su valor es true o false.
 */
 console.log("*******************ejercicio 3 de booleans*******************");
-let edad = 19;
+let edad = 17;
 if (edad >= 18){
     console.log(`Es verdadero es mayor de edad.`);
 } else {
