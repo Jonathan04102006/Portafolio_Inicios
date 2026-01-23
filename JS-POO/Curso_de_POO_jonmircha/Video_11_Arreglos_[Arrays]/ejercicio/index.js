@@ -39,6 +39,23 @@ Crea un arreglo con 5 colores y recórrelo usando forEach para mostrar en consol
 console.log("******************************ejercicio 3 de Arreglos_[Arrays]******************************");
 const colores = ["negro", "blanco", "morado", "verde", "blanco"];
 
-colores.forEach(function(index, el) {
-    console.log(`<li id=${el}>${index}</li>`)
+colores.forEach(function(color, numero) {
+    console.log(`<li id=${numero}>${color}</li>`)
 });
+
+
+
+
+// pruebas de compilacion de JS 
+
+// EJEMPLO 1
+var sumar = function (a = 5, b = 5) {
+  return a + b;
+};
+
+console.log(sumar());
+
+// EJEMPLO 2
+const sumar1 = (a = 10 , b = 14) => a + b;
+
+console.log(sumar1());

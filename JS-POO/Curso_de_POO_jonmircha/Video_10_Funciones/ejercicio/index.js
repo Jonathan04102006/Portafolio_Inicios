@@ -22,13 +22,11 @@ const verificarNumero = (numero) => {
     if (numero % 2 === 0) {
         console.log(`${numero} es un numero par.`);
     } else {
-        console.log(`${numero} es numero inpar.`);
+        console.log(`${numero} es un numero inpar.`);
     }
 };
 
-verificarNumero(3);
-
-
+verificarNumero(7);
 
 function Saludar() {
     return `Hola de nuevo`;
