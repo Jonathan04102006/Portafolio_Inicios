@@ -10,6 +10,7 @@ El último elemento
 console.log("******************************ejercicio 1 de Arreglos_[Arrays]******************************");
 const arreglo = ["Jonathan", 19, "Resident Evil", 2026, "007"];
 console.log(arreglo.length);
+// console.log(arreglo);
 console.log(arreglo[0]);
 console.log(arreglo[4]);
 
@@ -27,7 +28,7 @@ const fruta = ["manzana", "pera", "uva", "mandarina", "sandia"];
 
 console.log(fruta);
 
-fruta.push("fresa");
+fruta.push("fresa con crema");
 console.log(`agregando "fresa"`, fruta);
 
 fruta.pop("fresa");
@@ -37,14 +38,11 @@ console.log(`eliminado "fresa"`, fruta);
 Crea un arreglo con 5 colores y recórrelo usando forEach para mostrar en consola cada color junto con su posición (índice).
 */
 console.log("******************************ejercicio 3 de Arreglos_[Arrays]******************************");
-const colores = ["negro", "blanco", "morado", "verde", "blanco"];
+const colores = ["negro", "blanco", "morado", "verde", "celeste"];
 
-colores.forEach(function(color, numero) {
-    console.log(`<li id=${numero}>${color}</li>`)
+colores.forEach(function(color, id) {
+    console.log(`<li id=${id}>${color}</li>`)
 });
-
-
-
 
 // pruebas de compilacion de JS 
 
