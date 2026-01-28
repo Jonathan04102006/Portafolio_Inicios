@@ -40,7 +40,7 @@ if (nota >= 0 && nota <= 69){
 }
     
 // Con switch
-/*switch (true) {
+switch (true) {
     case (nota >= 0 && nota <= 69):
     console.log(`Reprobado`);
     break;
@@ -54,7 +54,6 @@ if (nota >= 0 && nota <= 69){
     console.log(`Nota NO valida`);
     break;
 }
-*/
 
 /*Día de la semana
 Dado un número del 1 al 7, muestra el día correspondiente (1 = Lunes, 7 = Domingo).

@@ -16,7 +16,7 @@ console.log(persona.apellido);
 console.log(persona.edad);
 console.log(persona.ciudad);
 
-console.log(`---------`);
+console.log(`---------------------`);
 
 // Notacion de corchetes
 console.log(persona["nombre"]);
@@ -24,7 +24,7 @@ console.log(persona["apellido"]);
 console.log(persona["edad"]);
 console.log(persona["ciudad"]);
 
-/*2️⃣ Objeto con métodos y this
+/*2️⃣ Objeto con métodos y this:
 Crea un objeto llamado auto con las propiedades: marca, modelo y anio, y agrega un método llamado descripcion que muestre un mensaje usando this con los datos del auto.
 */
 console.log(`***********************ejercicio 2 de Objetos***********************`);

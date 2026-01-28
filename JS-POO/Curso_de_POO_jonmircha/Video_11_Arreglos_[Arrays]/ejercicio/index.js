@@ -44,6 +44,9 @@ colores.forEach(function(color, id) {
     console.log(`<li id=${id}>${color}</li>`)
 });
 
+
+
+
 // pruebas de compilacion de JS 
 
 // EJEMPLO 1
