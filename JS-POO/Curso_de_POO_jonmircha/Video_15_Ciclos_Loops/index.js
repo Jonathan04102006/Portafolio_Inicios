@@ -36,12 +36,12 @@ const jon = {
     edad: 19
 }
 
-// For in
+// For in (For...in (Recorre llaves/índices))
 for(const propiedad in jon){
     console.log(`key: ${propiedad}, Value: ${jon[propiedad]}`);
 }
 
-// For of
+// For of (For...of (Recorre valores))
 for(const elemento of numeros){
     console.log(elemento);
 }

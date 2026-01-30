@@ -45,3 +45,44 @@ for(const propiedades in Ariel){
 for(const elemento of numeros){
     console.log(elemento);
 }
+
+
+
+
+
+
+
+
+// EJEMPLO APARTE
+console.log(`***********************ejemplo 1 de Loops***********************`);
+// 1. Caso for...in: Verificar qué descuentos están activos (Objeto)
+const descuentos = {
+    verano: 10,
+    navidad: 20,
+    primeraCompra: 5
+};
+
+for (const temporada in descuentos) {
+    console.log(`Aplicando descuento de ${temporada}: ${descuentos[temporada]}%`);
+}
+
+
+
+console.log(`***********************ejemplo 2 de Loops***********************`);
+// 2. Caso for...of: Procesar la lista de productos (Array)
+const carrito = [
+    { nombre: 'Laptop',
+        precio: 1000 },
+    { nombre: 'Mouse',
+        precio: 25 },
+    { nombre: 'Monitor',
+        precio: 200 }
+];
+
+let total1 = 0;
+for (const producto of carrito) {
+    total1 += producto.precio;
+    console.log(`Producto añadido: ${producto.nombre}`);
+}
+
+console.log(`Total a pagar: $${total}`);

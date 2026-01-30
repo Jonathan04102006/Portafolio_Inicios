@@ -26,7 +26,7 @@ Dada una variable nota (0 a 100), muestra:
 Usa if - else if - else.
 */
 console.log(`*********************ejercicio 2 de Condicionales*********************`);
-var nota = 17;
+var nota = 101;
 
 // Con if else
 if (nota >= 0 && nota <= 69){
@@ -38,7 +38,7 @@ if (nota >= 0 && nota <= 69){
 }else{
     console.log(`Nota NO valida`);
 }
-    
+
 // Con switch
 switch (true) {
     case (nota >= 0 && nota <= 69):
