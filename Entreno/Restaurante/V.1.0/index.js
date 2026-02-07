@@ -18,13 +18,58 @@
  * 6- FUCION con un mensaje de (gracias) y llamar la FUNCION de bienvenida y mostrar (MOSTRAR NUMERO DE CLIENTE).
  */
 
-/*1-¿Cual es el nombre y logo del restaurante? 
+/*1-¿Cual es el nombre y logo del restaurante?
 2- ¿Nombres de los productos y precios?
 3- ¿Como se dara la Bienvenida y gracias al CLIENTE?
 4- ¿Paletas de colores que desea?
 5- ¿Como se identificara el pedido por nombre o numero del cliente?
 */
+let contadorCliente = 0;
 
+function saludo(){
+    contadorCliente++;
+
+    const contenedor = document.getElementById("contenedorMenu");
+    
+    let contenidoHTML = `
+    <div>
+    <p>--------------------------------------------------</p>
+    <h2>¡BIENVENIDO AL RESTAURANTE "ANTOJITOS"!</h2>
+    <p>--------------------------------------------------</p>
+    <h3>NUESTRO MENU</h3>
+
+    <p><strong>Platos Fuertes:</strong> ${platoFuerte.join(", ")}</p>
+    <p><strong>Bebidas:</strong> ${bebida.join(", ")}</p>
+    <p><strong>Postres:</strong> ${postre.join(", ")}</p>
+    
+    <p>--------------------------------------------------</p>
+    <p><strong>Cliente No:</strong> ${contadorCliente}</p>
+    <p>--------------------------------------------------</p>
+    </div>
+    `
+    contenedor.innerHTML = contenidoHTML;
+}
+
+// SE UBICARA EN SOLICITUD.JS
+/* function platoFuerte(){
+    let seleccion = prompt(``)
+    } */
+   
+// SE UBICARA EN SOLICITUD.JS
+/* function bebida(){
+
+} */
+
+// SE UBICARA EN SOLICITUD.JS
+/* function postre(){
+
+} */
+
+
+// SE QUEDA EN INDEX.JS
+/* function mensajeDeGracias(){
+
+} */
 
 /* Para la version 2.0:
  1- Plato fuerte, bebida y postre (OPCIONAL MENU)

@@ -25,7 +25,6 @@
 5- ¿Como se identificara el pedido por nombre o numero del cliente?
 */
 
-
 /* Para la version 2.0:
  1- Plato fuerte, bebida y postre (OPCIONAL MENU)
  2- Ubicacion en la que se ubica el Restaurante.
