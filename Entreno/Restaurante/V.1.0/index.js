@@ -33,38 +33,24 @@ function saludo(){
     
     let contenidoHTML = `
     <div>
-    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------</p>
     <h2>¡BIENVENIDO AL RESTAURANTE "ANTOJITOS"!</h2>
-    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------</p>
     <h3>NUESTRO MENU</h3>
 
-    <p><strong>Platos Fuertes:</strong> ${platoFuerte.join(", ")}</p>
-    <p><strong>Bebidas:</strong> ${bebida.join(", ")}</p>
-    <p><strong>Postres:</strong> ${postre.join(", ")}</p>
+    ${obtenerPlatos()}
+    ${obtenerBebidas()}
+    ${obtenerPostres()}
     
-    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------</p>
     <p><strong>Cliente No:</strong> ${contadorCliente}</p>
-    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------</p>
     </div>
     `
     contenedor.innerHTML = contenidoHTML;
 }
 
-// SE UBICARA EN SOLICITUD.JS
-/* function platoFuerte(){
-    let seleccion = prompt(``)
-    } */
-   
-// SE UBICARA EN SOLICITUD.JS
-/* function bebida(){
-
-} */
-
-// SE UBICARA EN SOLICITUD.JS
-/* function postre(){
-
-} */
-
+// 
 
 // SE QUEDA EN INDEX.JS
 /* function mensajeDeGracias(){

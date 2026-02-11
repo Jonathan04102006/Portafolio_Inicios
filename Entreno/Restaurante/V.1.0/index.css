@@ -1,10 +1,35 @@
 body {
-    font-family: sans-serif;
-    padding: 20px;
-    background: #f4f4f4;
+    background-color: #d3d3d3;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
-.contenedorMenu{
-border: 1px #000;
-padding: 20px; 
-font-family: monospace;
+
+#contenedorMenu {
+    background-color: #ffffff;
+    width: 600px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    /* El toque del borde dentado (arriba y abajo) */
+    border-top: 5px dashed #d3d3d3;
+    border-bottom: 5px dashed #d3d3d3;
+}
+
+#miBoton {
+    background-color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    width: 90px;
+    right: 40px;
+    position: fixed;
+}
+
+#platoFuerte {
+    background-color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    text-align: center;
+    position: static;
 }
