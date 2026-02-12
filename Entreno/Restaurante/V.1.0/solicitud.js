@@ -14,18 +14,18 @@ function obtenerPostres() {
     return `<p><strong>Postres:</strong> ${postre.join(", ")}</p>`;
 }
 
-function mostrarPlatos() {
+/* function mostrarPlatos() {
     const contenedor = document.getElementById("platosFuertes");
     const mostrarPlatosFuertes = platoFuerte.map(platillo => {
         return `<div><button id ="platoFuerte" onclick="seleccionarPlato('${platillo}')">${platillo}</button></div>`;
     }).join("");
 
     contenedor.innerHTML = mostrarPlatosFuertes;
-}
+} */
 
-function seleccionarPlato(nombre) {
+/* function seleccionarPlato(nombre) {
     console.log("Seleccionaste: " + nombre);
-}
+} */
 
 
 
