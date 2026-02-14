@@ -12,8 +12,6 @@ const perro = {
 console.log(perro);
 perro.ladrar()
 
-
-
 const dog = {
     nombre,
     edad,
