@@ -17,19 +17,3 @@ body {
     border-top: 5px dashed #d3d3d3;
     border-bottom: 5px dashed #d3d3d3;
 }
-
-#miBoton {
-    background-color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
-    width: 90px;
-    right: 40px;
-    position: fixed;
-}
-
-#platoFuerte {
-    background-color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
-    text-align: center;
-    position: static;
-}

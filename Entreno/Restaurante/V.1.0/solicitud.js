@@ -3,7 +3,8 @@ function obtenerPlatos() {
         return `<a href="paso2.html">${platillo}</a>`;
     }).join(", ");
 
-    return `<p><strong>Platos Fuertes:</strong> ${listaPlatosFuertes}</p>`;
+    return `<h3>NUESTRO MENU</h3>
+    <p><strong>Platos Fuertes:</strong> ${listaPlatosFuertes}</p>`;
 }
 
 function obtenerBebidas() {
