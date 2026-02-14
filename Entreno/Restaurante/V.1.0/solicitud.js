@@ -1,6 +1,13 @@
 function obtenerPlatos() {
-    const listaPlatosFuertes = platoFuerte.map(platillo => {
-        return `<a href="paso2.html">${platillo}</a>`;
+    const parametros = new URLSearchParams(window.location.search);
+    const platoFuerteSeleccionado = parametros.get("plato");
+
+    if (platoFuerteSeleccionado) {
+        return `<p><strong>Plato Fuerte:</strong> ${platoFuerteSeleccionado}</p>`;
+    }
+    
+    const listaPlatosFuertes = platosFuertes.map(platillo => {
+        return `<a href="paso2.html?plato=${encodeURIComponent(platillo)}">${platillo}</a>`;
     }).join(", ");
 
     return `<h3>NUESTRO MENU</h3>
@@ -8,40 +15,27 @@ function obtenerPlatos() {
 }
 
 function obtenerBebidas() {
-    return `<p><strong>Bebidas:</strong> ${bebida.join(", ")}</p>`;
+    const parametros = new URLSearchParams(window.location.search);
+    const platoPrevio = parametros.get("plato");
+
+    const bebidaSeleccionada = parametros.get("bebida");
+
+    if (bebidaSeleccionada) {
+        return `<p><strong>Bebidas:</strong> ${bebidaSeleccionada}</p>`;
+    }
+
+    if (platoPrevio) {
+        const lista = bebidas.map(bebida => {
+            return `<a href="paso3.html?plato=${encodeURIComponent(platoPrevio)}&bebida=${encodeURIComponent(bebida)}">${bebida}</a>`;
+        }).join(", ");
+        return `<p><strong>Bebidas:</strong> ${lista}</p>`;
+    }
+
+    return `<p><strong>Bebidas:</strong> ${bebidas.join(", ")}</p>`;
 }
+
 
 function obtenerPostres() {
-    return `<p><strong>Postres:</strong> ${postre.join(", ")}</p>`;
+    return `<p><strong>Postres:</strong> ${postres.join(", ")}</p>`;
 }
 
-/* function mostrarPlatos() {
-    const contenedor = document.getElementById("platosFuertes");
-    const mostrarPlatosFuertes = platoFuerte.map(platillo => {
-        return `<div><button id ="platoFuerte" onclick="seleccionarPlato('${platillo}')">${platillo}</button></div>`;
-    }).join("");
-
-    contenedor.innerHTML = mostrarPlatosFuertes;
-} */
-
-/* function seleccionarPlato(nombre) {
-    console.log("Seleccionaste: " + nombre);
-} */
-
-
-
-
-
-
-
-
-   
-// SE UBICARA EN SOLICITUD.JS
-/* function bebida(){
-
-} */
-
-// SE UBICARA EN SOLICITUD.JS
-/* function postre(){
-
-} */

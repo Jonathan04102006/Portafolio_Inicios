@@ -26,30 +26,30 @@
 */
 let contadorCliente = 0;
 
-function saludo(mostrarSaludo){
+function saludo(mostrarSaludo) {
     contadorCliente++;
-
     const contenedor = document.getElementById("contenedorMenu");
 
     let titulo = mostrarSaludo ? `
     <p>--------------------------------------------------------------</p>
     <h2>¡BIENVENIDO AL RESTAURANTE "ANTOJITOS"!</h2>
     <p>--------------------------------------------------------------</p>
-    ${obtenerPlatos()}
     ` : "";
 
     let contenidoHTML = `
     <div>
-    ${titulo}
-
-    ${obtenerBebidas()}
-    ${obtenerPostres()}
-    
-    <p>--------------------------------------------------------------</p>
-    <p><strong>Cliente No:</strong> ${contadorCliente}</p>
-    <p>--------------------------------------------------------------</p>
+        ${titulo} 
+        
+        ${obtenerPlatos()}
+        ${obtenerBebidas()}
+        ${obtenerPostres()}
+        
+        <p>--------------------------------------------------------------</p>
+        <p><strong>Cliente No:</strong> ${contadorCliente}</p>
+        <p>--------------------------------------------------------------</p>
     </div>
-    `
+    `;
+    
     contenedor.innerHTML = contenidoHTML;
 }
 
