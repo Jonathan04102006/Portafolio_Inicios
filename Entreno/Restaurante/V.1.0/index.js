@@ -26,20 +26,29 @@
 */
 let contadorCliente = 0;
 
-function saludo(mostrarSaludo) {
-    contadorCliente++;
-    const contenedor = document.getElementById("contenedorMenu");
-
-    let titulo = mostrarSaludo ? `
+function saludo() {
+    const contenedor = document.getElementById("contenedorTitulo");
+    let titulo =`
     <p>--------------------------------------------------------------</p>
     <h2>¡BIENVENIDO AL RESTAURANTE "ANTOJITOS"!</h2>
     <p>--------------------------------------------------------------</p>
-    ` : "";
+    `;
 
     let contenidoHTML = `
     <div>
-        ${titulo} 
-        
+        ${titulo}
+    </div>
+    `;
+    
+    contenedor.innerHTML = contenidoHTML;
+}
+
+function mostrarContenido() {
+    contadorCliente++;
+    const contenedor = document.getElementById("contenedorListaMenu");
+
+    let contenidoHTML = `
+    <div>
         ${obtenerPlatos()}
         ${obtenerBebidas()}
         ${obtenerPostres()}

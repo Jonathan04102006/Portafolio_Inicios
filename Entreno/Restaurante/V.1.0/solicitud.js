@@ -21,7 +21,7 @@ function obtenerBebidas() {
     const bebidaSeleccionada = parametros.get("bebida");
 
     if (bebidaSeleccionada) {
-        return `<p><strong>Bebidas:</strong> ${bebidaSeleccionada}</p>`;
+        return `<p><strong>Bebida:</strong> ${bebidaSeleccionada}</p>`;
     }
 
     if (platoPrevio) {
@@ -35,7 +35,28 @@ function obtenerBebidas() {
 }
 
 
-function obtenerPostres() {
+/* function obtenerPostres() {
     return `<p><strong>Postres:</strong> ${postres.join(", ")}</p>`;
 }
+ */
 
+function obtenerPostres() {
+    const parametros = new URLSearchParams(window.location.search);
+    const platoPrevio = parametros.get("plato");
+    const bebidaPrevia = parametros.get("bebida");
+
+    const postreSeleccionado = parametros.get("postre");
+
+    if (postreSeleccionado) {
+        return `<p><strong>Postre:</strong> ${postreSeleccionado}</p>`;
+    }
+
+    if (bebidaPrevia) {
+        const lista = postres.map(postre => {
+            return `<a href="paso4.html?plato=${encodeURIComponent(platoPrevio)}&bebida=${encodeURIComponent(bebidaPrevia)}&postre=${encodeURIComponent(postre)}">${postre}</a>`;
+        }).join(", ");
+        return `<p><strong>Postres:</strong> ${lista}</p>`;
+    }
+
+    return `<p><strong>Postres:</strong> ${postres.join(", ")}</p>`;
+}
