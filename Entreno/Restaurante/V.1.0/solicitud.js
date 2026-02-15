@@ -34,12 +34,6 @@ function obtenerBebidas() {
     return `<p><strong>Bebidas:</strong> ${bebidas.join(", ")}</p>`;
 }
 
-
-/* function obtenerPostres() {
-    return `<p><strong>Postres:</strong> ${postres.join(", ")}</p>`;
-}
- */
-
 function obtenerPostres() {
     const parametros = new URLSearchParams(window.location.search);
     const platoPrevio = parametros.get("plato");
