@@ -77,3 +77,11 @@ function mostrarContenido() {
  5- Resdes sociales
  6- Precios de los productos
 */
+
+// V 1.5
+/* 
+1- Volver al menu
+2- Que el contador del cliente incremente
+3- Que los valores no viajen el la URL
+4- Cada paso (html) un JS (sin invocar el index.js)
+ */

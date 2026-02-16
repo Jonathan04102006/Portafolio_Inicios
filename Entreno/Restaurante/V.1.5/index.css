@@ -1,0 +1,19 @@
+body {
+    background-color: #d3d3d3;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#contenedorMenu {
+    background-color: #ffffff;
+    width: 600px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    /* El toque del borde dentado (arriba y abajo) */
+    border-top: 5px dashed #d3d3d3;
+    border-bottom: 5px dashed #d3d3d3;
+}
