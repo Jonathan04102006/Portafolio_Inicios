@@ -1,13 +1,17 @@
+function navegar(clave, valor, destino) {
+    localStorage.setItem(clave, valor);
+    window.location.href = destino;
+}
+
 function obtenerPlatos() {
-    const parametros = new URLSearchParams(window.location.search);
-    const platoFuerteSeleccionado = parametros.get("plato");
+    const platoFuerteSeleccionado = localStorage.getItem("plato");
 
     if (platoFuerteSeleccionado) {
         return `<p><strong>Plato Fuerte:</strong> ${platoFuerteSeleccionado}</p>`;
     }
     
     const listaPlatosFuertes = platosFuertes.map(platillo => {
-        return `<a href="paso2.html?plato=${encodeURIComponent(platillo)}">${platillo}</a>`;
+        return `<a href="#" onclick="navegar('plato', '${platillo}', 'paso2.html')">${platillo}</a>`;
     }).join(", ");
 
     return `<h3>NUESTRO MENU</h3>
@@ -15,10 +19,8 @@ function obtenerPlatos() {
 }
 
 function obtenerBebidas() {
-    const parametros = new URLSearchParams(window.location.search);
-    const platoPrevio = parametros.get("plato");
-
-    const bebidaSeleccionada = parametros.get("bebida");
+    const platoPrevio = localStorage.getItem("plato");
+    const bebidaSeleccionada = localStorage.getItem("bebida");
 
     if (bebidaSeleccionada) {
         return `<p><strong>Bebida:</strong> ${bebidaSeleccionada}</p>`;
@@ -26,7 +28,7 @@ function obtenerBebidas() {
 
     if (platoPrevio) {
         const lista = bebidas.map(bebida => {
-            return `<a href="paso3.html?plato=${encodeURIComponent(platoPrevio)}&bebida=${encodeURIComponent(bebida)}">${bebida}</a>`;
+            return `<a href="#" onclick="navegar('bebida', '${bebida}', 'paso3.html')">${bebida}</a>`;
         }).join(", ");
         return `<p><strong>Bebidas:</strong> ${lista}</p>`;
     }
@@ -35,11 +37,8 @@ function obtenerBebidas() {
 }
 
 function obtenerPostres() {
-    const parametros = new URLSearchParams(window.location.search);
-    const platoPrevio = parametros.get("plato");
-    const bebidaPrevia = parametros.get("bebida");
-
-    const postreSeleccionado = parametros.get("postre");
+    const bebidaPrevia = localStorage.getItem("bebida");
+    const postreSeleccionado = localStorage.getItem("postre");
 
     if (postreSeleccionado) {
         return `<p><strong>Postre:</strong> ${postreSeleccionado}</p>`;
@@ -47,7 +46,7 @@ function obtenerPostres() {
 
     if (bebidaPrevia) {
         const lista = postres.map(postre => {
-            return `<a href="paso4.html?plato=${encodeURIComponent(platoPrevio)}&bebida=${encodeURIComponent(bebidaPrevia)}&postre=${encodeURIComponent(postre)}">${postre}</a>`;
+            return `<a href="#" onclick="navegar('postre', '${postre}', 'paso4.html')">${postre}</a>`;
         }).join(", ");
         return `<p><strong>Postres:</strong> ${lista}</p>`;
     }
