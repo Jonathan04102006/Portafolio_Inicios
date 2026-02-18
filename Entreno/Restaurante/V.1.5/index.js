@@ -57,11 +57,22 @@ function mostrarContenido() {
         <p>--------------------------------------------------------------</p>
         <p><strong>Cliente No:</strong> ${contadorCliente}</p>
         <p>--------------------------------------------------------------</p>
+
+        <div">
+            <button onclick="reiniciarPedido()" style="padding: 10px 20px; cursor: pointer;">
+                REINICIAR PEDIDO
+            </button>
+        </div>
     </div>
     `;
     
     contenedor.innerHTML = contenidoHTML;
 }
+
+function reiniciarPedido() {
+    window.location.href = "index.html";
+}
+
 
 // SE QUEDA EN INDEX.JS
 /* function mensajeDeGracias(){
