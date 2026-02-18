@@ -70,6 +70,10 @@ function mostrarContenido() {
 }
 
 function reiniciarPedido() {
+    localStorage.removeItem("plato");
+    localStorage.removeItem("bebida");
+    localStorage.removeItem("postre");
+
     window.location.href = "index.html";
 }
 
