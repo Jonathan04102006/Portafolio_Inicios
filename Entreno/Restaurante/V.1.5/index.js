@@ -25,7 +25,6 @@
 4- ¿Paletas de colores que desea?
 5- ¿Como se identificara el pedido por nombre o numero del cliente?
 */
-let contadorCliente = 0;
 
 function saludo() {
     const contenedor = document.getElementById("contenedorTitulo");
@@ -38,14 +37,17 @@ function saludo() {
     let contenidoHTML = `
     <div>
         ${titulo}
-    </div>
-    `;
-
+    </div>`;
     contenedor.innerHTML = contenidoHTML;
 }
 
 function mostrarContenido() {
-    contadorCliente++;
+    if (!sessionStorage.getItem("contadorCliente")) {
+        sessionStorage.setItem("contadorCliente", "1");
+    }
+
+    let clienteActual = sessionStorage.getItem("contadorCliente");
+    
     const contenedor = document.getElementById("contenedorListaMenu");
 
     let contenidoHTML = `
@@ -55,21 +57,35 @@ function mostrarContenido() {
         ${obtenerPostres()}
         
         <p>--------------------------------------------------------------</p>
-        <p><strong>Cliente No:</strong> ${contadorCliente}</p>
+        <p><strong>Cliente No:</strong> ${clienteActual}</p> 
         <p>--------------------------------------------------------------</p>
 
-        <div">
-            <button onclick="reiniciarPedido()" style="padding: 10px 20px; cursor: pointer;">
-                REINICIAR PEDIDO
-            </button>
-        </div>
+        <div id="contenedorBotonFinal"></div>
     </div>
     `;
     
     contenedor.innerHTML = contenidoHTML;
+
+    if (window.location.pathname.includes("paso4.html")) {
+        botonDeReinicio();
+    }
 }
 
-function reiniciarPedido() {
+function botonDeReinicio() {
+    const contenedorBoton = document.getElementById("contenedorBotonFinal");
+    contenedorBoton.innerHTML = `
+        <div">
+            <button onclick="iniciarOtroPedido()">
+                INICIAR OTRO PEDIDO
+            </button>
+        </div>
+    `;
+}
+
+function iniciarOtroPedido() {
+    let contadorActual = parseInt(sessionStorage.getItem("contadorCliente"));
+    sessionStorage.setItem("contadorCliente", (contadorActual + 1).toString());
+
     localStorage.removeItem("plato");
     localStorage.removeItem("bebida");
     localStorage.removeItem("postre");

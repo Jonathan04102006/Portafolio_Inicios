@@ -52,10 +52,4 @@ function obtenerPostres() {
     }
 
     return `<p><strong>Postres:</strong> ${postres.join(", ")}</p>`;
-
-    /* <div">
-            <button onclick="reiniciarPedido()" style="padding: 10px 20px; cursor: pointer;">
-                REINICIAR PEDIDO
-            </button>
-        </div> */
 }
