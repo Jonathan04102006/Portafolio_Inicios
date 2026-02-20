@@ -63,7 +63,7 @@ function mostrarContenido() {
         <div id="contenedorBotonFinal"></div>
     </div>
     `;
-    
+    debugger;
     contenedor.innerHTML = contenidoHTML;
 
     if (window.location.pathname.includes("paso4.html")) {
