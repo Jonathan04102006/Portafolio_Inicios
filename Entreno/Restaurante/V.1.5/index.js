@@ -67,11 +67,11 @@ function mostrarContenido() {
     contenedor.innerHTML = contenidoHTML;
 
     if (window.location.pathname.includes("paso4.html")) {
-        botonDeReinicio();
+        botonDeNuevoCliente();
     }
 }
 
-function botonDeReinicio() {
+function botonDeNuevoCliente() {
     const contenedorBoton = document.getElementById("contenedorBotonFinal");
     contenedorBoton.innerHTML = `
         <div">
