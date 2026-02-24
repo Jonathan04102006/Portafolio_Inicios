@@ -25,3 +25,41 @@ let personas: Persona[] = [
 personas.push({ nombre: "Karla", edad: 19, esDesarrollador: true});
 
 console.log("Personas:", personas);
+
+//Tupla
+let persona: [string, number, boolean];
+persona = ["Jona", 19, true];
+
+console.log("Persona: ", persona);
+
+let personasTupla: [string, number, boolean][] = [];
+
+personasTupla.push(["Ariel", 19, true]);
+personasTupla.push(["Jorge", 39, false]);
+personasTupla.push(["Pedro", 21, false]);
+
+personasTupla.forEach(persona =>{
+    console.log("Persona: ", persona);
+
+    let nombre: string = persona[0];
+    let edad: number = persona[1];
+    let esDesarrollador: boolean = persona[2];
+
+    console.log("Nombre: ", nombre);
+    console.log("Edad: ", edad);
+    console.log("esDesarrollador: ", esDesarrollador);
+})
+
+// Enumerados
+enum DiaDeLaSemana {
+    Lunes,
+    Martes,
+    Miercoles,
+    Jueves,
+    Viernes,
+    Sabado,
+    Domingo
+}
+
+let dia: DiaDeLaSemana = DiaDeLaSemana.Martes;
+console.log("Día: ", DiaDeLaSemana[dia]);
