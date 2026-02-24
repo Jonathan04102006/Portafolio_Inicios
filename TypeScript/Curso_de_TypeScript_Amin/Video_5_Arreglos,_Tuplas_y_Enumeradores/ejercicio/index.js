@@ -60,3 +60,40 @@ Muestra en consola el valor del día seleccionado.
 
 Crea una función que reciba un valor del enum y muestre un mensaje diferente dependiendo del día. */
 console.log("*************************ejercicio 3 de Arreglos, Tuplas y Enumeradores*************************");
+var DiasSemana;
+(function (DiasSemana) {
+    DiasSemana["LUNES"] = "Lunes";
+    DiasSemana["MARTES"] = "Martes";
+    DiasSemana["MIERCOLES"] = "Miercoles";
+    DiasSemana["JUEVES"] = "Jueves";
+    DiasSemana["VIERNES"] = "Viernes";
+    DiasSemana["SABADO"] = "S\u00E1bado";
+    DiasSemana["DOMINGO"] = "Domingo";
+})(DiasSemana || (DiasSemana = {}));
+var diaSeleccionado = DiasSemana.VIERNES;
+console.log("D\u00EDa seleccionado: ".concat(diaSeleccionado));
+function mensajePorDia(dia) {
+    switch (dia) {
+        case DiasSemana.LUNES:
+            console.log("Es lunes, animo que la semana acaba de empezar.");
+            break;
+        case DiasSemana.MARTES:
+            console.log("Es martes, ya superastes lunes.");
+            break;
+        case DiasSemana.MIERCOLES:
+            console.log("Es miercoles, estas a la mitad de semana.");
+            break;
+        case DiasSemana.JUEVES:
+            console.log("Es jueves, casi llega el fin de semana.");
+            break;
+        case DiasSemana.VIERNES:
+            console.log("Es viernes, a celebrar.");
+            break;
+        case DiasSemana.SABADO:
+            console.log("Es s\u00E1bado, disfruta de tu descanso.");
+            break;
+        case DiasSemana.DOMINGO:
+            console.log("Es domingo, relajate antes del lunes");
+    }
+}
+mensajePorDia(diaSeleccionado);

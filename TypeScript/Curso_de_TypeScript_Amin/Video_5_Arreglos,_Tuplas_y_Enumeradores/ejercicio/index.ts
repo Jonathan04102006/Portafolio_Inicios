@@ -71,3 +71,43 @@ Muestra en consola el valor del día seleccionado.
 
 Crea una función que reciba un valor del enum y muestre un mensaje diferente dependiendo del día. */
 console.log(`*************************ejercicio 3 de Arreglos, Tuplas y Enumeradores*************************`);
+enum DiasSemana {
+  LUNES = "Lunes",
+  MARTES = "Martes",
+  MIERCOLES = "Miercoles",
+  JUEVES = "Jueves",
+  VIERNES = "Viernes",
+  SABADO = "Sábado",
+  DOMINGO = "Domingo"
+}
+
+const diaSeleccionado: DiasSemana = DiasSemana.VIERNES;
+
+console.log(`Día seleccionado: ${diaSeleccionado}`);
+
+function mensajePorDia(dia: DiasSemana): void{
+  switch (dia) {
+    case DiasSemana.LUNES:
+      console.log(`Es lunes, animo que la semana acaba de empezar.`);
+      break;
+    case DiasSemana.MARTES:
+      console.log(`Es martes, ya superastes lunes.`);
+      break;
+    case DiasSemana.MIERCOLES:
+      console.log(`Es miercoles, estas a la mitad de semana.`);
+      break;
+    case DiasSemana.JUEVES:
+      console.log(`Es jueves, casi llega el fin de semana.`);
+      break;
+    case DiasSemana.VIERNES:
+      console.log(`Es viernes, a celebrar.`);
+      break;
+    case DiasSemana.SABADO:
+      console.log(`Es sábado, disfruta de tu descanso.`);
+      break;
+    case DiasSemana.DOMINGO:
+      console.log(`Es domingo, relajate antes del lunes`);
+  }
+}
+
+mensajePorDia(diaSeleccionado);
