@@ -53,10 +53,10 @@ console.log(`Precio actualizado: $${producto[1]} Disponible: ${producto[2]}`);
 
 let producto2: [string, number, boolean] = ["Mouse Inalámbrico", 25.99, false];
 
-let inventario: [string, number, boolean][] = [producto, producto2];
+let unionDeProductos: [string, number, boolean][] = [producto, producto2];
 
-inventario.forEach(p => {
-  console.log(`Producto: ${p[0]}, Precio: $${p[1]}, Disponible: ${p[2]}`);
+unionDeProductos.forEach(producto => {
+  console.log(`Producto: ${producto[0]}, Precio: $${producto[1]}, Disponible: ${producto[2]}`);
 });   
 
 /* 3️⃣ Ejercicio – Enumeradores (Enums)

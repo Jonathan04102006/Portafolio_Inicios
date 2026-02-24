@@ -44,9 +44,9 @@ producto[1] = 49.99;
 producto[2] = true;
 console.log("Precio actualizado: $".concat(producto[1], " Disponible: ").concat(producto[2]));
 var producto2 = ["Mouse Inalámbrico", 25.99, false];
-var inventario = [producto, producto2];
-inventario.forEach(function (p) {
-    console.log("Producto: ".concat(p[0], ", Precio: $").concat(p[1], ", Disponible: ").concat(p[2]));
+var unionDeProductos = [producto, producto2];
+unionDeProductos.forEach(function (producto) {
+    console.log("Producto: ".concat(producto[0], ", Precio: $").concat(producto[1], ", Disponible: ").concat(producto[2]));
 });
 /* 3️⃣ Ejercicio – Enumeradores (Enums)
 
