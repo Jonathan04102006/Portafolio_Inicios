@@ -49,3 +49,18 @@ Si el idioma es "en", debe retornar "Hello, nombre".
 
 Si es cualquier otro idioma, debe retornar "Saludos, nombre". */
 console.log("*********************ejercicio 1 de Opcionales, M\u00FAltiples y por Defecto en TypeScript*********************");
+function generarSaludo(nombre, idioma) {
+    if (idioma === void 0) { idioma = "es"; }
+    if (idioma === "es") {
+        return "Hola, ".concat(nombre);
+    }
+    else if (idioma === "en") {
+        return "Hello, ".concat(nombre);
+    }
+    else {
+        return "Saludos, ".concat(nombre);
+    }
+}
+console.log(generarSaludo("Ariel"));
+console.log(generarSaludo("Jonathan", "en"));
+console.log(generarSaludo("Carlos", "fr"));
