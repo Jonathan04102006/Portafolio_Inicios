@@ -6,69 +6,77 @@
 }
 
 body{
-    background:#f4f4f4;
+    background:#F4F4F4;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .container{
     width:95%;
     max-width:1200px;
-    background:#ffffff;
+    background:#FFFFFF;
     display:flex;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 /* PANEL IZQUIERDO */
 .left-panel{
     flex:1;
-    padding:50px;
-    background:#ffffff;
+    padding:60px;
+    background:#FFFFFF;
 }
 
 .brand{
     display:flex;
     align-items:center;
     gap:15px;
-    margin-bottom:30px;
+    margin-bottom:35px;
+}
+
+.logo-img{
+    width:60px;
+    height:auto;
+    object-fit:contain;
 }
 
 .logo-text{
     font-size:32px;
-    color:#333333;
     letter-spacing:2px;
+    color:#333333;
 }
 
 .subtitle{
     font-size:18px;
-    margin-bottom:20px;
+    margin-bottom:25px;
     color:#444444;
+    line-height:1.4;
 }
 
 .features{
     list-style:none;
-    margin-bottom:25px;
+    margin-bottom:30px;
     color:#555555;
 }
 
 .features li{
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .tagline{
-    color:#777777;
     font-size:14px;
+    color:#777777;
 }
 
 /* PANEL DERECHO */
 .right-panel{
     flex:1;
-    padding:50px;
-    background:#fafafa;
+    padding:60px;
+    background:#FAFAFA;
 }
 
 .welcome{
@@ -78,7 +86,7 @@ body{
 }
 
 .description{
-    margin-bottom:30px;
+    margin-bottom:35px;
     color:#666666;
 }
 
@@ -88,17 +96,18 @@ body{
 }
 
 .label{
-    margin-bottom:5px;
     font-size:14px;
+    margin-bottom:6px;
     color:#444444;
 }
 
 .input{
-    padding:12px;
-    margin-bottom:20px;
-    border-radius:6px;
-    border:1px solid #cccccc;
+    padding:14px;
+    margin-bottom:22px;
+    border-radius:8px;
+    border:1px solid #CCCCCC;
     font-size:14px;
+    transition:0.3s;
 }
 
 .input:focus{
@@ -107,9 +116,9 @@ body{
 }
 
 .btn-login{
-    padding:14px;
+    padding:15px;
     border:none;
-    border-radius:6px;
+    border-radius:8px;
     background:#E53935;
     color:white;
     font-size:16px;
@@ -118,37 +127,68 @@ body{
 }
 
 .btn-login:hover{
-    background:#c62828;
+    background:#C62828;
 }
 
 .error-message{
     color:#E53935;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-/* RESPONSIVE */
+/* ============================= */
+/* 📱 MÓVILES */
+/* ============================= */
 
-/* Móviles */
 @media (max-width: 480px){
     .container{
         flex-direction:column;
+        width:95%;
     }
+
     .left-panel{
         display:none;
     }
+
+    .right-panel{
+        padding:40px 25px;
+    }
 }
 
-/* Tablets */
+/* ============================= */
+/* 📲 TABLETS */
+/* ============================= */
+
 @media (min-width: 481px) and (max-width: 1024px){
     .container{
         flex-direction:column;
     }
+
+    .left-panel{
+        padding:40px;
+    }
+
+    .right-panel{
+        padding:40px;
+    }
 }
 
-/* 2K y 4K */
+/* ============================= */
+/* 🖥 2K */
+/* ============================= */
+
 @media (min-width: 1921px){
     .container{
-        max-width:1600px;
+        max-width:1500px;
+    }
+}
+
+/* ============================= */
+/* 🖥 4K */
+/* ============================= */
+
+@media (min-width: 3000px){
+    .container{
+        max-width:1800px;
     }
 }
