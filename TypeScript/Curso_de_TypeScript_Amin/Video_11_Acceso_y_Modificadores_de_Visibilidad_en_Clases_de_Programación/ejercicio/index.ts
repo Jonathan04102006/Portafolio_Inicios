@@ -61,6 +61,15 @@ Agrega una propiedad public puesto: string
 Crea un método public mostrarInformacion() que pueda acceder a edad (porque es protected)
 
 Intenta acceder a edad desde una instancia fuera de la clase (debe dar error). */
+export class Persona {
+    public nombre: string;
+    public edad: number;
+
+    constructor ( nombre: string, edad: number ) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
 
 /* 🧠 Ejercicio 3: Diferencia entre public, private y protected
 
@@ -85,3 +94,15 @@ Intenta acceder a modelo
 Intenta acceder a numeroSerie
 
 Explica qué accesos funcionan y cuáles no, y por qué. */
+
+export class Vehiculo {
+    public marca: string;
+    protected modelo: string;
+    private numeroSerie: string;
+
+    constructor ( marca: string, modelo: string, numeroSerie: string ) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.numeroSerie = numeroSerie;
+    }
+}

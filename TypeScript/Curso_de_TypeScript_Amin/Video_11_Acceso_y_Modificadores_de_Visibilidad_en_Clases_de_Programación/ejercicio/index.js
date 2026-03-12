@@ -1,6 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CuentaBancaria = void 0;
+exports.__esModule = true;
+exports.Vehiculo = exports.Persona = exports.CuentaBancaria = void 0;
 /* 🧠 Ejercicio 1: Uso de private y método público de acceso
 
 Crea una clase llamada CuentaBancaria que tenga:
@@ -60,6 +60,14 @@ Agrega una propiedad public puesto: string
 Crea un método public mostrarInformacion() que pueda acceder a edad (porque es protected)
 
 Intenta acceder a edad desde una instancia fuera de la clase (debe dar error). */
+var Persona = /** @class */ (function () {
+    function Persona(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    return Persona;
+}());
+exports.Persona = Persona;
 /* 🧠 Ejercicio 3: Diferencia entre public, private y protected
 
 Crea una clase Vehiculo con:
@@ -82,4 +90,13 @@ Intenta acceder a modelo
 
 Intenta acceder a numeroSerie
 
-Explica qué accesos funcionan y cuáles no, y por qué. */ 
+Explica qué accesos funcionan y cuáles no, y por qué. */
+var Vehiculo = /** @class */ (function () {
+    function Vehiculo(marca, modelo, numeroSerie) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.numeroSerie = numeroSerie;
+    }
+    return Vehiculo;
+}());
+exports.Vehiculo = Vehiculo;

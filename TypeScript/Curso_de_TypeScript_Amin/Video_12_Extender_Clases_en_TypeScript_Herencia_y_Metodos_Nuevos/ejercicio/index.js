@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.Empleado = exports.Persona1 = exports.Persona = void 0;
 /* Ejercicio 1: Crear una nueva clase que extienda Persona
 Objetivo
 
@@ -31,18 +34,15 @@ console.log(estudiante.mostrarCarrera());
 Resultado esperado en consola
 Hola, mi nombre es: Carlos y tengo 20 años.
 Estoy estudiando la carrera de Ingeniería en Sistemas */
-export class Persona {
-    public nombre: string;
-    public edad: number;
-    public esDesarrolador: boolean;
-
-    constructor ( nombre: string, edad: number, esDesarrollador: boolean ) {
+var Persona = /** @class */ (function () {
+    function Persona(nombre, edad, esDesarrollador) {
         this.nombre = nombre;
         this.edad = edad;
         this.esDesarrolador = esDesarrollador;
     }
-}
-
+    return Persona;
+}());
+exports.Persona = Persona;
 /* Ejercicio 2: Sobrescribir un método de la clase padre
 Objetivo
 
@@ -74,21 +74,18 @@ let empleado = new Empleado("Maria", 25, true, "Backend Developer");
 console.log(empleado.saludar());
 Resultado esperado
 Hola, mi nombre es: Maria y tengo 25 años. Trabajo como Backend Developer */
-export class Persona1 {
-    public nombre: string;
-    public edad: number;
-    public esDesarrolador: boolean;
-
-    constructor ( nombre: string, edad: number, esDesarrollador: boolean ) {
+var Persona1 = /** @class */ (function () {
+    function Persona1(nombre, edad, esDesarrollador) {
         this.nombre = nombre;
         this.edad = edad;
         this.esDesarrolador = esDesarrollador;
     }
-
-    public saludar(): string {
-        return `Hola, mi nombre es: ${this.nombre} y tengo ${this.edad} años`;
-    }
-}
+    Persona1.prototype.saludar = function () {
+        return "Hola, mi nombre es: ".concat(this.nombre, " y tengo ").concat(this.edad, " a\u00F1os");
+    };
+    return Persona1;
+}());
+exports.Persona1 = Persona1;
 /* Ejercicio 3: Crear un nuevo método en la clase hija
 Objetivo
 
@@ -114,25 +111,19 @@ let empleado = new Empleado("Luis", 30, true, "Frontend Developer");
 console.log(empleado.descripcionCompleta());
 Resultado esperado
 Mi nombre es Luis, tengo 30 años y mi puesto es Frontend Developer */
-
-export class Empleado {
-    public nombre: string;
-    public edad: number;
-    public esDesarrollador: boolean;
-    public puesto: string;
-
-    constructor ( nombre: string, edad: number, esDesarrollador: boolean, puesto: string ) {
+var Empleado = /** @class */ (function () {
+    function Empleado(nombre, edad, esDesarrollador, puesto) {
         this.nombre = nombre;
         this.edad = edad;
         this.esDesarrollador = esDesarrollador;
         this.puesto = puesto;
     }
-
-    public obtenerEdad(): number {
+    Empleado.prototype.obtenerEdad = function () {
         return this.edad;
-    }
-
-    public descripcionCompleta(): string {
-        return `Mi nombre es ${this.nombre}, tengo ${this.obtenerEdad()} años y mi puesto es ${this.puesto}`;
-    }
-}
+    };
+    Empleado.prototype.descripcionCompleta = function () {
+        return "Mi nombre es ".concat(this.nombre, ", tengo ").concat(this.obtenerEdad(), " a\u00F1os y mi puesto es ").concat(this.puesto);
+    };
+    return Empleado;
+}());
+exports.Empleado = Empleado;
