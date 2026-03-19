@@ -14,6 +14,4 @@ export function division(numero1: number, numero2: number): number {
     return numero1 / numero2;
 }
 
-const sumar = suma(5, 6);
-
-console.log(sumar);
+export const Pi = 3.1416;
