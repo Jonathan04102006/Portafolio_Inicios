@@ -1,0 +1,12 @@
+{
+  "name": "video_9_-coercion_de_tipos_en_javascript_explicada",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
