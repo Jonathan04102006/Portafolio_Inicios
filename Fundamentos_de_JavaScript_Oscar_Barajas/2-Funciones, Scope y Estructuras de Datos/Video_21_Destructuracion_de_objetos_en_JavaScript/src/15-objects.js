@@ -59,3 +59,19 @@ console.log('title' in nota4);
 // Object.keys
 
 console.log(Object.keys(nota4));
+/* [ 'id', 'title', 'cotent', 'createAt' ] */
+
+// Object.values
+
+console.log(Object.values(nota4));
+/* [ 1, 'Mi primera nota', 'Contenido de la nota', 1774910112800 ] */
+
+// Object.entries
+
+console.log(Object.entries(nota4));
+/* [
+  [ 'id', 1 ],
+  [ 'title', 'Mi primera nota' ],
+  [ 'cotent', 'Contenido de la nota' ],
+  [ 'createAt', 1774910112800 ]
+] */
