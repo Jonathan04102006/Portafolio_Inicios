@@ -149,4 +149,4 @@ console.log(listarNotas());
 
 eliminarNota(0);
 
-console.log(listarNotas());   
+console.log(listarNotas());

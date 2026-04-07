@@ -1,0 +1,12 @@
+{
+  "name": "video_25_avanzar_en_nuestro_proyecto_leyendo_codigo_ajeno",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
