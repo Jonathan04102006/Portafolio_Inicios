@@ -1,8 +1,4 @@
-
-
 renderOpinions(opiniones);
-
-const CONTACT_STORAGE_KEY = 'form';
 
 function renderSavedMessage() {
   const box = document.querySelector('#mensaje-guardado');
@@ -38,9 +34,12 @@ function handleContactSubmit(event) {
   form.reset();
 }
 
-const contactForm = document.querySelector('#contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', handleContactSubmit);
+export function initContact () {
+  const contactForm = document.querySelector('#contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+  }
 }
 
 renderSavedMessage();
+
