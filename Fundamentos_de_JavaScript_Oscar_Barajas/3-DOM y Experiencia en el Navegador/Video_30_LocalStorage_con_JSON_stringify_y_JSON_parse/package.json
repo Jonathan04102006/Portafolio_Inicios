@@ -1,0 +1,12 @@
+{
+  "name": "video_30_localstorage_con_json_stringify_y_json_parse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
