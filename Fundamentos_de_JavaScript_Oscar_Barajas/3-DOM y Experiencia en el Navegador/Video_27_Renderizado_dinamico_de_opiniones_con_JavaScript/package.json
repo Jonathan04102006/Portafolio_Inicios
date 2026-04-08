@@ -1,0 +1,12 @@
+{
+  "name": "video_27_renderizado_dinamico_de_opiniones_con_javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
