@@ -1,0 +1,92 @@
+Aprende a pasar de objetos literales y funciones constructoras a clases en JavaScript con una sintaxis clara y moderna. Verás cómo class en ECMAScript 6 es azúcar sintáctica sobre prototype, cómo mover métodos compartidos a la clase y cómo un método static corrige errores reales al generar un ID único.
+
+¿Qué cambia con clases en JavaScript frente a funciones constructoras?
+
+La clase organiza cómo se ve y se comporta un tipo de objeto. Piensa en un molde que crea muchas instancias con sus propios datos. Aunque uses la palabra reservada class, por debajo siguen existiendo funciones constructoras y prototipos.
+
+¿Por qué class es azúcar sintáctica en ECMAScript 6?
+
+Mejora la lectura y la intención del código.
+Mantiene el modelo basado en prototype que ya conoces.
+Facilita declarar métodos sin escribir objeto.prototype.cadaVez.
+¿Cómo opera this y new al instanciar?
+
+this apunta a la nueva instancia creada.
+new devuelve el objeto construido sin alterar el flujo previo.
+La clase actúa como un contrato claro para construir objetos.
+¿Qué pasa con el prototype y métodos compartidos?
+
+Los métodos definidos dentro de la clase siguen siendo compartidos entre instancias.
+Se evita escribir habit.prototype.metodo manualmente.
+Se conserva la optimización del código por uso de prototype.
+¿Cómo se implementa la clase habit y sus métodos?
+
+Migrar desde una función constructora es directo: se renombra en PascalCase, se define el constructor, se mueven métodos al cuerpo de la clase y se reemplaza el contador global por un método static que genera el ID.
+
+
+class Habit {
+  constructor(name, frequency) {
+    this.id = Habit.createID(); // sin variable global.
+    this.name = name;
+    this.frequency = frequency;
+    this.createdAt = new Date(); // fecha de creación.
+  }
+
+  // método compartido por todas las instancias.
+  rename(newName) {
+    this.name = newName;
+  }
+
+  // método estático: pertenece a la clase, no a la instancia.
+  static createID() {
+    // versión corregida para evitar decimales con parseInt.
+    return Date.now() + Math.floor(Math.random() * 1000);
+  }
+}
+
+// instanciación, mismo flujo que con funciones constructoras.
+const habit = new Habit('Correr', 'Diaria');
+¿Cómo definir el constructor y propiedades?
+
+Define parámetros: name, frequency.
+Asigna propiedades con this: id, name, frequency, createdAt.
+Llama a Habit.createID() para generar el ID único.
+¿Cómo migrar métodos del prototype a la clase?
+
+Escribe el método dentro del cuerpo de la clase.
+Sigue siendo compartido entre instancias vía prototype.
+Ejemplo: rename(newName) actualiza this.name.
+¿Cómo instanciar con new sin cambiar el flujo?
+
+Usa: new Habit(nombre, frecuencia).
+Devuelve el objeto listo para usarse.
+No rompe la lógica previa de la aplicación.
+¿Por qué usar un método estático para generar IDs sin errores?
+
+Un método static pertenece a la clase y no a las instancias. Ideal para encapsular lógica interna, como generar el ID cuando se construye el objeto. Así no dependes de valores globales y mejoras la claridad.
+
+¿Qué bug produjo parseInt con IDs decimales?
+
+Primera versión: Date.now() + Math.random generó decimales.
+En otra parte, al leer el ID con parseInt, se truncó la parte decimal.
+Resultado: “hábito no encontrado” al no coincidir los IDs.
+
+// Versión problemática.
+static createID() {
+  return Date.now() + Math.random(); // decimales que parseInt trunca.
+}
+¿Cómo corregir la generación de IDs con Math.floor?
+
+Mantén Date.now() como base única en milisegundos.
+Multiplica Math.random() por 1000 y aplica Math.floor para evitar decimales.
+Garantiza enteros compatibles con parseInt y reduce colisiones.
+
+// Versión corregida.
+static createID() {
+  return Date.now() + Math.floor(Math.random() * 1000);
+}
+¿Cuándo usar static en una clase?
+
+Cuando la lógica solo le compete a la clase: no a cada instancia.
+Para factorías internas, validaciones comunes o utilidades de la clase.
+Para encapsular y eliminar dependencias globales.
