@@ -1,0 +1,99 @@
+La encapsulación es clave para crear software confiable: oculta el estado interno, expone solo lo necesario y protege las invariantes del dominio. Aquí verás cómo convertir una clase en un bloque seguro con campos privados, getters y setters con validación, y manejo de errores con try y catch para no romper el flujo.
+
+¿Cómo aplicar la encapsulación con campos privados y getters?
+
+Usar campos privados con el símbolo numeral garantiza que el estado no se modifique desde fuera de la clase. El acceso externo directo provoca un syntax error, así que todo se controla desde métodos internos con this.
+
+Define campos privados con el símbolo numeral antes del constructor.
+Limita el acceso externo: solo desde métodos internos con this.
+Expón datos con getters como propiedades de solo lectura.
+
+class Habit {
+  // Campos privados
+  #name;
+  #frequency;
+  #id;
+
+  constructor({ name, frequency, id }) {
+    // Usa setters para respetar validaciones e invariantes.
+    this.name = name;
+    this.frequency = frequency;
+    this.#id = id; // sin setter: se asigna internamente.
+  }
+
+  // Getters: exponen lectura controlada
+  get name() { return this.#name; }
+  get frequency() { return this.#frequency; }
+  get id() { return this.#id; }
+}
+¿Qué implicaciones tiene el acceso interno y externo?
+
+Acceso interno: solo dentro de la clase con this y el nombre privado.
+Acceso externo: bloqueado, se evita modificar el estado sin control.
+Beneficio directo: se protege la coherencia del objeto.
+¿Por qué los setters con validación protegen las invariantes del dominio?
+
+Las invariantes del dominio son reglas que jamás deben romperse. Con setters validas y normalizas la entrada antes de guardar, evitando estados inválidos y manipulaciones malintencionadas desde el DOM del navegador.
+
+Normaliza entradas: elimina espacios con trim.
+Valida longitudes mínimas y formatos.
+Restringe valores permitidos con listas de opciones.
+
+class Habit {
+  #name; #frequency; #id;
+  constructor({ name, frequency, id }) {
+    this.name = name;           // valida y normaliza
+    this.frequency = frequency; // restringe a opciones válidas
+    this.#id = id;
+  }
+
+  get name() { return this.#name; }
+  get frequency() { return this.#frequency; }
+  get id() { return this.#id; }
+
+  // Setter con normalización y longitud mínima
+  set name(value) {
+    const normalized = value.trim();
+    if (normalized.length < 3) {
+      throw new Error('el nombre del hábito debe de tener al menos tres caracteres');
+    }
+    this.#name = normalized;
+  }
+
+  // Setter con opciones acotadas
+  set frequency(value) {
+    const validFrequencies = ['daily', 'weekly'];
+    if (!validFrequencies.includes(value)) {
+      throw new Error('la frecuencia debe de ser daily o weekly');
+    }
+    this.#frequency = value;
+  }
+}
+¿Qué reglas de negocio quedan blindadas?
+
+Nombre con mínimo de 3 caracteres.
+Frecuencia solo en 'daily' o 'weekly'.
+Estados inválidos bloqueados con throw new Error.
+¿Cómo manejar errores con try y catch sin romper el flujo?
+
+Cuando algo falla, no debe colapsar la experiencia. Con try y catch capturas los errores que lanzan los setters, muestras un mensaje claro con showMessage y detienes la operación con return null.
+
+Captura errores y muestra mensajes descriptivos.
+No rompas el flujo: usa return null.
+Mantén datos del usuario sin perderse.
+
+function addHabit(payload) {
+  try {
+    const habit = new Habit(payload);
+    // continuar flujo normal: guardar, renderizar, etc.
+    return habit;
+  } catch (error) {
+    showMessage(error.message, 'error');
+    return null;
+  }
+}
+¿Por qué usar setters dentro del constructor?
+
+Si asignas directamente a los campos privados, evitas validaciones.
+Usar setters en el constructor aplica invariantes desde el inicio.
+Resultado: la clase nunca queda en estados inválidos.
