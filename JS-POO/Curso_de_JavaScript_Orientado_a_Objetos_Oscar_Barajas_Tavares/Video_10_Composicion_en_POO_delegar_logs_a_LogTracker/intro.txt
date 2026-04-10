@@ -1,0 +1,86 @@
+Aplicar composición en programación orientada a objetos permite escribir código más claro, reutilizable y seguro. Aquí verás cómo delegar el manejo de logs en una clase especializada (LogTracker) e integrarlo en Habit, evitando estados globales y reforzando la encapsulación.
+
+¿Qué es la composición y cómo se diferencia de la herencia?
+
+La composición es un patrón de diseño donde un objeto delega responsabilidades a otros objetos especializados, en lugar de heredarlas. Con la analogía del coche: con herencia dirías “un coche es un vehículo con motor y ruedas”; con composición, “un coche tiene un motor, un conjunto de ruedas y un sistema de frenos”.
+
+Con herencia, una clase “es un” tipo base.
+Con composición, una clase “tiene un” conjunto de capacidades.
+Beneficios: separación de responsabilidades, reutilización entre contextos, y encapsulación del estado privado.
+No todo lo que tiene motor es coche. La composición evita acoplar funciones solo por compartir rasgos.
+¿Qué habilidades y keywords se practican?
+
+Patrón de diseño: composición y delegación de responsabilidades.
+Encapsulación de estado privado y acceso controlado.
+Validación de datos y manejo de errores con null.
+Eliminación de arreglo global y de habit id counter no usado.
+Métodos clave: addLog, getLogs, register check in, render habits.
+¿Cómo construir LogTracker para manejar logs?
+
+Se crea la clase LogTracker encargada del sistema de logs. Mantiene un array privado de fechas y expone dos métodos: addLog(date) para validar y agregar, y getLogs() para devolver una copia del historial. Si la fecha no es válida (no es string o su longitud es distinta de 10), retorna null. Así se protege el estado y se estandariza el flujo de error.
+
+
+class LogTracker {
+  private dates: string[] = [];
+
+  addLog(date: string): string | null {
+    if (typeof date !== 'string' || date.length !== 10) return null;
+    this.dates.push(date);
+    return date;
+  }
+
+  getLogs(): string[] {
+    return [...this.dates]; // copia para evitar mutaciones externas
+  }
+}
+Estado privado: el array de fechas solo se modifica dentro de la clase.
+Validación simple: tipo string y longitud de 10 caracteres.
+Copia defensiva en getLogs para impedir modificaciones externas al array interno.
+¿Cómo integrar la composición en Habit y actualizar el flujo?
+
+La clase Habit no maneja logs directamente. En su lugar, delegará en una instancia privada de LogTracker (un tracker especializado). Se añaden métodos que usan el tracker para registrar y consultar. Luego se actualizan funciones externas para consumir esa delegación y se eliminan estructuras globales.
+
+
+class Habit {
+  private id: string;
+  private tracker: LogTracker;
+
+  constructor(id: string) {
+    this.id = id;
+    this.tracker = new LogTracker(); // composición: "tiene un" LogTracker
+  }
+
+  registerCheckIn(date: string): { habitId: string; date: string } | null {
+    const created = this.tracker.addLog(date);
+    if (!created) return null; // si la fecha es inválida
+    return { habitId: this.id, date: created };
+  }
+
+  getLogs(): string[] {
+    return this.tracker.getLogs();
+  }
+}
+Campo privado: tracker mantiene la instancia de LogTracker.
+Constructor: instancia con new LogTracker() para habilitar la delegación.
+Método: register check in usa tracker.addLog(date), retorna objeto { habitId, date } o null.
+Método: get logs delega a tracker.getLogs().
+¿Qué cambios aplicar en las funciones externas?
+
+En la función de log del hábito, delegar: habit.registerCheckIn(fecha).
+Eliminar el arreglo global de logs.
+Eliminar habit id counter que ya no se usa.
+En render habits, obtener logs con habit.getLogs().
+
+function logHabit(habit: Habit, date: string) {
+  return habit.registerCheckIn(date);
+}
+
+function renderHabits(habits: Habit[]) {
+  for (const habit of habits) {
+    const logs = habit.getLogs();
+    // ...pintar logs del hábito
+  }
+}
+Resultado: cada hábito gestiona sus propios registros.
+Datos relacionados viven juntos: Habit y su LogTracker.
+Efecto colateral: menos acoplamiento, mayor claridad y reutilización.
