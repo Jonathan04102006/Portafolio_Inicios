@@ -1,0 +1,62 @@
+Resumen
+Comprende cómo el polimorfismo en programación orientada a objetos te permite usar la misma función con distintos objetos y obtener respuestas correctas en cada caso. Con una analogía de control universal y una demostración simple en JavaScript, verás por qué el método hablar es suficiente para que todo funcione gracias al duck typing.
+
+¿Qué es el polimorfismo y por qué importa en programación orientada a objetos?
+
+El polimorfismo significa “muchas formas” y describe la capacidad de distintos objetos de responder al mismo mensaje según su tipo. La analogía del control universal lo ilustra: al presionar encender, un televisor, un sistema de audio o un proyector actúan de forma distinta, pero cumplen su tarea.
+
+Un mismo mensaje: encender o hablar.
+Distintos tipos de objeto: televisor, audio, proyector; persona, perro, robot.
+Resultado correcto en cada contexto.
+¿Cómo ayuda la analogía del control universal?
+
+Mismo botón, comportamientos diferentes según el dispositivo.
+Mantiene una interfaz común: “encender”.
+Refuerza la idea clave del polimorfismo: una interfaz, múltiples implementaciones.
+¿Cómo aplica en JavaScript con duck typing?
+
+En JavaScript, el polimorfismo se vive con duck typing: “si camina como pato y hace cuac como pato, trátalo como pato”. Importa lo que el objeto puede hacer, no su tipo o clase. Aquí, basta con que el objeto tenga hablar.
+
+JavaScript no verifica tipos ni clases, solo que exista el método llamado.
+Si el objeto tiene hablar, funciona. Si no, aparece un error en ejecución.
+La misma función se comporta distinto según el objeto que recibe.
+¿Qué es duck typing en JavaScript?
+
+Evalúa capacidades: “¿tiene el método hablar?”.
+No requiere herencia ni clases compartidas.
+Favorece funciones genéricas que aceptan varios objetos.
+¿Cómo se implementa con una función que recibe objetos?
+
+
+// Tres objetos distintos, misma interfaz: hablar
+const persona = { hablar() { console.log("Hola, soy una persona"); } };
+const perro   = { hablar() { console.log("Ladrido"); } };
+const robot   = { hablar() { console.log("Sonido icónico de robot"); } };
+
+// Una función que usa el método hablar del objeto recibido
+function hacerHablar(algo) {
+  algo.hablar();
+}
+
+// La misma función, distintos objetos, respuestas correctas
+hacerHablar(persona); // Hola, soy una persona
+hacerHablar(perro);   // Ladrido
+hacerHablar(robot);   // Sonido icónico de robot
+Interfaz común: hablar.
+Llamada uniforme: hacerHablar(objeto).
+Resultados correctos: cada objeto responde según su comportamiento.
+¿Qué ocurre si el objeto no tiene el método?
+
+La llamada a hablar no existe y produce un error en tiempo de ejecución.
+Señal clara de que el objeto no cumple con la interfaz esperada.
+Recomendación práctica: asegura que el objeto provea hablar antes de llamarlo.
+¿Qué habilidades y prácticas te llevas?
+
+La demostración en el navegador refuerza habilidades clave que aplican en proyectos reales.
+
+Entender y explicar polimorfismo con una analogía clara.
+Aplicar duck typing para diseñar funciones genéricas y reutilizables.
+Crear objetos independientes que comparten una interfaz mínima.
+Invocar métodos comunes sin depender de clases o herencias.
+Probar en el navegador y leer el output esperado.
+Identificar y manejar errores cuando falta el método requerido.
