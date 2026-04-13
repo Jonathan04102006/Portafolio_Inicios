@@ -1,0 +1,86 @@
+La herencia en programación orientada a objetos permite crear nuevas clases a partir de una base para reutilizar código, extender funcionalidades y mantener una jerarquía clara. Aquí verás cómo una clase Habit sirve de base para una subclase TimedHabit que añade minutos objetivo, valida entradas y sobrescribe métodos para mostrar información completa.
+
+¿Qué es la herencia en programación orientada a objetos y por qué reutiliza código?
+
+La idea central: una clase base comparte sus propiedades y métodos con sus subclases. El ejemplo del transcript usa la analogía de vehículo, automóvil y motocicleta para mostrar una relación es-un: el automóvil y la motocicleta son vehículos, pero con rasgos propios. Así, una subclase hereda lo común y añade lo específico sin modificar la base.
+
+Herencia: compartir constructor, métodos y propiedades de la clase base.
+Polimorfismo: tratar objetos de distintas subclases como si fueran de la clase base.
+Extensión: agregar capacidades sin tocar la implementación original.
+Palabras clave: extends para heredar. super para inicializar la base. override al sobrescribir un método.
+¿Cómo crear la subclase TimedHabit con getters, setters y validación?
+
+El objetivo es añadir a Habit un campo privado de minutos objetivo. Con extends heredamos todo y con super inicializamos lo común. Luego usamos getter y setter para encapsular y validar que los minutos sean positivos.
+
+¿Cómo se define la clase base habit y su método toDisplayString?
+
+La base muestra el nombre y la frecuencia del hábito.
+
+
+class Habit {
+  constructor(
+    protected name: string,
+    protected frequency: string // p. ej., 'daily'.
+  ) {}
+
+  // Muestra información básica del hábito.
+  toDisplayString(): string {
+    return `${this.name} - ${this.frequency}`;
+  }
+}
+¿Cómo extender habit con TimedHabit usando extends y super?
+
+La subclase añade minutos objetivo con validación y sobrescribe el método de despliegue para incluirlos.
+
+
+class TimedHabit extends Habit {
+  private _targetMinutes!: number; // campo privado.
+
+  constructor(name: string, frequency: string, targetMinutes: number) {
+    super(name, frequency); // inicializa Habit: name y frequency.
+    this.targetMinutes = targetMinutes; // usa el setter para validar.
+  }
+
+  get targetMinutes(): number {
+    return this._targetMinutes;
+  }
+
+  set targetMinutes(value: number) {
+    const minutes = Number(value);
+    if (Number.isNaN(minutes) || minutes <= 0) {
+      throw new Error('El objetivo de tiempo debe de ser un número positivo');
+    }
+    this._targetMinutes = minutes;
+  }
+
+  // override del método para incluir minutos.
+  toDisplayString(): string {
+    const baseString = super.toDisplayString();
+    return `${baseString} - ${this.targetMinutes} minutos`;
+  }
+}
+Encapsulación: el campo privado protege el estado.
+Validación: asegura un número positivo antes de asignar.
+Sobrescritura: combina el resultado base con los minutos.
+¿Cómo probar la herencia con console.log e instanceof?
+
+Se sugiere probar en la inicialización de la app y validar en consola. También se muestra cómo detectar errores comunes de escritura (typos) apoyándote en el editor.
+
+
+console.log('Habit tracker se ha inicializado.');
+
+const demoHabit = new Habit('leer', 'daily');
+const demoTimedHabit = new TimedHabit('meditar', 'daily', 20);
+
+console.log(demoHabit.toDisplayString());
+// leer - daily
+
+console.log(demoTimedHabit.toDisplayString());
+// meditar - daily - 20 minutos
+
+console.log(demoHabit instanceof Habit);       // true
+console.log(demoTimedHabit instanceof Habit);   // true
+console.log(demoTimedHabit instanceof TimedHabit); // true
+Usa console.log para observar el flujo y resultados.
+Verifica con instanceof la pertenencia a la clase base y a la subclase.
+Si aparece un error, revisa nombres de variables como targetMinutes y mensajes del editor.
