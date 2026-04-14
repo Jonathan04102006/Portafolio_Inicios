@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Entrada</title>
+</head>
+<body>
+    <style>body{
+        background-color: black;
+        color: white;
+    }</style>
+    <h1>¡Login Exitoso!</h1>
+    <div id="user-info">Cargando datos de tu perfil...</div>
+
+    <script>
+        // Capturamos el token que viene en la URL después del símbolo #
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const accessToken = params.get('access_token');
+
+        if (accessToken) {
+            // Le pedimos a Google los datos del usuario usando el token
+            fetch(`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${accessToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('user-info').innerHTML = `
+                        <h2>Hola, ${data.name}</h2>
+                        <p>Email: ${data.email}</p>
+                        <img src="${data.picture}" alt="Foto de perfil">
+                    `;
+                })
+                .catch(err => console.error("Error al obtener datos:", err));
+        } else {
+            document.getElementById('user-info').innerText = "No se encontró el token de acceso.";
+        }
+    </script>
+</body>
+</html>
