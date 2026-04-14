@@ -21,6 +21,19 @@ habito1.mostrarHabito();
 ✅ Resultado esperado:
 Hábito: Leer - Frecuencia: diario */
 console.log(`************************************************************************`);
+function crearHabito(nombre, frecuencia) {
+    return {
+        nombre,
+        frecuencia,
+        mostrarHabito() {
+            console.log(`Hábito: ${this.nombre} - Frecuencia: ${this.frecuencia}`);
+        }
+    };
+};
+
+const habito1 = crearHabito("Leer", "diario");
+habito1.mostrarHabito();
+
 
 /* 🧠 Ejercicio 2: Factory con estado interno (progreso)
 🎯 Objetivo:
@@ -52,6 +65,29 @@ habito.mostrarEstado();
 2
 Hábito: Ejercicio - Progreso: 2 */
 console.log(`************************************************************************`);
+function crearHabitoConProgreso(nombre) {
+    let progreso = 0;
+
+    return {
+        registrar() {
+            progreso++;
+        },
+        obtenerProgreso() {
+            return progreso;
+        },
+        mostrarEstado() {
+            console.log(`Hábito: ${nombre} - Progreso: ${progreso}`);
+        }
+    };
+}
+
+const habito = crearHabitoConProgreso("Ejercicio");
+
+habito.registrar();
+habito.registrar();
+
+console.log(habito.obtenerProgreso());
+habito.mostrarEstado();
 
 /* 🧠 Ejercicio 3: Factory Method con tipos de hábitos
 🎯 Objetivo:
@@ -85,3 +121,31 @@ Realizando hábito saludable: Correr
 Mejorando productividad con: Estudiar
 Disfrutando: Videojuegos */
 console.log(`************************************************************************`);
+function crearHabito1(tipo, nombre) {
+    switch (tipo) {
+        case "salud":
+            return {
+                accion() {
+                    return `Realizando hábito saludable: ${nombre}`;
+                }
+            };
+        case "productividad":
+            return {
+                accion() {
+                    return `Mejorando productividad con: ${nombre}`;
+                }
+            };
+        case "ocio":
+            return {
+                accion() {
+                    return `Disfrutando: ${nombre}`;
+                }
+            };
+        default:
+            console.log("Tipo de hábito no válido");
+            return null;
+    }
+}   
+
+const habito2 = crearHabito1("productividad", "Estudiar");
+console.log(habito2.accion());
