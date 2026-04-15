@@ -1,0 +1,17 @@
+1- Comprueba la instalación de Node y npm:
+(node -v y npm -v)
+
+2- Instala la última versión estable globalmente:
+(npm install -g @angular/cli)
+
+3- Verifica la instalación:
+(ng version)
+
+4- Genera el esqueleto del proyecto:
+(ng new mi-proyecto-angular)
+
+4- Navega a la carpeta del proyecto:
+(cd mi-proyecto-angular.)
+
+5- Inicia el servidor de desarrollo y abre el navegador:
+(ng serve -o.)
