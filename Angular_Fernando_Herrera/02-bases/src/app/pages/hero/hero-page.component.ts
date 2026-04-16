@@ -1,19 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 
 @Component({
     templateUrl: './hero-page.component.html',
 })
 export class HeroPageComponent {
-    name() {
-        throw new Error('Method not implement.');
-    }
+    name = signal('Iroman');
 
-    age() {
-        throw new Error('Method not implement.');
-    }
+    age = signal(19);
 
     getHeroDescription() {
-        throw new Error('Method not implement.');
+        throw new Error('Method not implement.')
     }
 
     changeHero() {
