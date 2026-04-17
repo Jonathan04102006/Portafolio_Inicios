@@ -1,0 +1,78 @@
+Domina la abstracción en JavaScript aplicando encapsulamiento real con getters privados y factory methods. Este enfoque crea una API intencional, evita errores por parámetros inválidos y mejora la legibilidad del código al construir hábitos diarios y semanales de forma clara y segura.
+
+¿Cómo aplicar la abstracción en JavaScript con getters y propiedades privadas?
+
+Convertir propiedades públicas y mutables en privadas refuerza la integridad del estado. Aquí se vuelve privada la fecha de creación y se expone solo mediante un getter. Así, se controla el acceso y se explica la intención sin filtrar detalles internos del constructor.
+
+
+class Habit {
+  #createdAt;
+  constructor(name, frequency) {
+    this.name = name;
+    this.frequency = frequency;
+    this.#createdAt = new Date();
+  }
+  get created() {
+    return this.#createdAt;
+  }
+}
+Se evita mutabilidad externa del estado sensible.
+Se documenta el acceso con un getter claro.
+Se cumple la abstracción: se oculta cómo se inicializa y solo se expone lo necesario.
+¿Por qué usar factory methods para crear hábitos daily y weekly?
+
+Los factory methods ocultan la complejidad del constructor y exponen una API intencional. En lugar de recordar y pasar manualmente la frecuencia, el desarrollador invoca métodos estáticos obvios que guían hacia valores válidos (daily o weekly). Se evita el parámetro de frequency en la interfaz pública y se reducen errores de typo, incluso si el dato viniera del frontend.
+
+¿Cómo se ven los factory methods en Habit?
+
+
+class Habit {
+  // ...
+  static daily(name) {
+    return new Habit(name, 'daily');
+  }
+  static weekly(name) {
+    return new Habit(name, 'weekly');
+  }
+}
+Se oculta el parámetro frequency.
+Se garantiza que los valores sean válidos.
+El nombre del método documenta la intención.
+¿Cómo extender en TimeHabit con herencia?
+
+Cuando una clase hereda de Habit, también puede ofrecer su propia API de factory methods para mantener la intención y agregar datos específicos (por ejemplo, minutos).
+
+
+class TimeHabit extends Habit {
+  constructor(name, frequency, minutes) {
+    super(name, frequency);
+    this.minutes = minutes;
+  }
+  static daily(name, minutes) {
+    return new TimeHabit(name, 'daily', minutes);
+  }
+  static weekly(name, minutes) {
+    return new TimeHabit(name, 'weekly', minutes);
+  }
+}
+Se mantiene la coherencia de la API entre clases.
+Se agrega información propia del subtipo sin exponer cómo se construye.
+Se facilita el polimorfismo al compartir contratos claros.
+¿Cómo validar la API con herencia, polimorfismo y registros en consola?
+
+Probar la API demuestra su claridad y robustez. Crear instancias con métodos static hace que el código sea autoexplicativo y más fácil de mantener. Además, imprimir resultados con console.log o con un método como toDisplayString ayuda a verificar la salida esperada.
+
+
+const habit1 = Habit.daily('leer');
+const habit2 = Habit.weekly('ejercicio');
+const habit3 = TimeHabit.daily('meditar', 20);
+
+// Registros y visualización.
+console.log('Hábito diario:', habit1);
+console.log('Hábito semanal:', habit2);
+console.log('Hábito con tiempo:', habit3.toDisplayString());
+API clara: Habit.daily y Habit.weekly indican exactamente qué sucede.
+Robustez: se evita pasar frequency a mano y los posibles typos.
+Documentación implícita: los nombres guían el uso correcto.
+Polimorfismo: distintas clases comparten una interfaz coherente para construir y mostrar datos.
+Conceptos y habilidades reforzadas: abstracción, encapsulamiento con propiedades privadas, getter para acceso controlado, factory methods con métodos static, herencia entre clases, polimorfismo en la representación e impresión, API intencional, prevención de typos desde el frontend, y pruebas rápidas con console log y toDisplayString.

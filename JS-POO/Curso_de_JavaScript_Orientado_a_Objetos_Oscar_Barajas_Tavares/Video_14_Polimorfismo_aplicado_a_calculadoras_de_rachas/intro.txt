@@ -1,0 +1,127 @@
+Potencia tu proyecto de hábitos con polimorfismo en JavaScript: dos clases especializadas calculan rachas diarias y semanales con el mismo método, mientras una estrategia según la frecuencia decide qué lógica ejecutar. Verás cómo organizar logs, normalizar fechas, evitar errores comunes y preparar la UI en HTML y CSS para mostrar el resultado.
+
+¿Cómo aplicar polimorfismo en JavaScript para rachas de hábitos?
+
+El enfoque usa una tabla de mapeo por frecuencia que instancia calculators y un método en Habit que selecciona la estrategia correcta. Ambas clases comparten el método calculate, lo que habilita el polimorfismo: mismo mensaje, comportamientos distintos.
+
+Mapa de estrategias con streakCalculators: daily y weekly.
+Selección dinámica según this.frequency del hábito.
+Manejo de fecha actual con new Date() como today.
+Retorno seguro: si no hay estrategia, racha en 0.
+
+// Mapa de estrategias por frecuencia
+const streakCalculators = {
+  daily: new DailyStreakCalculator(),
+  weekly: new WeeklyStreakCalculator(),
+};
+
+// En la clase Habit
+calculateStreak(today = new Date()) {
+  const calculator = streakCalculators[this.frequency];
+  if (!calculator) return 0; // sin estrategia, no hay racha
+  return calculator.calculate(this, this.getLogs(), today);
+}
+¿Qué estructura usa calculateStreak con frecuencia y today?
+
+El método recibe today, busca el calculator por frecuencia y llama a calculate(habit, logs, today). Aquí ocurre el polimorfismo: DailyStreakCalculator y WeeklyStreakCalculator comparten firma, pero su lógica interna difiere.
+
+Parámetros clave: habit, logs de fechas, today.
+Validación inicial: si no hay registros, racha 0.
+Consistencia de interfaz: ambos calculators exponen calculate.
+¿Qué hacen DailyStreakCalculator y WeeklyStreakCalculator?
+
+Ambas clases calculan rachas con enfoques distintos. La diaria compara fechas día a día. La semanal agrupa por semana y recorre semanas consecutivas. Se usan utilidades internas (métodos privados) para formatear fechas y agrupar semanas.
+
+DailyStreakCalculator:
+Ordena logs del más reciente al más antiguo.
+Normaliza today sin horas, minutos, segundos ni milisegundos.
+Compara contra la fecha esperada en formato año-mes-día.
+Si no coincide, rompe el ciclo y retorna la racha.
+
+class DailyStreakCalculator {
+  calculate(habit, logs, today) {
+    if (!logs || logs.length === 0) return 0;
+    const sorted = [...logs].sort((a, b) => b - a); // reciente → antiguo
+    const current = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+    let streak = 0;
+    for (const log of sorted) {
+      const expected = new Date(current);
+      expected.setDate(current.getDate() - streak);
+      if (this.#toKey(log) === this.#toKey(expected)) streak++;
+      else break; // racha interrumpida
+    }
+    return streak;
+  }
+
+  // método privado: formatea fecha a clave estable (YYYY-M-D)
+  #toKey(date) {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  }
+}
+WeeklyStreakCalculator:
+Agrupa logs por semana con una utilería interna.
+Ordena semanas con Object.keys de más reciente a más antigua.
+Obtiene la semana actual y avanza comparando con la semana esperada.
+Si la semana no coincide, rompe el bucle y retorna la racha.
+
+class WeeklyStreakCalculator {
+  calculate(habit, logs, today) {
+    if (!logs || logs.length === 0) return 0;
+
+    const byWeek = this.#groupByWeek(logs);
+    const weeks = Object.keys(byWeek).sort((a, b) => b.localeCompare(a));
+    const currentWeek = this.#weekKey(today);
+
+    let streak = 0;
+    let expected = currentWeek;
+
+    for (const wk of weeks) {
+      if (wk === expected) {
+        streak++;
+        expected = this.#prevWeek(expected);
+      } else {
+        break; // racha interrumpida
+      }
+    }
+    return streak;
+  }
+
+  // utilería: agrupa fechas por clave de semana
+  #groupByWeek(dates) {
+    return dates.reduce((acc, d) => {
+      const key = this.#weekKey(d);
+      (acc[key] ||= []).push(d);
+      return acc;
+    }, {});
+  }
+
+  // clave de semana y cálculo de semana previa (implementación consistente en tu código)
+  #weekKey(date) { /* ... */ }
+  #prevWeek(weekKey) { /* ... */ }
+}
+¿Qué considerar al trabajar con fechas en JavaScript?
+
+Las fechas requieren atención al detalle: normalización, conversión y consistencia. JavaScript ofrece múltiples formas de transformar fechas; cuida el formato de claves y el cálculo de número de semana y semana previa para evitar desajustes.
+
+Normaliza la fecha para comparaciones estables.
+Evita dependencias implícitas de zona horaria.
+Sé consistente en las claves de día y semana.
+¿Cómo depurar y probar con consola y UI?
+
+La inicialización crea hábitos de prueba y muestra resultados en consola con live server. Un detalle importante: olvidar ejecutar un método puede romper la racha. La técnica del patito de hule ayuda a leer el código en voz alta y detectar errores.
+
+Demo: hábito “leer” daily con 3 registros. Hábito “ejercicio” weekly con 2 registros.
+Salida: toDisplayString() y calculateStreak() en console.log.
+Observación: rachas en 0 por pasar this.getLogs en vez de this.getLogs().
+Corrección: agregar paréntesis para ejecutar la función.
+¿Qué error común con getLogs y cómo evitarlo?
+
+Pasar una referencia a función no la ejecuta.
+Usa this.getLogs() al invocar calculate.
+Valida con console.log los parámetros antes del cálculo.
+¿Qué reto de interfaz con HTML y CSS?
+
+Renderiza la racha diaria y semanal con el retorno de calculate.
+Usa la estructura visual ya definida en HTML y CSS.
+Integra el valor en componentes de la UI de hábitos.

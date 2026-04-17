@@ -1,0 +1,83 @@
+Un manejo de errores de dominio bien diseñado en programación orientada a objetos protege las reglas de negocio y evita estados inválidos. Aquí verás cómo estructurar DomainError y códigos de error para validar de forma consistente, mejorar pruebas, facilitar monitoreo e internacionalizar mensajes sin tocar la lógica central.
+
+¿Por qué diferenciar errores de dominio y técnicos en programación orientada a objetos?
+
+Distinguir tipos de error evita confusiones y acelera diagnósticos. Los errores de dominio representan violaciones a reglas de negocio; los errores técnicos son fallas del sistema. Esta separación mejora la claridad del modelo y guía decisiones de manejo y registro.
+
+¿Qué son invariantes y reglas de negocio?
+
+En POO, el modelo no solo describe comportamiento: también asegura invariantes. Si una regla exige que no existan montos negativos o que no se supere un límite diario, romperla debe generar un error de dominio. Estos errores no son bugs, son señales explícitas de que una regla de negocio se violó.
+
+¿Qué ejemplos aclaran dominio vs técnico?
+
+Errores de dominio: fondos insuficientes. monto inválido (negativo). límite diario excedido.
+Errores técnicos: conexión fallida a base de datos. servidor no disponible. excepción inesperada en la lógica.
+¿Cómo crear DomainError y códigos de error reutilizables?
+
+Centralizar la definición de errores permite estandarizar respuestas y hacer debugging más rápido. Con una clase DomainError y una tabla de códigos de error, la aplicación lanza errores consistentes y fáciles de categorizar en logs y monitoreo.
+
+¿Cómo definir la clase base y el DomainError?
+
+Usa una clase específica que herede de la base de errores e incluya un code único por regla de negocio:
+
+
+class DomainError extends Error {
+  constructor(message, code) {
+    super(message);
+    this.name = 'DomainError';
+    this.code = code;
+  }
+}
+¿Qué códigos de error usar en validaciones de negocio?
+
+Define un objeto centralizado con identificadores claros. así no cambias la semántica del error si traduces el mensaje:
+
+
+const ERROR_CODES = {
+  INVALID_NAME: 'INVALID_NAME',
+  INVALID_FREQUENCY: 'INVALID_FREQUENCY',
+  DUPLICATE_CHECKIN: 'DUPLICATE_CHECKIN',
+  INVALID_DATE: 'INVALID_DATE',
+  FUTUREDATE: 'FUTUREDATE',
+  INVALID_TARGET_MINUTES: 'INVALID_TARGET_MINUTES',
+};
+¿Por qué ayudan internacionalización y monitoreo?
+
+Mensajes traducibles: cambias el texto sin tocar el code.
+Pruebas precisas: verificas por code y aislas el idioma.
+Observabilidad: los logs agrupan por code y muestran patrones.
+Enrutamiento claro: si hay muchos INVALID_NAME, el equipo sabe dónde actuar.
+¿Cómo aplicar validaciones y prevenir estados inválidos?
+
+Valida desde los setters de tu modelo para impedir que el objeto entre en un estado imposible. Cada regla rota dispara un DomainError con su code correspondiente. Así documentas el contrato del dominio y simplificas el manejo de errores en capas superiores.
+
+¿Cómo actualizar setters con DomainError y códigos?
+
+Ejemplo en un agregado como Habit con validación de nombre y frecuencia:
+
+
+class Habit {
+  setName(name) {
+    if (!name || name.trim().length === 0) {
+      throw new DomainError('Nombre inválido.', ERROR_CODES.INVALID_NAME);
+    }
+    this.name = name;
+  }
+
+  setFrequency(frequency) {
+    const allowed = ['daily', 'weekly', 'monthly'];
+    if (!allowed.includes(frequency)) {
+      throw new DomainError('Frecuencia inválida.', ERROR_CODES.INVALID_FREQUENCY);
+    }
+    this.frequency = frequency;
+  }
+}
+También aplica a reglas de fechas y métricas: formato incorrecto, fecha futura no permitida, minutos objetivo inválidos.
+
+¿Qué beneficios aporta centralizar el manejo de errores?
+
+Consistencia: un único formato de error con name, message y code.
+Prevención de estados inválidos: se captura en el punto de entrada con setters.
+Facilidad de debugging: el code indica la regla exacta que falló.
+Mejor comunicación: el equipo discute reglas de negocio, no rastros ambiguos.
+Extensibilidad: agregar nuevas reglas solo requiere añadir un code y lanzar el DomainError.

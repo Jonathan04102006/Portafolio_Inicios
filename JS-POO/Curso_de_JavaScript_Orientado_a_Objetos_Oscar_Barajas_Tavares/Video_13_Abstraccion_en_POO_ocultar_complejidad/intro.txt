@@ -1,0 +1,66 @@
+La abstracción en programación orientada a objetos te permite enfocarte en lo que importa: usar un objeto sin preocuparte por su complejidad interna. Igual que con una cafetera automática, eliges espresso o capuchino y listo; no necesitas conocer bombas, sensores ni flujos. Aquí verás cómo trasladar esa idea a JavaScript con clases, herencia y métodos públicos.
+
+¿Qué es la abstracción en programación orientada a objetos?
+
+La abstracción consiste en ocultar la complejidad interna y exponer solo lo necesario mediante una interfaz clara. Piensa en un contrato mental: definimos qué se puede hacer, no cómo se hace por dentro. Así, el usuario interactúa con métodos públicos y el resto queda fuera de su atención.
+
+Enfoca el uso, no la implementación.
+Define capacidades con nombres claros.
+Mantén detalles internos fuera del alcance del consumidor.
+Mejora legibilidad y mantenimiento del código.
+¿Cómo aplicarlo en JavaScript con herencia y métodos públicos?
+
+En el ejemplo, una class base llamada Dispositivo define lo que se puede hacer: encender. Luego, clases concretas como Televisor y Radio heredan de Dispositivo y deciden cómo se encienden. Una función externa, prender, recibe un Dispositivo y llama a su método sin conocer detalles internos. Así, la abstracción está en el uso del método, no en la herencia en sí.
+
+Dispositivo define la capacidad: encender.
+Televisor y Radio implementan el comportamiento concreto.
+prender usa Dispositivo sin conocer internos.
+JavaScript lo aplica por convención: expones lo público y ocultas lo demás.
+
+// Definición base: contrato de uso
+class Dispositivo {
+  encender() {
+    // Detalle genérico o abstracto por convención.
+  }
+}
+
+// Implementaciones concretas
+class Televisor extends Dispositivo {
+  encender() {
+    console.log('El televisor se encendió.');
+  }
+}
+
+class Radio extends Dispositivo {
+  encender() {
+    console.log('La radio está sonando.');
+  }
+}
+
+// Uso de la abstracción: función que no conoce los detalles internos
+function prender(dispositivo) {
+  dispositivo.encender();
+}
+
+// Instancias y ejecución
+const tv = new Televisor();
+const radio = new Radio();
+
+prender(tv);     // El televisor se encendió.
+prender(radio);  // La radio está sonando.
+Claves a notar:
+
+La abstracción está en el uso de los métodos: prender solo requiere encender.
+Las clases concretas deciden el cómo: cada una redefine encender según su comportamiento.
+Herencia como medio, no fin: se usa para compartir contrato, no para exponer internos.
+Convención en JavaScript: lo público es lo que eliges exponer; lo demás, no se usa fuera.
+¿Qué habilidades y conceptos refuerza este enfoque en JavaScript?
+
+Este patrón te ayuda a diseñar código más claro y reutilizable. Separas responsabilidades, reduces dependencias y haces que tu API sea predecible.
+
+Modelado con clases y herencia usando extends.
+Definición de métodos públicos con nombres expresivos.
+Creación de clases concretas que especializan comportamientos.
+Uso de funciones que operan sobre contratos (como prender) en lugar de detalles internos.
+Comprensión de contrato mental: Dispositivo establece qué se puede hacer.
+Enfoque en ocultar complejidad y exponer lo esencial.
