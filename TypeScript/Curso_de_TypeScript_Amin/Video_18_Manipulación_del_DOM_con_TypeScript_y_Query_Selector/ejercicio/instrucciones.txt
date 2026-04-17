@@ -1,0 +1,73 @@
+🧩 Ejercicio 1: Cambiar el texto del título dinámicamente
+
+Objetivo:
+Modificar el contenido del <h1> cuando cargue la página.
+
+Instrucciones:
+
+Usa querySelector para seleccionar el <h1>.
+
+Cambia su texto a: "Aprendiendo TypeScript con el DOM".
+
+Muestra el nuevo texto en consola.
+
+Pista:
+
+Usa textContent.
+
+Resultado esperado en pantalla:
+👉 El título cambia automáticamente al nuevo texto.
+
+🧩 Ejercicio 2: Mostrar el texto del input en consola
+
+Objetivo:
+Capturar lo que el usuario escribe en el input.
+
+Instrucciones:
+
+Selecciona el input con #message.
+
+Escucha el evento input o change.
+
+Cada vez que el usuario escriba, muestra el valor en consola.
+
+Pista:
+
+Usa addEventListener.
+
+Usa value del HTMLInputElement.
+
+Resultado esperado:
+👉 Cada letra que escribas se imprime en consola.
+
+🧩 Ejercicio 3: Crear un mensaje en pantalla con lo que escribe el usuario
+
+Objetivo:
+Mostrar en el DOM lo que el usuario escribe.
+
+Instrucciones:
+
+Crea un <p> dinámicamente desde TypeScript.
+
+Agrégalo al body.
+
+Cada vez que el usuario escriba en el input:
+
+Actualiza el texto del <p> con el contenido del input.
+
+Pista:
+
+Usa document.createElement("p")
+
+Usa appendChild
+
+Resultado esperado:
+👉 Debajo del input aparece el texto en tiempo real.
+
+💡 Extra (reto opcional)
+
+Agrega un botón que al hacer clic:
+
+Limpie el input
+
+Limpie el <p>

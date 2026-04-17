@@ -1,0 +1,20 @@
+/* Declara cinco variables tipadas en TypeScript: un string para el nombre de una ciudad, un number para su población, un boolean que indique si es capital, una variable que pueda ser string | undefined para el nombre del alcalde y una variable de tipo null. Luego imprime todos los valores en consola antes y después de asignarle valor a la variable opcional. */
+console.log("**********************ejercicio 1 de Variables y Compilaci\u00F3n B\u00E1sica**********************");
+var ciudad = "San Salvador";
+var numero = 2400;
+var boolean = true;
+var nombreAlcalde = "Javier";
+var anulado = null;
+/* Crea un archivo app.ts donde declares al menos cuatro variables con tipos explícitos (string, number, boolean y null). Compila el archivo a JavaScript usando el compilador de TypeScript y ejecuta el archivo generado con Node.js para verificar los resultados en consola. */
+console.log("**********************ejercicio 2 de Variables y Compilaci\u00F3n B\u00E1sica**********************");
+var palabra = "estudiante";
+var numero1 = 19;
+var boolean1 = true;
+var nulo = null;
+console.log(palabra, numero1, boolean1, nulo);
+/* Declara una variable que pueda ser number | undefined para representar la nota de un estudiante. Imprime su valor antes de asignarle una nota, luego asígnale un número y vuelve a imprimirlo. Finalmente, muestra un mensaje personalizado usando template strings que incluya el nombre del estudiante y su nota. */
+console.log("**********************ejercicio 3 de Variables y Compilaci\u00F3n B\u00E1sica**********************");
+var numero2 = undefined;
+console.log(numero2);
+numero2 = 8;
+console.log(numero2);
