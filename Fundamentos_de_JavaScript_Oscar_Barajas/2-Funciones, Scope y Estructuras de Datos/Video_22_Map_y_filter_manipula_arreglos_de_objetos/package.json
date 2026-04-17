@@ -1,0 +1,12 @@
+{
+  "name": "video_22_map_y_filter_manipula_arreglos_de_objetos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

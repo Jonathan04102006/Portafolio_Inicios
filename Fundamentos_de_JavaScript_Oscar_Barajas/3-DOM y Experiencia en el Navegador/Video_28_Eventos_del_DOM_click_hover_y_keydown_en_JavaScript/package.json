@@ -1,0 +1,12 @@
+{
+  "name": "video_28_eventos_del_dom_click_hover_y_keydown_en_javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
