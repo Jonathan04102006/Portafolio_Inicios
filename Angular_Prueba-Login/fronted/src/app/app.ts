@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// Importa tus componentes y servicios
 import { Login } from './layout/publico/login/login/login';
 import { Principal } from './layout/privado/principal/principal';
 import { AutentifactionService } from './shared/servicios/autentifaction';
