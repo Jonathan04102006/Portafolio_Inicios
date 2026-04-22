@@ -36,17 +36,17 @@
             Administra tu restaurante sin fricción.
         </p>
 
-        <form class="login-form" onsubmit="return validarFormulario()">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
 
             <label class="label">Usuario</label>
-            <input type="text" class="input usuario" placeholder="Ingrese su usuario">
+            <input type="text" class="input usuario" formControlName="usuario" placeholder="Ingrese su usuario">
 
             <label class="label">Contraseña</label>
-            <input type="password" class="input password" placeholder="Ingrese su contraseña">
+            <input type="password" class="input" formControlName="password" placeholder="Ingrese su contraseña">
 
             <p class="error-message"></p>
 
-            <button type="submit" class="btn-login">
+            <button type="submit" class="btn-login" [attr.disabled]="loginForm.valid ? null : 'disabled'">
                 Iniciar sesión
             </button>
 

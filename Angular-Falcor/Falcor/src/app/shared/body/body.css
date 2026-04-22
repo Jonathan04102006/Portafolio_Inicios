@@ -1,196 +1,177 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  background: #F4F4F4;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  justify-content: center; /* Centra horizontalmente */
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  min-height: 500px;
+  background: #FFFFFF;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.left-panel {
+  flex: 1;
+  padding: 60px;
+  background: #FFFFFF;
+}
+
+.brand {
+  display: flex;
   align-items: center;
-}   
-
-/* CONTENEDOR PRINCIPAL */
-.container{
-    width:95%;
-    max-width:1200px;
-    background:#FFFFFF;
-    display:flex;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
-    min-height: 500px;
+  gap: 15px;
+  margin-bottom: 35px;
 }
 
-/* PANEL IZQUIERDO */
-.left-panel{
-    flex:1;
-    padding:60px;
-    background:#FFFFFF;
+.logo-img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
 }
 
-.brand{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:35px;
+.logo-text {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #333333;
 }
 
-.logo-img{
-    width:60px;
-    height:auto;
-    object-fit:contain;
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #444444;
+  line-height: 1.4;
 }
 
-.logo-text{
-    font-size:32px;
-    letter-spacing:2px;
-    color:#333333;
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+  color: #555555;
 }
 
-.subtitle{
-    font-size:18px;
-    margin-bottom:25px;
-    color:#444444;
-    line-height:1.4;
+.features li {
+  margin-bottom: 12px;
 }
 
-.features{
-    list-style:none;
-    margin-bottom:30px;
-    color:#555555;
+.tagline {
+  font-size: 14px;
+  color: #777777;
 }
 
-.features li{
-    margin-bottom:12px;
+.right-panel {
+  flex: 1;
+  padding: 60px;
+  background: #FAFAFA;
 }
 
-.tagline{
-    font-size:14px;
-    color:#777777;
+.welcome {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333333;
 }
 
-/* PANEL DERECHO */
-.right-panel{
-    flex:1;
-    padding:60px;
-    background:#FAFAFA;
+.description {
+  margin-bottom: 35px;
+  color: #666666;
 }
 
-.welcome{
-    font-size:26px;
-    margin-bottom:10px;
-    color:#333333;
+.login-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.description{
-    margin-bottom:35px;
-    color:#666666;
+.label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444444;
 }
 
-.login-form{
-    display:flex;
-    flex-direction:column;
+.input {
+  padding: 14px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid #CCCCCC;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.label{
-    font-size:14px;
-    margin-bottom:6px;
-    color:#444444;
+.input:focus {
+  outline: none;
+  border: 1px solid #E53935;
 }
 
-.input{
-    padding:14px;
-    margin-bottom:22px;
-    border-radius:8px;
-    border:1px solid #CCCCCC;
-    font-size:14px;
-    transition:0.3s;
+.btn-login {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #E53935;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.input:focus{
-    outline:none;
-    border:1px solid #E53935;
+.btn-login:hover {
+  background: #C62828;
 }
 
-.btn-login{
-    padding:15px;
-    border:none;
-    border-radius:8px;
-    background:#E53935;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+.btn-login:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-.btn-login:hover{
-    background:#C62828;
+.error-message {
+  color: #E53935;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 
-.error-message{
-    color:#E53935;
-    font-size:13px;
-    margin-bottom:12px;
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+  }
+  .left-panel {
+    display: none;
+  }
+  .right-panel {
+    padding: 40px 25px;
+  }
 }
 
-/* ============================= */
-/* 📱 MÓVILES */
-/* ============================= */
-
-@media (max-width: 480px){
-    .container{
-        flex-direction:column;
-        width:95%;
-    }
-
-    .left-panel{
-        display:none;
-    }
-
-    .right-panel{
-        padding:40px 25px;
-    }
+@media (min-width: 481px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-panel,
+  .right-panel {
+    padding: 40px;
+  }
 }
 
-/* ============================= */
-/* 📲 TABLETS */
-/* ============================= */
-
-@media (min-width: 481px) and (max-width: 1024px){
-    .container{
-        flex-direction:column;
-    }
-
-    .left-panel{
-        padding:40px;
-    }
-
-    .right-panel{
-        padding:40px;
-    }
+@media (min-width: 1921px) {
+  .container {
+    max-width: 1500px;
+  }
 }
 
-/* ============================= */
-/* 🖥 2K */
-/* ============================= */
-
-@media (min-width: 1921px){
-    .container{
-        max-width:1500px;
-    }
-}
-
-/* ============================= */
-/* 🖥 4K */
-/* ============================= */
-
-@media (min-width: 3000px){
-    .container{
-        max-width:1800px;
-    }
+@media (min-width: 3000px) {
+  .container {
+    max-width: 1800px;
+  }
 }
