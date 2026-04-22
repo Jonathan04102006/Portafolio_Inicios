@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { LoginPageComponent } from './pages/Login/login-page-component';
+import { Body } from './shared/body/body';
 
 export const routes: Routes = [ 
     {
         path: '',
-        component: LoginPageComponent,
+        component: Body,
     },
     {
         path: '**',
