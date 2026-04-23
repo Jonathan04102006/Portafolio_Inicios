@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';   
 import { Footer } from './shared/footer/footer';
 import { Dashboard } from './pages/dashboard/dashboard';
@@ -8,6 +8,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    RouterModule,
     Header,
     Footer,
     Dashboard,
