@@ -23,7 +23,7 @@
 }
 
 .main-logo {
-  height: 45px; /* Ajusta el tamaño a tu gusto */
+  height: 75px; /* Ajusta el tamaño a tu gusto */
   width: auto;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .register-header h1 {
-  font-size: 22px;
+  font-size: 42px;
   color: #333;
   margin-bottom: 5px;
 }
