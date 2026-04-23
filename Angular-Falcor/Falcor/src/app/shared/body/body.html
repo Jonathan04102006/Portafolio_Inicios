@@ -44,11 +44,22 @@
             <label class="label">Contraseña</label>
             <input type="password" class="input" formControlName="password" placeholder="Ingrese su contraseña">
 
+            <div class="forgot-password-container">
+                <a routerLink="/recuperar" class="forgot-link">¿Has olvidado la contraseña?</a>
+            </div>
+
             <p class="error-message"></p>
 
             <button type="submit" class="btn-login" [attr.disabled]="loginForm.valid ? null : 'disabled'">
                 Iniciar sesión
             </button>
+
+            <div class="register-section">
+                <p>¿No tienes una cuenta?</p>
+                <button type="button" routerLink="/registro" class="btn-register">
+                    Crear una cuenta
+                </button>
+            </div>
 
         </form>
 

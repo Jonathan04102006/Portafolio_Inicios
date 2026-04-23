@@ -1,8 +1,9 @@
+/* RESET Y BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Tipografía más moderna */
 }
 
 body {
@@ -13,10 +14,11 @@ body {
   min-height: 100vh;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .container {
   width: 95%;
   max-width: 1200px;
-  min-height: 500px;
+  min-height: 550px; /* Un poco más de altura para los nuevos campos */
   background: #FFFFFF;
   display: flex;
   border-radius: 12px;
@@ -24,10 +26,14 @@ body {
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
+/* PANEL IZQUIERDO (INFO) */
 .left-panel {
   flex: 1;
   padding: 60px;
   background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .brand {
@@ -45,6 +51,7 @@ body {
 
 .logo-text {
   font-size: 32px;
+  font-weight: bold;
   letter-spacing: 2px;
   color: #333333;
 }
@@ -64,17 +71,25 @@ body {
 
 .features li {
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .tagline {
   font-size: 14px;
   color: #777777;
+  font-style: italic;
 }
 
+/* PANEL DERECHO (FORMULARIO) */
 .right-panel {
   flex: 1;
   padding: 60px;
   background: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .welcome {
@@ -95,13 +110,14 @@ body {
 
 .label {
   font-size: 14px;
+  font-weight: 600;
   margin-bottom: 6px;
   color: #444444;
 }
 
 .input {
   padding: 14px;
-  margin-bottom: 22px;
+  margin-bottom: 15px; /* Reducido para dar espacio al link de abajo */
   border-radius: 8px;
   border: 1px solid #CCCCCC;
   font-size: 14px;
@@ -111,8 +127,28 @@ body {
 .input:focus {
   outline: none;
   border: 1px solid #E53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
 }
 
+/* OLVIDÓ CONTRASEÑA */
+.forgot-password-container {
+  text-align: right;
+  margin-top: -5px;
+  margin-bottom: 25px;
+}
+
+.forgot-link {
+  font-size: 13px;
+  color: #E53935;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* BOTONES */
 .btn-login {
   padding: 15px;
   border: none;
@@ -120,12 +156,15 @@ body {
   background: #E53935;
   color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom: 10px;
 }
 
 .btn-login:hover {
   background: #C62828;
+  transform: translateY(-1px);
 }
 
 .btn-login:disabled {
@@ -133,14 +172,48 @@ body {
   color: #666666;
   cursor: not-allowed;
   opacity: 0.7;
+  transform: none;
 }
 
+/* SECCIÓN DE REGISTRO */
+.register-section {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.register-section p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: #E53935;
+  border: 2px solid #E53935;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  background: #FCEEEE;
+}
+
+/* MENSAJES DE ERROR */
 .error-message {
   color: #E53935;
   font-size: 13px;
   margin-bottom: 12px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 480px) {
   .container {
     flex-direction: column;
@@ -161,17 +234,5 @@ body {
   .left-panel,
   .right-panel {
     padding: 40px;
-  }
-}
-
-@media (min-width: 1921px) {
-  .container {
-    max-width: 1500px;
-  }
-}
-
-@media (min-width: 3000px) {
-  .container {
-    max-width: 1800px;
   }
 }
