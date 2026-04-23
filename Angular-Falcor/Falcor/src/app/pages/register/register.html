@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="register.css">
+<div class="register-container">
+  <header class="register-header">
+    <div class="brand-container">
+      <img src="falcor.png" alt="Falcor Logo" class="main-logo">
+      <h1 class="brand-name">FALCOR</h1>
+    </div>
+    <h2 class="register-title">Crea tu cuenta como Gerente o Propietario</h2>
+    <p>Completa los datos para comenzar a usar Falcor</p>
+  </header>
+
+  <form class="register-card">
+    
+    <section class="form-section">
+      <div class="section-title">
+        <img src="usuario.png" alt="" class="section-icon">
+        <h2>Datos personales</h2>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Primer nombre *</label>
+          <input type="text" placeholder="Ingresa tu primer nombre">
+        </div>
+        <div class="form-group">
+          <label>Segundo nombre</label>
+          <input type="text" placeholder="Ingresa tu segundo nombre">
+        </div>
+        <div class="form-group">
+          <label>Tercer nombre</label>
+          <input type="text" placeholder="Ingresa tu tercer nombre">
+        </div>
+        <div class="form-group">
+          <label>Primer apellido *</label>
+          <input type="text" placeholder="Ingresa tu primer apellido">
+        </div>
+        <div class="form-group">
+          <label>Segundo apellido</label>
+          <input type="text" placeholder="Ingresa tu segundo apellido">
+        </div>
+        <div class="form-group">
+          <label>Apellido de casada</label>
+          <input type="text" placeholder="Ingresa tu apellido de casada">
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="section-title">
+        <img src="candado.png" alt="" class="section-icon">
+        <h2>Datos de usuario</h2>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Nombre de usuario *</label>
+        <div class="input-with-icon password-box">
+            <img src="usuario.png" class="inner-icon">
+            <input type="password" placeholder="Crea una contraseña">
+          </div>
+        <small class="help-text">Será tu identificador para iniciar sesión en Falcor.</small>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Clave *</label>
+          <div class="input-with-icon password-box">
+            <img src="candado.png" class="inner-icon">
+            <input type="password" placeholder="Crea una contraseña">
+            <img src="public/eye-icon.png" class="eye-icon">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Confirmación de clave *</label>
+          <div class="input-with-icon password-box">
+            <img src="candado.png" class="inner-icon">
+            <input type="password" placeholder="Confirma tu contraseña">
+            <img src="public/eye-icon.png" class="eye-icon">
+          </div>
+        </div>
+      </div>
+      <small class="help-text">Mínimo 8 caracteres, con letras, números y símbolos.</small>
+    </section>
+
+    <section class="form-section">
+      <div class="section-title">
+        <img src="correo.png" alt="" class="section-icon">
+        <h2>Contacto</h2>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <div class="input-with-icon">
+            <img src="correo.png" class="inner-icon">
+            <input type="email" placeholder="ejemplo@correo.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Número de teléfono *</label>
+          <div class="input-with-icon">
+            <img src="telefono-conectado.png" class="inner-icon">
+            <input type="tel" placeholder="(503) 7000-0000">
+          </div>
+          <small class="help-text">Incluye el código de tu país.</small>
+        </div>
+      </div>
+    </section>
+
+    <button type="submit" class="btn-submit">
+      <img src="usuariomas.png" class="btn-icon">
+      Crear mi cuenta
+    </button>
+
+    <p class="login-footer">
+      ¿Ya tienes una cuenta? <a routerLink="/">Iniciar sesión</a>
+    </p>
+
+  </form>
+</div>
