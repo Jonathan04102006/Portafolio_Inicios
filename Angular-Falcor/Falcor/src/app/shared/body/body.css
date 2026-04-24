@@ -27,7 +27,7 @@ body {
   display: flex;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(255, 2, 2, 0.08);
 }
 
 /* PANEL IZQUIERDO (INFO) */
