@@ -7,23 +7,27 @@
 }
 
 body {
-  background: #F4F4F4;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Ocupa el 100% de la altura de la vista */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
+  background-color: #F4F4F4; /* Tu color de fondo */
 }
 
 /* CONTENEDOR PRINCIPAL */
 .container {
   width: 95%;
   max-width: 1200px;
-  min-height: 550px; /* Un poco más de altura para los nuevos campos */
+  margin: auto; /* <--- ESTO centra horizontalmente */
+  min-height: 350px;
   background: #FFFFFF;
   display: flex;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.08);
 }
 
 /* PANEL IZQUIERDO (INFO) */
