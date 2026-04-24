@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Tipografía más moderna */
+  font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
 body {
@@ -97,7 +97,7 @@ body {
 }
 
 .welcome {
-  font-size: 26px;
+  font-size: 32px;
   margin-bottom: 10px;
   color: #333333;
 }
@@ -130,7 +130,7 @@ body {
 
 .input:focus {
   outline: none;
-  border: 1px solid #E53935;
+  border: 1px solid #ff8f0f;
   box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
 }
 

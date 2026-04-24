@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';   
 import { Footer } from './shared/footer/footer';
-import { Dashboard } from './pages/dashboard/dashboard';
+import { Home } from './pages/home/home';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
     RouterModule,
     Header,
     Footer,
-    Dashboard,
+    Home,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

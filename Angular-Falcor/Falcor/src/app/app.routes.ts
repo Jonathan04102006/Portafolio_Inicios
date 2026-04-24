@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Body } from './shared/body/body';
-import { Dashboard } from './pages/dashboard/dashboard';
+import { Home } from './pages/home/home';
 import { Register } from './pages/register/register';
 
 export const routes: Routes = [ 
@@ -9,8 +9,8 @@ export const routes: Routes = [
         component: Body,
     },
     {
-        path: 'dashboard',
-        component: Dashboard,
+        path: 'home',
+        component: Home,
     },
     {
         path: 'register',

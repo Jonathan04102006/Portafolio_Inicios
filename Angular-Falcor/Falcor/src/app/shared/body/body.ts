@@ -31,7 +31,7 @@ export class Body {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.router.navigate(['/dashboard']);   
+      this.router.navigate(['/home']);   
     }
   }
 }
