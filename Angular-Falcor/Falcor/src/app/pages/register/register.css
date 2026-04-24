@@ -37,13 +37,14 @@
 
 .register-title {
   font-size: 20px;
-  color: #444;
+  color: #d32f2f;
   margin-bottom: 5px;
 }
 
+/* FALCOR TITLE */
 .register-header h1 {
   font-size: 42px;
-  color: #333;
+  color: #d32f2f;
   margin-bottom: 5px;
 }
 
@@ -110,6 +111,7 @@
   margin-bottom: 8px;
 }
 
+/* INPUT-REGISTER */
 .form-group input {
   padding: 12px 15px;
   border: 1px solid #e0e0e0;
@@ -119,13 +121,94 @@
   transition: 0.3s;
 }
 
+/* FOCUS-REGISTER */
 .form-group input:focus {
   outline: none;
   border-color: #d32f2f;
   background-color: #fff;
 }
 
-/* Inputs con Iconos */
+/* INPUT-ONE */
+.input-one input{
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+/* INPUT-ONE-FOCUS */
+.input-one input:focus {
+  outline: none;
+  border-color: #00254b;
+  background-color: #fff;
+}
+
+/* INPUT-TWO */
+.input-two input{
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+/* INPUT-TWO-FOCUS */
+.input-two input:focus {
+  outline: none;
+  border-color: #1A2533;
+  background-color: #fff;
+}
+
+/* INPUT-THREE */
+.input-three input{
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+/* INPUT-THREE-FOCUS */
+.input-three input:focus {
+  outline: none;
+  border-color: #01442d;
+  background-color: #fff;
+}
+
+/* INPUT-FOUR */
+.input-four input{
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+/* INPUT-FOUR-FOCUS */
+.input-four input:focus {
+  outline: none;
+  border-color: #32004b;
+  background-color: #fff;
+}
+
+/* INPUT-FIVE*/
+.input-five input{
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+/* INPUT-FIVE-FOCUS */
+.input-five input:focus {
+  outline: none;
+  border-color: #578d00;
+  background-color: #fff;
+}
+
+/* INPUTS-CON-ICONOS */
 .input-with-icon {
   position: relative;
   display: flex;
