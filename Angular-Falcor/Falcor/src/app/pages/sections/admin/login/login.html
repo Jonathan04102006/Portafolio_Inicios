@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="login.css">
+<div class="container">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="left-panel">
+
+        <div class="brand">
+            <div class="falcon-icon">
+                <img src="falcor.png" alt="Falcor Logo" class="logo-img">
+            </div>
+            <h1 class="logo-text">FALCOR</h1>
+        </div>
+
+        <h2 class="subtitle">
+            Software inteligente para restaurantes modernos
+        </h2>
+
+        <ul class="features">
+            <li>✔ Control en tiempo real</li>
+            <li>✔ Órdenes sincronizadas</li>
+            <li>✔ Gestión multi-rol</li>
+        </ul>
+
+        <p class="tagline">
+            Diseñado para velocidad.<br>
+            Construido para precisión.
+        </p>
+
+    </div>
+
+    <!-- PANEL DERECHO -->
+    <div class="right-panel">
+
+        <h2 class="welcome">Bienvenido de nuevo 🪶</h2>
+        <p class="description">
+            Administra tu restaurante sin fricción.
+        </p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+            <label class="label">Usuario</label>
+            <input type="text" class="input usuario" formControlName="usuario" placeholder="Ingrese su usuario">
+
+            <label class="label">Contraseña</label>
+            <input type="password" class="input" formControlName="password" placeholder="Ingrese su contraseña">
+
+            <div class="forgot-password-container">
+                <a routerLink="/recuperar" class="forgot-link">¿Has olvidado la contraseña?</a>
+            </div>
+
+            <p class="error-message"></p>
+
+            <button type="submit" class="btn-login" [attr.disabled]="loginForm.valid ? null : 'disabled'">
+                Iniciar sesión
+            </button>
+
+            <div class="register-section">
+                <p>¿No tienes una cuenta?</p>
+                <button type="button" routerLink="/register" class="btn-register">
+                    Crear una cuenta
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

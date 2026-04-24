@@ -11,27 +11,4 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './body.html',
   styleUrls: ['./body.css']
 })
-export class Body {
-  loginForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.loginForm = this.fb.group({
-      usuario: ['', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.pattern('^[a-zA-Z0-9.]*$')
-      ]],
-      password: ['', [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/)
-      ]]
-    });
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      this.router.navigate(['/home']);   
-    }
-  }
-}
+export class Body {}

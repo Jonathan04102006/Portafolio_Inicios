@@ -2,8 +2,9 @@ import { Component, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';   
 import { Footer } from './shared/footer/footer';
-import { Home } from './pages/sections/home/home';
+import { Home } from './pages/sections/admin/home/home';
 import { Body } from './shared/body/body';
+import { Login } from './pages/sections/admin/login/login';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { Body } from './shared/body/body';
     Body,
     Header,
     Footer,
+    Login,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { Body } from './shared/body/body';
-import { Home } from './pages/sections/home/home';
-import { Register } from './pages/sections/register/register';
+import { Home } from './pages/sections/admin/home/home';
+import { Register } from './pages/sections/admin/register/register';
+import { Login } from './pages/sections/admin/login/login';
 
 export const routes: Routes = [ 
     {
         path: '',
-        component: Body,
+        component: Login,
     },
     {
         path: 'home',
