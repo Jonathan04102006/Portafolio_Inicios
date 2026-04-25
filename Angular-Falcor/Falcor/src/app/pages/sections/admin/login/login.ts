@@ -31,7 +31,7 @@ export class Login {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.router.navigate(['/home']);   
+      this.router.navigate(['/home']);
     }
   }
 }

@@ -1,2 +1,19 @@
 <link rel="stylesheet" href="home.css">
 <h1>Bienvenido a Falcor (Contenido)</h1>
+
+<div class="form-group">
+  <label for="password">Contraseña</label>
+
+  <input
+    id="password"
+    type="password"
+    class="form-control"
+    [(ngModel)]="password"
+    (input)="validatePassword()"
+    placeholder="Ingrese su contraseña"
+  />
+
+  <label class="text-danger" *ngIf="passwordError">
+    {{ passwordError }}
+  </label>
+</div>
