@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+// Declaración para que TypeScript reconozca la librería de Google
+declare const google: any;
 
 @Component({
   selector: 'app-login',
@@ -14,8 +17,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login {
+export class Login implements OnInit {
   loginForm: FormGroup;
+  private clientId = '863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com';
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
@@ -27,11 +31,35 @@ export class Login {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        // Minimo 8 carac, 1 Mayuscula, 1 Minusculas, 1 Numemeros, 1 Especiales
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/)
       ]]
     });
   }
+
+  ngOnInit(): void {
+    // Inicializamos Google cuando el componente carga
+    if (typeof google !== 'undefined') {
+      google.accounts.id.initialize({
+        client_id: this.clientId,
+        callback: (response: any) => this.handleGoogleLogin(response)
+      });
+    }
+  }
+
+  // --- MÉTODOS DE GOOGLE ---
+  
+  loginWithGoogle() {
+    google.accounts.id.prompt();
+  }
+
+  handleGoogleLogin(response: any) {
+    if (response.credential) {
+      console.log("Login exitoso con Google. Token:", response.credential);
+      this.router.navigate(['/home']);
+    }
+  }
+
+  // --- VALIDACIONES DE FORMULARIO ---
 
   getUsuarioError(): string {
     const control = this.loginForm.get('usuario');
@@ -58,6 +86,10 @@ export class Login {
   onSubmit() {
     if (this.loginForm.valid) {
       this.router.navigate(['/home']);
+    } else {
+      this.loginForm.markAllAsTouched();
     }
   }
 }
+
+/* 863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com */

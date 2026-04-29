@@ -1,0 +1,77 @@
+1 - Obtén tu Client ID
+    1. Ve a Google Cloud Console.
+
+    2. Crea un proyecto nuevo o selecciona uno existente.
+
+    3. Busca "APIs y servicios" > "Pantalla de consentimiento de OAuth" y configúrala (tipo "External").
+
+    4. Ve a "Credenciales" > "Crear credenciales" > "ID de cliente de OAuth".
+
+    5. Selecciona "Aplicación web".
+
+    6. En "Orígenes de JavaScript autorizados", añade http://localhost:4200.
+
+    7. Copia el Client ID que te darán.
+
+2 - Añade el Script al index.html
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+3. Configura la lógica en login.ts
+Debes declarar la variable global de Google y configurar el "prompt" de selección de cuenta.
+
+import { Component, OnInit } from '@angular/core';
+// ... tus otros imports
+
+declare global {
+  const google: any;
+}
+
+@Component({
+  selector: 'app-login',
+  // ... resto del decorador
+})
+export class Login implements OnInit {
+  
+  ngOnInit() {
+    // Inicializamos la configuración de Google al cargar el componente
+    if (typeof google !== 'undefined') {
+      google.accounts.id.initialize({
+        client_id: 'TU_CLIENT_ID_AQUI.apps.googleusercontent.com',
+        callback: (response: any) => this.handleLogin(response)
+      });
+    }
+  }
+
+  // Función que se dispara al hacer clic en tu botón personalizado
+  loginWithGoogle() {
+    google.accounts.id.prompt(); // Esto abre la ventana de "Elige una cuenta"
+  }
+
+  handleLogin(response: any) {
+    console.log("Token de Google recibido:", response.credential);
+    // Aquí mandarías el token a tu backend para validar
+    // y luego: this.router.navigate(['/home']);
+  }
+}
+
+4. Vincula el botón en login.html
+Busca el botón de Google que creamos antes y añade el evento (click):
+
+<button type="button" class="btn-google" (click)="loginWithGoogle()">
+    <img src="public/google-icon.svg" alt="Google" class="google-icon">
+    Continuar con Google
+</button>
+
+¿Por qué este método?
+Paso 1: Al usar google.accounts.id.prompt(), invocas el flujo nativo de Google.
+
+Paso 2: Si el usuario ya tiene sesiones abiertas en su navegador (como se ve en tu imagen), Google
+le mostrará automáticamente la lista de sus correos.
+
+Paso 3: Es más seguro que hacer un simple enlace externo, ya que recibes un token (JWT)
+que garantiza que el inicio de sesión es real.
+
+Nota importante: Si google.accounts.id.prompt() no aparece por políticas de seguridad del
+navegador (a veces se bloquea si no hay interacción previa), puedes usar el botón renderizado
+automáticamente por Google o usar el método requestCode() para abrir una ventana emergente (popup).
