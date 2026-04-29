@@ -1,36 +1,34 @@
-/* RESET Y BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Georgia', 'Times New Roman', 'Times';
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía más moderna para software */
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh; /* Ocupa el 100% de la altura de la vista */
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;     /* Centrado vertical */
-  background-color: #F4F4F4; /* Tu color de fondo */
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F4F4; /* Fondo neutro para resaltar el contenedor */
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* --- CONTENEDOR PRINCIPAL --- */
 .container {
   width: 95%;
-  max-width: 1200px;
-  margin: auto; /* <--- ESTO centra horizontalmente */
-  min-height: 350px;
+  max-width: 1100px;
+  min-height: 550px;
   background: #FFFFFF;
   display: flex;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(255, 2, 2, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* PANEL IZQUIERDO (INFO) */
+/* --- PANEL IZQUIERDO (Identidad Visual) --- */
 .left-panel {
   flex: 1;
   padding: 60px;
@@ -44,27 +42,27 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .logo-img {
-  width: 60px;
+  width: 55px;
   height: auto;
   object-fit: contain;
 }
 
 .logo-text {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 800;
   letter-spacing: 2px;
-  color: #333333;
+  color: #1A2533; /* Azul medianoche notorio */
 }
 
 .subtitle {
   font-size: 18px;
   margin-bottom: 25px;
   color: #444444;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .features {
@@ -77,34 +75,39 @@ body {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  font-weight: 500;
 }
 
 .tagline {
   font-size: 14px;
-  color: #777777;
+  color: #888888;
   font-style: italic;
+  border-left: 3px solid #E53935;
+  padding-left: 10px;
 }
 
-/* PANEL DERECHO (FORMULARIO) */
+/* --- PANEL DERECHO (Formulario y Máscaras) --- */
 .right-panel {
   flex: 1;
   padding: 60px;
-  background: #FAFAFA;
+  background: #FAFAFA; /* Un toque grisáceo para separar secciones */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .welcome {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #333333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1A2533;
 }
 
 .description {
   margin-bottom: 35px;
   color: #666666;
+  font-size: 15px;
 }
 
 .login-form {
@@ -113,31 +116,64 @@ body {
 }
 
 .label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #444444;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1A2533;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+/* --- MÁSCARAS DE INPUTS --- */
 .input {
-  padding: 14px;
-  margin-bottom: 15px; /* Reducido para dar espacio al link de abajo */
+  padding: 14px 16px;
+  margin-bottom: 5px; /* Espacio para el mensaje de error */
   border-radius: 8px;
-  border: 1px solid #CCCCCC;
-  font-size: 14px;
-  transition: 0.3s;
+  border: 1.5px solid #E0E0E0;
+  font-size: 15px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
 }
 
+/* Estado Focus con el naranja pedido */
 .input:focus {
   outline: none;
-  border: 1px solid #ff8f0f;
-  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
+  border-color: #ff8f0f;
+  box-shadow: 0 0 0 4px rgba(255, 143, 15, 0.1);
 }
 
-/* OLVIDÓ CONTRASEÑA */
+/* Estado de Error (Dinámico) */
+.input-error {
+  border-color: #D32F2F !important;
+  background-color: #FFF8F8 !important;
+}
+
+/* Texto de error estilo home.ts */
+.error-text {
+  color: #D32F2F;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: slideIn 0.2s ease-out;
+}
+
+.error-text::before {
+  content: '⚠';
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ACCIONES --- */
 .forgot-password-container {
   text-align: right;
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: 25px;
 }
 
@@ -145,46 +181,50 @@ body {
   font-size: 13px;
   color: #E53935;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .forgot-link:hover {
   text-decoration: underline;
 }
 
-/* BOTONES */
+/* BOTÓN DE LOGIN NOTORIO */
 .btn-login {
-  padding: 15px;
+  padding: 16px;
   border: none;
   border-radius: 8px;
   background: #E53935;
   color: white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
-  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.2);
 }
 
-.btn-login:hover {
+.btn-login:hover:not(:disabled) {
   background: #C62828;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(198, 40, 40, 0.3);
+}
+
+.btn-login:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .btn-login:disabled {
-  background-color: #cccccc;
-  color: #666666;
+  background-color: #CCCCCC;
+  color: #888888;
   cursor: not-allowed;
-  opacity: 0.7;
-  transform: none;
+  box-shadow: none;
 }
 
-/* SECCIÓN DE REGISTRO */
+/* SECCIÓN REGISTRO */
 .register-section {
   text-align: center;
   margin-top: 30px;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 20px;
+  border-top: 1px solid #E0E0E0;
+  padding-top: 25px;
 }
 
 .register-section p {
@@ -197,46 +237,31 @@ body {
   width: 100%;
   padding: 12px;
   background: transparent;
-  color: #E53935;
-  border: 2px solid #E53935;
+  color: #1A2533; /* Usando el azul oscuro notorio */
+  border: 2px solid #1A2533;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-register:hover {
-  background: #FCEEEE;
-}
-
-/* MENSAJES DE ERROR */
-.error-message {
-  color: #E53935;
-  font-size: 13px;
-  margin-bottom: 12px;
+  background: #1A2533;
+  color: #FFFFFF;
 }
 
 /* RESPONSIVE */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
-    width: 95%;
+    width: 90%;
+    margin: 20px auto;
   }
   .left-panel {
     display: none;
   }
   .right-panel {
-    padding: 40px 25px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-  }
-  .left-panel,
-  .right-panel {
-    padding: 40px;
+    padding: 40px 30px;
   }
 }
