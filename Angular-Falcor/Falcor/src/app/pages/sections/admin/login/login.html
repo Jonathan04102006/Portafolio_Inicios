@@ -1,86 +1,58 @@
 <div class="container">
-
-    <div class="left-panel">
-        <div class="brand">
-            <div class="falcon-icon">
-                <img src="falcor.png" alt="Falcor Logo" class="logo-img">
-            </div>
-            <h1 class="logo-text">FALCOR</h1>
-        </div>
-
-        <h2 class="subtitle">
-            Software inteligente para restaurantes modernos
-        </h2>
-
-        <ul class="features">
-            <li>✔ Control en tiempo real</li>
-            <li>✔ Órdenes sincronizadas</li>
-            <li>✔ Gestión multi-rol</li>
-        </ul>
-
-        <p class="tagline">
-            Diseñado para velocidad.<br>
-            Construido para precisión.
-        </p>
+  <div class="left-panel">
+    <div class="brand">
+      <img src="falcor.png" alt="Falcor Logo" class="logo-img">
+      <h1 class="logo-text">FALCOR</h1>
     </div>
+    <h2 class="subtitle">Software inteligente para restaurantes modernos</h2>
+    <ul class="features">
+      <li>Control en tiempo real</li>
+      <li>&Oacute;rdenes sincronizadas</li>
+      <li>Gesti&oacute;n multi-rol</li>
+    </ul>
+    <p class="tagline">Dise&ntilde;ado para velocidad.<br>Construido para precisi&oacute;n.</p>
+  </div>
 
-    <div class="right-panel">
+  <div class="right-panel">
+    <h2 class="welcome">Bienvenido de nuevo 🪶</h2>
+    <p class="description">Administra tu restaurante sin fricci&oacute;n.</p>
 
-        <h2 class="welcome">Bienvenido de nuevo 🪶</h2>
-        <p class="description">
-            Administra tu restaurante sin fricción.
-        </p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <label class="label">Usuario</label>
+      <input type="text" formControlName="usuario" class="input" [class.input-error]="getUsuarioError()" placeholder="Ingrese su usuario">
+      <div class="error-text" *ngIf="getUsuarioError()">
+        {{ getUsuarioError() }}
+      </div>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <label class="label">Contrase&ntilde;a</label>
+      <input type="password" formControlName="password" class="input" [class.input-error]="getPasswordError()" placeholder="Ingrese su contrase&ntilde;a">
+      <div class="error-text" *ngIf="getPasswordError()">
+        {{ getPasswordError() }}
+      </div>
 
-            <label class="label">Usuario</label>
-            <input type="text" 
-                   class="input" 
-                   formControlName="usuario" 
-                   placeholder="Ingrese su usuario"
-                   [ngClass]="{'input-error': getUsuarioError()}">
-            
-            <p class="error-text" *ngIf="getUsuarioError()">
-                {{ getUsuarioError() }}
-            </p>
+      <div class="forgot-password-container">
+        <a routerLink="/forgot-password" class="forgot-link">
+          ¿Has olvidado la contrase&ntilde;a?
+        </a>
+      </div>
 
-            <label class="label">Contraseña</label>
-            <input type="password" 
-                   class="input" 
-                   formControlName="password" 
-                   placeholder="Ingrese su contraseña"
-                   [ngClass]="{'input-error': getPasswordError()}">
-            
-            <p class="error-text" *ngIf="getPasswordError()">
-                {{ getPasswordError() }}
-            </p>
+      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
+        Iniciar sesi&oacute;n
+      </button>
+    
+      <div class="divider">
+        <span>o</span>
+      </div>
 
-            <div class="forgot-password-container">
-                <a routerLink="/recuperar" class="forgot-link">¿Has olvidado la contrase&ntilde;a?</a>
-            </div>
-
-            <button type="submit" 
-                    class="btn-login" 
-                    [disabled]="loginForm.invalid">
-                Iniciar sesión
-            </button>
-            <div class="divider">
-                <span>o</span>
-            </div>
-            <button type="button" class="btn-google" (click)="loginWithGoogle()">
-                <img src="Logo_google.svg" alt="Google" class="google-icon">
-                Continuar con Google
-            </button>
-
-            <div class="register-section">
-                <p>¿No tienes una cuenta?</p>
-                <button type="button" routerLink="/register" class="btn-register">
-                    Crear una cuenta
-                </button>
-            </div>
-
-        </form>
-
+      <div id="googleBtn" class="google-container">
+      </div>
+    </form>
+    
+    <div class="register-section">
+      <p>¿No tienes una cuenta?</p>
+      <button type="button" class="btn-register" routerLink="/register">
+        Crear una cuenta
+      </button>
     </div>
-
+  </div>
 </div>

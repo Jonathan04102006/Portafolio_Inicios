@@ -2,42 +2,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman', Times;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F4F4F4;
+  background-color: #E0E0E0;
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+/* ==========================================================================
+   2. ESTRUCTURA (CONTAINER)
+   ========================================================================== */
 .container {
-  width: 95%;          /* Bajamos un poco del 95% para que respire mejor */
+  width: 95%;
   max-width: 1100px;
   min-height: 550px;
-  background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  
-  /* Esto es vital si el flex del padre falla por alguna jerarquía de Angular */
-  margin-left: auto;
-  margin-right: auto;
-} 
+  margin: auto;
+}
 
-/* --- PANEL IZQUIERDO --- */
+/* ==========================================================================
+   3. PANEL IZQUIERDO (BRANDING)
+   ========================================================================== */
 .left-panel {
   flex: 1;
-  padding: 0px 1;
   padding: 60px;
-  background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +70,7 @@ body {
 .features {
   list-style: none;
   margin-bottom: 30px;
-  color: #555555;
+  color: black;
 }
 
 .features li {
@@ -83,19 +81,27 @@ body {
   font-weight: 500;
 }
 
+.features li::before {
+  content: '✓';
+  color: #e1750f;
+  font-weight: bold;
+}
+
 .tagline {
   font-size: 14px;
-  color: #888888;
+  color: #666666;
   font-style: italic;
-  border-left: 3px solid #E53935;
+  border-left: 3px solid #d32f2f;
   padding-left: 10px;
 }
 
-/* --- PANEL DERECHO --- */
+/* ==========================================================================
+   4. PANEL DERECHO (LOGIN)
+   ========================================================================== */
 .right-panel {
   flex: 1;
-  padding: 60px;
-  background: #FAFAFA;
+  padding: 30px;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,157 +111,154 @@ body {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1A2533;
+  color: black;
 }
 
 .description {
   margin-bottom: 30px;
-  color: #666666;
+  color: black;
   font-size: 15px;
 }
 
-/* --- FORMULARIO Y MÁSCARAS --- */
+/* ==========================================================================
+   5. FORMULARIO E INPUTS
+   ========================================================================== */
 .login-form {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .label {
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #1A2533;
-  letter-spacing: 0.5px;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333333;
+  font-size: 14px;
 }
 
 .input {
-  padding: 13px 16px;
-  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid black;
   border-radius: 8px;
-  border: 1.5px solid #E0E0E0;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  background: #ffffff;
+  transition: all 0.3s;
 }
 
 .input:focus {
   outline: none;
-  border-color: #ff8f0f; /* Naranja Falcor */
-  box-shadow: 0 0 0 4px rgba(255, 143, 15, 0.1);
+  border-color: #e1750f;
+  box-shadow: 0 0 0 1px #e1750f;
 }
 
 .input-error {
-  border-color: #D32F2F !important;
-  background-color: #FFF8F8 !important;
+  border-color: #d32f2f;
 }
 
 .error-text {
-  color: #D32F2F;
+  color: #d32f2f;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 5px;
-  animation: slideIn 0.2s ease-out;
 }
 
-.error-text::before { content: '⚠'; }
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- ACCIONES --- */
+/* Olvidó contraseña */
 .forgot-password-container {
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .forgot-link {
-  font-size: 13px;
-  color: #E53935;
+  font-size: 12px;
+  color: #d32f2f;
   text-decoration: none;
-  font-weight: 600;
+  transition: color 0.3s;
 }
 
-/* --- BOTONES --- */
+.forgot-link:hover {
+  color: #e1750f;
+}
+
+/* Botón Iniciar Sesión */
 .btn-login {
-  padding: 15px;
+  width: 100%;
+  background: #d32f2f;
+  color: #E0E0E0;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  background: #E53935;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #d32f2f;
 }
 
 .btn-login:disabled {
-  background-color: #CCCCCC;
-  color: #888888;
+  background: #cccccc;
   cursor: not-allowed;
 }
 
-/* DIVISOR Y GOOGLE (AJUSTADO) */
+/* ==========================================================================
+   6. DIVISOR Y GOOGLE
+   ========================================================================== */
 .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 15px 0;
-    color: #888;
-    font-size: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0;
+  width: 100%;
+  color: #999999;
+  font-size: 13px;
 }
 
 .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #e0e0e0;
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #E0E0E0;
 }
 
-.divider:not(:empty)::before { margin-right: .5em; }
-.divider:not(:empty)::after { margin-left: .5em; }
-
-.btn-google {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 11px;
-    background-color: #1f1f1f;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 5px; /* Menos margen aquí */
+.divider span {
+  padding: 0 10px;
 }
 
-.google-icon {
-    width: 20px;
-    height: 20px;
+.google-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  min-height: 44px;
+  width: 100%;
 }
 
-/* SECCIÓN REGISTRO (MÁS COMPACTA) */
+/* ==========================================================================
+   7. SECCIÓN REGISTRO
+   ========================================================================== */
 .register-section {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
   border-top: 1px solid #E0E0E0;
-  padding-top: 15px;
+  padding-top: 20px;
+  width: 100%;
 }
 
 .register-section p {
-  font-size: 13px;
-  color: #666666;
-  margin-bottom: 8px;
+  font-size: 14px;
+  color: #d32f2f; /* Aplicado Gris Ceniza */
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .btn-register {
   width: 100%;
-  padding: 11px;
+  padding: 12px;
   background: transparent;
   color: #d32f2f;
   border: 2px solid #d32f2f;
@@ -263,17 +266,28 @@ body {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-register:hover {
   background: #d32f2f;
-  color: #FFFFFF;
+  color: #E0E0E0;
 }
 
-/* RESPONSIVE */
+/* ==========================================================================
+   8. RESPONSIVE
+   ========================================================================== */
 @media (max-width: 768px) {
-  .container { flex-direction: column; width: 90%; }
-  .left-panel { display: none; }
-  .right-panel { padding: 40px 30px; }
+  .container { 
+    flex-direction: column; 
+    width: 90%; 
+    min-height: auto; 
+  }
+  .left-panel { 
+    display: none; /* O puedes ajustarlo para que salga arriba */
+  }
+  .right-panel { 
+    padding: 40px 25px; 
+    border-radius: 20px; /* Mantener bordes redondeados en móvil */
+  }
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-// Declaración para que TypeScript reconozca la librería de Google
+// Declaración global para la librería de Google
 declare const google: any;
 
 @Component({
@@ -17,8 +17,10 @@ declare const google: any;
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
-export class Login implements OnInit {
+export class Login implements OnInit, AfterViewInit {
   loginForm: FormGroup;
+  
+  // Tu ID de cliente verificado
   private clientId = '863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com';
 
   constructor(private fb: FormBuilder, private router: Router) {
@@ -37,36 +39,57 @@ export class Login implements OnInit {
   }
 
   ngOnInit(): void {
-    // Inicializamos Google cuando el componente carga
+    this.initializeGoogleConfig();
+  }
+
+  ngAfterViewInit(): void {
+    // Intentamos renderizar el botón después de que el HTML esté listo
+    this.renderGoogleButton();
+  }
+
+  private initializeGoogleConfig() {
     if (typeof google !== 'undefined') {
       google.accounts.id.initialize({
         client_id: this.clientId,
-        callback: (response: any) => this.handleGoogleLogin(response)
+        callback: (response: any) => this.handleGoogleLogin(response),
+        use_fedcm: true, // Optimizado para Brave y Chrome
+        ux_mode: 'popup'
       });
     }
   }
 
-  // --- MÉTODOS DE GOOGLE ---
-  
-  loginWithGoogle() {
-    google.accounts.id.prompt();
+  private renderGoogleButton() {
+  const btnElement = document.getElementById('googleBtn');
+  if (btnElement && typeof google !== 'undefined') {
+    // Forzamos el ancho para que coincida con el formulario
+    const totalWidth = btnElement.offsetWidth;
+
+    google.accounts.id.renderButton(btnElement, {
+      theme: 'outline',
+      size: 'large',
+      width: totalWidth, // Esto quita los espacios a los lados
+      text: 'signin_with',
+      shape: 'rectangular',
+      logo_alignment: 'left'
+    });
   }
+}
 
   handleGoogleLogin(response: any) {
     if (response.credential) {
-      console.log("Login exitoso con Google. Token:", response.credential);
+      console.log("¡Login exitoso!");
       this.router.navigate(['/home']);
     }
   }
 
-  // --- VALIDACIONES DE FORMULARIO ---
+  // --- MÉTODOS DE VALIDACIÓN ---
 
   getUsuarioError(): string {
     const control = this.loginForm.get('usuario');
     if (control?.touched && control.errors) {
       if (control.errors['required']) return 'El usuario es obligatorio.';
       if (control.errors['minlength']) return 'Debe tener al menos 6 caracteres.';
-      if (control.errors['pattern']) return 'Solo letras, números y puntos permitidos.';
+      if (control.errors['pattern']) return 'Solo letras, números y puntos.';
     }
     return '';
   }
@@ -76,9 +99,7 @@ export class Login implements OnInit {
     if (control?.touched && control.errors) {
       if (control.errors['required']) return 'La contraseña es obligatoria.';
       if (control.errors['minlength']) return 'Debe tener al menos 8 caracteres.';
-      if (control.errors['pattern']) {
-        return 'Debe incluir mayúscula, minúscula, número y un carácter especial (!@#$%^&*).';
-      }
+      if (control.errors['pattern']) return 'Formato inválido (A, a, 1, @).';
     }
     return '';
   }
