@@ -30,7 +30,7 @@ body {
   /* Esto es vital si el flex del padre falla por alguna jerarquía de Angular */
   margin-left: auto;
   margin-right: auto;
-}
+} 
 
 /* --- PANEL IZQUIERDO --- */
 .left-panel {
