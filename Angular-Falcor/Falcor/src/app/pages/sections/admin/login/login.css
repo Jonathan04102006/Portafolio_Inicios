@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía más moderna para software */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F4F4F4; /* Fondo neutro para resaltar el contenedor */
+  background-color: #F4F4F4;
 }
 
 /* --- CONTENEDOR PRINCIPAL --- */
@@ -28,7 +28,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* --- PANEL IZQUIERDO (Identidad Visual) --- */
+/* --- PANEL IZQUIERDO --- */
 .left-panel {
   flex: 1;
   padding: 60px;
@@ -48,14 +48,13 @@ body {
 .logo-img {
   width: 55px;
   height: auto;
-  object-fit: contain;
 }
 
 .logo-text {
   font-size: 32px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #1A2533; /* Azul medianoche notorio */
+  color: #d32f2f;
 }
 
 .subtitle {
@@ -87,11 +86,11 @@ body {
   padding-left: 10px;
 }
 
-/* --- PANEL DERECHO (Formulario y Máscaras) --- */
+/* --- PANEL DERECHO --- */
 .right-panel {
   flex: 1;
   padding: 60px;
-  background: #FAFAFA; /* Un toque grisáceo para separar secciones */
+  background: #FAFAFA;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,65 +104,58 @@ body {
 }
 
 .description {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   color: #666666;
   font-size: 15px;
 }
 
+/* --- FORMULARIO Y MÁSCARAS --- */
 .login-form {
   display: flex;
   flex-direction: column;
 }
 
 .label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #1A2533;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* --- MÁSCARAS DE INPUTS --- */
 .input {
-  padding: 14px 16px;
-  margin-bottom: 5px; /* Espacio para el mensaje de error */
+  padding: 13px 16px;
+  margin-bottom: 4px;
   border-radius: 8px;
   border: 1.5px solid #E0E0E0;
   font-size: 15px;
-  background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
 
-/* Estado Focus con el naranja pedido */
 .input:focus {
   outline: none;
-  border-color: #ff8f0f;
+  border-color: #ff8f0f; /* Naranja Falcor */
   box-shadow: 0 0 0 4px rgba(255, 143, 15, 0.1);
 }
 
-/* Estado de Error (Dinámico) */
 .input-error {
   border-color: #D32F2F !important;
   background-color: #FFF8F8 !important;
 }
 
-/* Texto de error estilo home.ts */
 .error-text {
   color: #D32F2F;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 15px;
-  margin-top: 2px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 5px;
   animation: slideIn 0.2s ease-out;
 }
 
-.error-text::before {
-  content: '⚠';
-}
+.error-text::before { content: '⚠'; }
 
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-5px); }
@@ -173,8 +165,7 @@ body {
 /* --- ACCIONES --- */
 .forgot-password-container {
   text-align: right;
-  margin-top: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .forgot-link {
@@ -184,13 +175,9 @@ body {
   font-weight: 600;
 }
 
-.forgot-link:hover {
-  text-decoration: underline;
-}
-
-/* BOTÓN DE LOGIN NOTORIO */
+/* --- BOTONES --- */
 .btn-login {
-  padding: 16px;
+  padding: 15px;
   border: none;
   border-radius: 8px;
   background: #E53935;
@@ -199,46 +186,75 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.2);
-}
-
-.btn-login:hover:not(:disabled) {
-  background: #C62828;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(198, 40, 40, 0.3);
-}
-
-.btn-login:active:not(:disabled) {
-  transform: translateY(0);
 }
 
 .btn-login:disabled {
   background-color: #CCCCCC;
   color: #888888;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
-/* SECCIÓN REGISTRO */
+/* DIVISOR Y GOOGLE (AJUSTADO) */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider:not(:empty)::before { margin-right: .5em; }
+.divider:not(:empty)::after { margin-left: .5em; }
+
+.btn-google {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 5px; /* Menos margen aquí */
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* SECCIÓN REGISTRO (MÁS COMPACTA) */
 .register-section {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 15px;
   border-top: 1px solid #E0E0E0;
-  padding-top: 25px;
+  padding-top: 15px;
 }
 
 .register-section p {
-  font-size: 14px;
+  font-size: 13px;
   color: #666666;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .btn-register {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   background: transparent;
-  color: #1A2533; /* Usando el azul oscuro notorio */
-  border: 2px solid #1A2533;
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
@@ -247,21 +263,13 @@ body {
 }
 
 .btn-register:hover {
-  background: #1A2533;
+  background: #d32f2f;
   color: #FFFFFF;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    width: 90%;
-    margin: 20px auto;
-  }
-  .left-panel {
-    display: none;
-  }
-  .right-panel {
-    padding: 40px 30px;
-  }
+  .container { flex-direction: column; width: 90%; }
+  .left-panel { display: none; }
+  .right-panel { padding: 40px 30px; }
 }
