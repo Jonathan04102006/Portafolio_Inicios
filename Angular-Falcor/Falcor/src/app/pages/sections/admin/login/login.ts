@@ -52,7 +52,7 @@ export class Login implements OnInit, AfterViewInit {
       google.accounts.id.initialize({
         client_id: this.clientId,
         callback: (response: any) => this.handleGoogleLogin(response),
-        use_fedcm: true, // Optimizado para Brave y Chrome
+        use_fedcm: true,
         ux_mode: 'popup'
       });
     }
@@ -65,9 +65,9 @@ export class Login implements OnInit, AfterViewInit {
     const totalWidth = btnElement.offsetWidth;
 
     google.accounts.id.renderButton(btnElement, {
-      theme: 'outline',
+      theme: 'outline', // Esto hace que el botón sea más fácil de camuflar
       size: 'large',
-      width: totalWidth, // Esto quita los espacios a los lados
+      width: 400,
       text: 'signin_with',
       shape: 'rectangular',
       logo_alignment: 'left'

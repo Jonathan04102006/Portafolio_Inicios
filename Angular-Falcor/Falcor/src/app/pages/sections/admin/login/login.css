@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -166,7 +166,6 @@ body {
   gap: 5px;
 }
 
-/* Olvidó contraseña */
 .forgot-password-container {
   text-align: right;
   margin-bottom: 5px;
@@ -183,7 +182,6 @@ body {
   color: #e1750f;
 }
 
-/* Botón Iniciar Sesión */
 .btn-login {
   width: 100%;
   background: #d32f2f;
@@ -198,7 +196,7 @@ body {
 }
 
 .btn-login:hover {
-  background-color: #d32f2f;
+  background-color: #b71c1c; /* Un rojo un poco más oscuro para el feedback */
 }
 
 .btn-login:disabled {
@@ -207,7 +205,7 @@ body {
 }
 
 /* ==========================================================================
-   6. DIVISOR Y GOOGLE
+   6. DIVISOR Y GOOGLE (ACTUALIZADO)
    ========================================================================== */
 .divider {
   display: flex;
@@ -230,12 +228,75 @@ body {
 }
 
 .google-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  min-height: 44px;
   width: 100%;
+  height: 44px;
+  margin: 15px 0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 2px solid #d32f2f;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  /* Evita el resalte negro en navegadores móviles/escritorio */
+  outline: none;
+  -webkit-tap-highlight-color: transparent; 
+}
+
+.google-container::before {
+  content: 'Acceder con Google';
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 14px;
+  position: absolute;
+  z-index: 1;
+}
+
+.google-container:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.1);
+}
+
+/* Elimina bordes negros al hacer click */
+.google-container:focus,
+.google-container:focus-within {
+  outline: none;
+}
+
+.google-container:active {
+  background-color: #d32f2f;
+}
+
+.google-container:active::before {
+  opacity: 0; /* Ocultamos el primer texto para mostrar el de 'Iniciando...' */
+}
+
+#googleBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0; 
+  z-index: 3; /* Siempre arriba para capturar el click */
+}
+
+/* Texto de feedback al presionar */
+.google-container::after {
+  content: 'Iniciando sesión...';
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.google-container:active::after {
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -251,7 +312,7 @@ body {
 
 .register-section p {
   font-size: 14px;
-  color: #d32f2f; /* Aplicado Gris Ceniza */
+  color: #d32f2f;
   margin-bottom: 12px;
   font-weight: 500;
 }
@@ -284,10 +345,10 @@ body {
     min-height: auto; 
   }
   .left-panel { 
-    display: none; /* O puedes ajustarlo para que salga arriba */
+    display: none; 
   }
   .right-panel { 
     padding: 40px 25px; 
-    border-radius: 20px; /* Mantener bordes redondeados en móvil */
+    border-radius: 20px;
   }
 }
