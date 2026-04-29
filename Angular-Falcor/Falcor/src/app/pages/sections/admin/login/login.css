@@ -18,7 +18,7 @@ body {
 
 /* --- CONTENEDOR PRINCIPAL --- */
 .container {
-  width: 95%;
+  width: 90%;          /* Bajamos un poco del 95% para que respire mejor */
   max-width: 1100px;
   min-height: 550px;
   background: #FFFFFF;
@@ -26,6 +26,10 @@ body {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  
+  /* Esto es vital si el flex del padre falla por alguna jerarquía de Angular */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- PANEL IZQUIERDO --- */
