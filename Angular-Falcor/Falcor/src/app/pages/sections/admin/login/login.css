@@ -18,7 +18,7 @@ body {
 
 /* --- CONTENEDOR PRINCIPAL --- */
 .container {
-  width: 90%;          /* Bajamos un poco del 95% para que respire mejor */
+  width: 95%;          /* Bajamos un poco del 95% para que respire mejor */
   max-width: 1100px;
   min-height: 550px;
   background: #FFFFFF;
@@ -35,6 +35,7 @@ body {
 /* --- PANEL IZQUIERDO --- */
 .left-panel {
   flex: 1;
+  padding: 0px 1;
   padding: 60px;
   background: #FFFFFF;
   display: flex;
@@ -122,15 +123,14 @@ body {
 .label {
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   color: #1A2533;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .input {
   padding: 13px 16px;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   border-radius: 8px;
   border: 1.5px solid #E0E0E0;
   font-size: 15px;
