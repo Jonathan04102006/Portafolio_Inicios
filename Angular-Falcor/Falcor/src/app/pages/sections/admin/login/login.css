@@ -137,23 +137,61 @@ body {
   font-size: 14px;
 }
 
-.input {
+.custom-input-group {
+  position: relative; /* Necesario para ubicar el label */
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid black;
-  border-radius: 8px;
-  background: #ffffff;
-  transition: all 0.3s;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
-.input:focus {
+/* El Borde del Input */
+.custom-input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid black; /* Tu color original */
+  border-radius: 8px;
+  background: transparent;
+  font-size: 15px;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+/* El Label (Texto superior) */
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: -10px; /* Lo sube para que quede sobre el borde */
+  background: white; /* ¡ESTO ES LO QUE TAPA LA LÍNEA! */
+  padding: 0 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  z-index: 1;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Para que el click pase al input */
+}
+
+/* --- ESTADOS --- */
+
+/* Hover y Focus: Se torna naranja */
+.custom-input-group:hover input,
+.custom-input-group:focus-within input {
   border-color: #e1750f;
   box-shadow: 0 0 0 1px #e1750f;
 }
 
-.input-error {
+.custom-input-group:hover .floating-label,
+.custom-input-group:focus-within .floating-label {
+  color: #e1750f;
+}
+
+/* Estado de Error */
+.custom-input-group.input-error input {
   border-color: #d32f2f;
+}
+
+.custom-input-group.input-error .floating-label {
+  color: #d32f2f;
 }
 
 .error-text {

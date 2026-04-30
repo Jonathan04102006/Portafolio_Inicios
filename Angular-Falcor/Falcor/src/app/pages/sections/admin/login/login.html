@@ -18,17 +18,25 @@
     <p class="description">Administra tu restaurante sin fricci&oacute;n.</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-      <label class="label">Usuario</label>
-      <input type="text" formControlName="usuario" class="input" [class.input-error]="getUsuarioError()" placeholder="Ingrese su usuario">
-      <div class="error-text" *ngIf="getUsuarioError()">
-        {{ getUsuarioError() }}
-      </div>
+      <div class="login-form">
+  <!-- Campo Usuario -->
+  <div class="custom-input-group" [class.input-error]="getUsuarioError()">
+    <label class="floating-label">Usuario</label>
+    <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
+  </div>
+  <div class="error-text" *ngIf="getUsuarioError()">
+    {{ getUsuarioError() }}
+  </div>
 
-      <label class="label">Contrase&ntilde;a</label>
-      <input type="password" formControlName="password" class="input" [class.input-error]="getPasswordError()" placeholder="Ingrese su contrase&ntilde;a">
-      <div class="error-text" *ngIf="getPasswordError()">
-        {{ getPasswordError() }}
-      </div>
+  <!-- Campo Contraseña -->
+  <div class="custom-input-group" [class.input-error]="getPasswordError()">
+    <label class="floating-label">Contraseña</label>
+    <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+  </div>
+  <div class="error-text" *ngIf="getPasswordError()">
+    {{ getPasswordError() }}
+  </div>
+</div>
 
       <div class="forgot-password-container">
         <a routerLink="/forgot-password" class="forgot-link">

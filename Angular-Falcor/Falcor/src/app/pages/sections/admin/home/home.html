@@ -2,19 +2,21 @@
 <div>
   <h1>Bienvenido a Falcor (Home)</h1>
 </div>
-<!-- <div class="form-group">
-  <label for="password">Contraseña</label>
 
-  <input
-    id="password"
-    type="password"
-    class="form-control"
-    [(ngModel)]="password"
-    (input)="validatePassword()"
-    placeholder="Ingrese su contraseña"
-  />
+<div class="input-container">
+  <!-- Input de Usuario -->
+  <fieldset class="outlined-input">
+    <legend>Usuario</legend>
+    <div class="input-wrapper">
+      <input type="text" placeholder="Ingrese su usuario">
+    </div>
+  </fieldset>
 
-  <label class="text-danger" *ngIf="passwordError">
-    {{ passwordError }}
-  </label>
-</div> -->
+  <!-- Input de Contraseña -->
+  <fieldset class="outlined-input">
+    <legend>Contraseña</legend>
+    <div class="input-wrapper">
+      <input type="password" placeholder="Ingrese su contraseña">
+    </div>
+  </fieldset>
+</div>
