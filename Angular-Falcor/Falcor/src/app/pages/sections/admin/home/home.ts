@@ -12,19 +12,19 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home {/* 
   password: string = '';
   passwordError: string = '';
 
   validatePassword(): void {
-    /**
+    
      * Reglas:
      * - Mínimo 6 caracteres
      * - Al menos 1 mayúscula
      * - Al menos 1 minúscula
      * - Al menos 1 número
      * - Solo caracteres especiales permitidos: $ @ . *
-     */
+     
 
     if (!this.password) {
       this.passwordError = '';
@@ -48,5 +48,5 @@ export class Home {
     } else {
       this.passwordError = '';
     }
-  }
+  } */
 }

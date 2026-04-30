@@ -1,29 +1,33 @@
+* {
+  padding: 0px;
+  font-family: 'Georgia', 'Times New Roman', 'Times';
+}
+
 .register-container {
   max-width: 850px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
 /* Header */
 .register-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra todo el contenido del header */
+  align-items: center;
 }
 
 .brand-container {
   display: flex;
-  align-items: center; /* Alinea verticalmente el logo con el texto */
+  align-items: center;
   justify-content: center;
-  gap: 12px; /* Espacio entre el logo y el texto */
+  gap: 12px;
   margin-bottom: 15px;
 }
 
 .main-logo {
-  height: 75px; /* Ajusta el tamaño a tu gusto */
+  height: 75px;
   width: auto;
 }
 
@@ -32,7 +36,7 @@
   font-weight: bold;
   letter-spacing: 2px;
   color: #333;
-  margin: 0; /* Quita márgenes por defecto del h1 */
+  margin: 0;
 }
 
 .register-title {
@@ -57,7 +61,7 @@
 .register-card {
   background: white;
   border-radius: 15px;
-  padding: 40px;
+  padding: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   border: 1px solid #f0f0f0;
 }
