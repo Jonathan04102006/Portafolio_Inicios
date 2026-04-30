@@ -138,7 +138,7 @@ body {
 }
 
 .custom-input-group {
-  position: relative; /* Necesario para ubicar el label */
+  position: relative;
   width: 100%;
   margin-top: 15px;
   margin-bottom: 5px;
@@ -148,7 +148,7 @@ body {
 .custom-input-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid black; /* Tu color original */
+  border: 1px solid black;
   border-radius: 8px;
   background: transparent;
   font-size: 15px;
@@ -160,20 +160,19 @@ body {
 .floating-label {
   position: absolute;
   left: 12px;
-  top: -10px; /* Lo sube para que quede sobre el borde */
-  background: white; /* ¡ESTO ES LO QUE TAPA LA LÍNEA! */
+  top: -10px;
+  background: white;
   padding: 0 5px;
   font-size: 13px;
   font-weight: 600;
   color: #333333;
   z-index: 1;
   transition: all 0.3s ease;
-  pointer-events: none; /* Para que el click pase al input */
+  pointer-events: none;
 }
 
 /* --- ESTADOS --- */
 
-/* Hover y Focus: Se torna naranja */
 .custom-input-group:hover input,
 .custom-input-group:focus-within input {
   border-color: #e1750f;
@@ -233,7 +232,7 @@ body {
 }
 
 .btn-login:hover {
-  background-color: #b71c1c; /* Un rojo un poco más oscuro para el feedback */
+  background-color: #b71c1c;
 }
 
 .btn-login:disabled {
@@ -312,7 +311,7 @@ body {
 /* --- ESTADO HOVER (AL PASAR EL MOUSE) --- */
 .google-container:hover {
   background-color: #e1750f;
-  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  box-shadow: 0 4px 12px black;
 }
 
 .google-container:hover::before {

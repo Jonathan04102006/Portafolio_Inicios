@@ -19,24 +19,24 @@
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <div class="login-form">
-  <!-- Campo Usuario -->
-  <div class="custom-input-group" [class.input-error]="getUsuarioError()">
-    <label class="floating-label">Usuario</label>
-    <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
-  </div>
-  <div class="error-text" *ngIf="getUsuarioError()">
-    {{ getUsuarioError() }}
-  </div>
-
-  <!-- Campo Contraseña -->
-  <div class="custom-input-group" [class.input-error]="getPasswordError()">
-    <label class="floating-label">Contraseña</label>
-    <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
-  </div>
-  <div class="error-text" *ngIf="getPasswordError()">
-    {{ getPasswordError() }}
-  </div>
-</div>
+        <!-- Campo Usuario -->
+         <div class="custom-input-group" [class.input-error]="getUsuarioError()">
+          <label class="floating-label">Usuario</label>
+          <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
+        </div>
+        <div class="error-text" *ngIf="getUsuarioError()">
+          {{ getUsuarioError() }}
+        </div>
+        
+        <!-- Campo Contraseña -->
+         <div class="custom-input-group" [class.input-error]="getPasswordError()">
+          <label class="floating-label">Contraseña</label>
+          <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+        </div>
+        <div class="error-text" *ngIf="getPasswordError()">
+          {{ getPasswordError() }}
+        </div>
+      </div>
 
       <div class="forgot-password-container">
         <a routerLink="/forgot-password" class="forgot-link">

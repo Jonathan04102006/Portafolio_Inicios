@@ -15,7 +15,7 @@ declare const google: any;
     CommonModule
   ],
   templateUrl: './login.html',
-  styleUrl: './login.css'
+  styleUrls: ['./login.css']
 })
 export class Login implements OnInit, AfterViewInit {
   loginForm: FormGroup;
