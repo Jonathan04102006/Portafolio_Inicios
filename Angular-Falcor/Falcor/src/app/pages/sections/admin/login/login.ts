@@ -65,9 +65,9 @@ export class Login implements OnInit, AfterViewInit {
     const totalWidth = btnElement.offsetWidth;
 
     google.accounts.id.renderButton(btnElement, {
-      theme: 'outline', // Esto hace que el botón sea más fácil de camuflar
+      theme: 'outline',
       size: 'large',
-      width: 400,
+      width: totalWidth,
       text: 'signin_with',
       shape: 'rectangular',
       logo_alignment: 'left'
