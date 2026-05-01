@@ -1,3 +1,29 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESET
+   ========================================================================== */
+:root {
+  /* Fondos y Superficies */
+  --bg-main: #E0E0E0;
+  --bg-card: #ffffff;
+  --bg-disabled: #cccccc;
+
+  /* Colores de Marca (Brand) */
+  --color-falcor: #d32f2f;
+  --color-falcor-dark: #b71c1c;
+  --color-accent: #e1750f;
+
+  /* Colores de Texto */
+  --text-primary: black;
+  --text-dark: #333333;
+  --text-medium: #444444;
+  --text-light: #666666;
+  --text-white: white;
+
+  /* Estados y Bordes */
+  --border-default: black;
+  --error: #d32f2f;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -82,7 +108,7 @@ body {
 }
 
 .features li::before {
-  content: '✓';
+  content: '\2713';
   color: #e1750f;
   font-weight: bold;
 }
