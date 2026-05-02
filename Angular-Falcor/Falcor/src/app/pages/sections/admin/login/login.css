@@ -337,7 +337,7 @@ body {
 /* --- ESTADO HOVER (AL PASAR EL MOUSE) --- */
 .google-container:hover {
   background-color: #e1750f;
-  box-shadow: 0 4px 12px black;
+  box-shadow: 0 1px 5px black;
 }
 
 .google-container:hover::before {
@@ -405,6 +405,7 @@ body {
 .btn-register:hover {
   background: #e1750f;
   color: #E0E0E0;
+  box-shadow: 0 1px 5px black;
 }
 
 /* ==========================================================================
