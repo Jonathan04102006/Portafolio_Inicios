@@ -201,7 +201,7 @@ body {
 
 .custom-input-group:hover input,
 .custom-input-group:focus-within input {
-  border-color: #e1750f;
+  border: 1px solid #e1750f;
   box-shadow: 0 0 0 1px #e1750f;
 }
 
@@ -212,7 +212,7 @@ body {
 
 /* Estado de Error */
 .custom-input-group.input-error input {
-  border-color: #d32f2f;
+  border: 1px solid #b71c1c;
 }
 
 .custom-input-group.input-error .floating-label {
@@ -314,7 +314,7 @@ body {
   margin: 5px 0;
   border-radius: 8px;
   background-color: #ffffff;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -338,7 +338,7 @@ body {
 /* Texto del botón */
 .google-text {
   color: #000000;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 14px;
   z-index: 1;
   transition: all 0.3s ease;
@@ -405,10 +405,10 @@ body {
   padding: 12px;
   background: transparent;
   color: #000000;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 700;
+  /* font-weight: 700; */
   cursor: pointer;
   transition: all 0.3s ease;
 }
