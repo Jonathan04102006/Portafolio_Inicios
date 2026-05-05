@@ -20,18 +20,21 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <div class="login-form">
         <!-- Campo Usuario -->
-         <div class="custom-input-group" [class.input-error]="getUsuarioError()">
-          <label class="floating-label">Usuario</label>
-          <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
+         <div class="custom-input-group" [class.input-error]="getUsuarioError()"
+         [class.input-valid]="loginForm.get('usuario')?.valid && loginForm.get('usuario')?.touched">
+         <label class="floating-label">Usuario</label>
+         <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
         </div>
         <div class="error-text" *ngIf="getUsuarioError()">
           {{ getUsuarioError() }}
         </div>
         
         <!-- Campo Contraseña -->
-         <div class="custom-input-group" [class.input-error]="getPasswordError()">
-          <label class="floating-label">Contraseña</label>
-          <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+         <div class="custom-input-group" 
+         [class.input-error]="getPasswordError()"
+         [class.input-valid]="loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+         <label class="floating-label">Contraseña</label>
+         <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
         </div>
         <div class="error-text" *ngIf="getPasswordError()">
           {{ getPasswordError() }}

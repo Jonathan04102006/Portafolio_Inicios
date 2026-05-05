@@ -13,14 +13,14 @@
   --color-accent: #e1750f;
 
   /* Colores de Texto */
-  --text-primary: black;
+  --text-primary: #000000;
   --text-dark: #333333;
   --text-medium: #444444;
   --text-light: #666666;
   --text-white: white;
 
   /* Estados y Bordes */
-  --border-default: black;
+  --border-default: #000000;
   --error: #d32f2f;
 }
 
@@ -96,7 +96,7 @@ body {
 .features {
   list-style: none;
   margin-bottom: 30px;
-  color: black;
+  color: #000000;
 }
 
 .features li {
@@ -137,12 +137,12 @@ body {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: black;
+  color: #000000;
 }
 
 .description {
   margin-bottom: 10px;
-  color: black;
+  color: #000000;
   font-size: 15px;
 }
 
@@ -174,7 +174,7 @@ body {
 .custom-input-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 8px;
   background: transparent;
   font-size: 15px;
@@ -235,7 +235,7 @@ body {
 
 .forgot-link {
   font-size: 12px;
-  color: black;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -266,6 +266,16 @@ body {
   cursor: not-allowed;
 }
 
+/* Estado Válido (Color Naranja) */
+.custom-input-group.input-valid input {
+  border-color: #e1750f;
+  box-shadow: 0 0 0 1px #e1750f;
+}
+
+.custom-input-group.input-valid .floating-label {
+  color: #e1750f;
+}
+
 /* ==========================================================================
    6. DIVISOR Y GOOGLE (VERSIÓN FINAL FALCOR)
    ========================================================================== */
@@ -277,7 +287,7 @@ body {
   text-align: center;
   margin: 8px 0;
   width: 100%;
-  color: black;
+  color: #000000;
   font-size: 13px;
 }
 
@@ -304,7 +314,7 @@ body {
   margin: 5px 0;
   border-radius: 8px;
   background-color: #ffffff;
-  border: 2px solid #e1750f;
+  border: 2px solid #000000;
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -327,7 +337,7 @@ body {
 
 /* Texto del botón */
 .google-text {
-  color: #e1750f;
+  color: #000000;
   font-weight: bold;
   font-size: 14px;
   z-index: 1;
@@ -336,8 +346,9 @@ body {
 
 /* --- ESTADO HOVER (AL PASAR EL MOUSE) --- */
 .google-container:hover {
+  border-color: #e1750f;
   background-color: #e1750f;
-  box-shadow: 0 1px 5px black;
+  box-shadow: 0 1px 5px #000000;
 }
 
 .google-container:hover::before {
@@ -384,7 +395,7 @@ body {
 
 .register-section p {
   font-size: 14px;
-  color: black;
+  color: #000000;
   margin-bottom: 12px;
   font-weight: 500;
 }
@@ -393,8 +404,8 @@ body {
   width: 100%;
   padding: 12px;
   background: transparent;
-  color: #e1750f;
-  border: 2px solid #e1750f;
+  color: #000000;
+  border: 2px solid #000000;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
@@ -403,9 +414,10 @@ body {
 }
 
 .btn-register:hover {
+  border-color: #e1750f;
   background: #e1750f;
   color: #E0E0E0;
-  box-shadow: 0 1px 5px black;
+  box-shadow: 0 1px 5px #000000;
 }
 
 /* ==========================================================================
