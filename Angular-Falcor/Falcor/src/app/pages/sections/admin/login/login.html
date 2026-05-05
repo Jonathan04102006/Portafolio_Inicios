@@ -1,71 +1,82 @@
 <div class="container">
-  <div class="left-panel">
+  <!-- Panel Izquierdo: Branding y Mensaje de Bienvenida -->
+   <div class="left-panel">
     <div class="brand">
-      <img src="falcor.png" alt="Falcor Logo" class="logo-img">
-      <h1 class="logo-text">FALCOR</h1>
+      <img src="falcor.png" alt="FALCOR Logo" class="logo-img">
+      <!-- Usamos la clase de utilidad .text-falcor -->
+       <h1 class="logo-text text-falcor">FALCOR</h1>
+      </div>
+      
+      <p class="subtitle">Software inteligente para restaurantes modernos.</p>
+      <ul class="features">
+        <li>Gesti&oacute;n de mesas en tiempo real</li>
+        <li>Control de inventario preciso</li>
+        <li>Reportes de ventas autom&aacute;ticos</li>
+      </ul>
+      
+      <div class="tagline">
+        "Llevando la eficiencia de tu cocina al siguiente nivel."
+      </div>
     </div>
-    <h2 class="subtitle">Software inteligente para restaurantes modernos</h2>
-    <ul class="features">
-      <li>Control en tiempo real</li>
-      <li>&Oacute;rdenes sincronizadas</li>
-      <li>Gesti&oacute;n multi-rol</li>
-    </ul>
-    <p class="tagline">Dise&ntilde;ado para velocidad.<br>Construido para precisi&oacute;n.</p>
-  </div>
-
-  <div class="right-panel">
-    <h2 class="welcome">Bienvenido de nuevo 🪶</h2>
-    <p class="description">Administra tu restaurante sin fricci&oacute;n.</p>
-
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-      <div class="login-form">
-        <!-- Campo Usuario -->
-         <div class="custom-input-group" [class.input-error]="getUsuarioError()"
+    
+    <!-- Panel Derecho: Formulario de Inicio de Sesión -->
+     <div class="right-panel">
+      <h2 class="welcome">¡Bienvenido de nuevo!</h2>
+      <p class="description">Por favor, ingresa tus credenciales para acceder.</p>
+      
+      <!-- Vinculación con el Form Group de TypeScript -->
+       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        
+        <!-- Campo Usuario con clases condicionales para error y éxito -->
+         <div class="custom-input-group"
+         [class.input-error]="getUsuarioError()"
          [class.input-valid]="loginForm.get('usuario')?.valid && loginForm.get('usuario')?.touched">
          <label class="floating-label">Usuario</label>
          <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
         </div>
-        <div class="error-text" *ngIf="getUsuarioError()">
+        <!-- Mensaje de error dinámico -->
+         <div class="error-text" *ngIf="getUsuarioError()">
           {{ getUsuarioError() }}
         </div>
         
         <!-- Campo Contraseña -->
-         <div class="custom-input-group" 
+         <div class="custom-input-group"
          [class.input-error]="getPasswordError()"
          [class.input-valid]="loginForm.get('password')?.valid && loginForm.get('password')?.touched">
-         <label class="floating-label">Contraseña</label>
-         <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+         <label class="floating-label">Contrase&ntilde;a</label>
+         <input type="password" formControlName="password" placeholder="Ingrese su contrase&ntilde;a">
         </div>
         <div class="error-text" *ngIf="getPasswordError()">
           {{ getPasswordError() }}
         </div>
-      </div>
-
-      <div class="forgot-password-container">
-        <a routerLink="/forgot-password" class="forgot-link">
-          ¿Has olvidado la contrase&ntilde;a?
-        </a>
-      </div>
-
-      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
-        Iniciar sesi&oacute;n
-      </button>
-    
-      <div class="divider">
-        <span>o</span>
-      </div>
-
-      <div class="google-container">
-        <span class="google-text">Acceder con Google</span>
-        <div id="googleBtn"></div>
-      </div>
-    </form>
-    
-    <div class="register-section">
-      <p>¿No tienes una cuenta?</p>
-      <button type="button" class="btn-register" routerLink="/register">
-        Crear una cuenta
-      </button>
+        
+        <!-- Enlace de recuperación -->
+         <div class="forgot-password-container">
+          <a href="#" class="forgot-link">¿Has olvidado la contrase&ntilde;a?</a>
+        </div>
+        
+        <!-- Botón de acción principal con clase de utilidad .text-white -->
+         <button type="submit" class="btn-login text-white" [disabled]="loginForm.invalid">
+          Iniciar sesi&oacute;n
+        </button>
+        
+        <!-- Divisor visual -->
+         <div class="divider">
+          <span>&oacute;</span>
+        </div>
+        
+        <!-- Integración de Google OAuth -->
+         <div class="google-container">
+          <span class="google-text">Acceder con Google</span>
+          <div id="googleBtn"></div>
+        </div>
+        
+        <!-- Sección de registro -->
+         <div class="register-section">
+          <p class="description">¿No tienes una cuenta?</p>
+          <button type="button" class="btn-register">Crear cuenta nueva</button>
+        </div>
+      
+      </form>
     </div>
-  </div>
 </div>
