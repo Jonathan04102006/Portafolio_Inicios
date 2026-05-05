@@ -187,7 +187,7 @@ body {
   position: absolute;
   left: 12px;
   top: -10px;
-  background: white;
+  background: #ffffff;
   padding: 0 5px;
   font-size: 13px;
   font-weight: 600;
@@ -246,8 +246,8 @@ body {
 
 .btn-login {
   width: 100%;
-  background: #d32f2f;
-  color: #E0E0E0;
+  background: #e1750f;
+  color: #ffffff;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -258,7 +258,8 @@ body {
 }
 
 .btn-login:hover {
-  background-color: #b71c1c;
+  background-color: #e1750f;
+  box-shadow: 0 1px 5px #000000;
 }
 
 .btn-login:disabled {
