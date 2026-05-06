@@ -1,27 +1,17 @@
 /* ==========================================================================
    1. VARIABLES GLOBALES Y RESET
    ========================================================================== */
-:root {
-  /* Fondos y Superficies */
+:host {
   --bg-main: #E0E0E0;
   --bg-card: #ffffff;
   --bg-disabled: #cccccc;
-
-  /* Colores de Marca (Brand) */
   --color-falcor: #d32f2f;
-  --color-falcor-dark: #b71c1c;
+  --color-error: #b71c1c;
   --color-accent: #e1750f;
-
-  /* Colores de Texto */
   --text-primary: #000000;
   --text-dark: #333333;
   --text-medium: #444444;
   --text-light: #666666;
-  --text-white: #ffffff;
-
-  /* Estados y Bordes */
-  --border-default: #000000;
-  --error: #d32f2f;
 }
 
 * {
@@ -37,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E0E0E0;
+  background-color: var(--bg-main);
 }
 
 /* ==========================================================================
@@ -47,7 +37,7 @@ body {
   width: 95%;
   max-width: 1100px;
   min-height: 550px;
-  background: #ffffff;
+  background: var(--bg-card);
   display: flex;
   border-radius: 20px;
   overflow: hidden;
@@ -61,7 +51,7 @@ body {
 .left-panel {
   flex: 1;
   padding: 60px;
-  background: #ffffff;
+  background: var(--bg-card);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,7 +73,7 @@ body {
   font-size: 32px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #d32f2f;
+  color: var(--color-falcor);
 }
 
 .subtitle {
@@ -96,7 +86,7 @@ body {
 .features {
   list-style: none;
   margin-bottom: 30px;
-  color: #000000;
+  color: var(--text-primary);
 }
 
 .features li {
@@ -109,7 +99,7 @@ body {
 
 .features li::before {
   content: '\2713';
-  color: #e1750f;
+  color: var(--color-accent);
   font-weight: bold;
 }
 
@@ -117,7 +107,7 @@ body {
   font-size: 14px;
   color: #666666;
   font-style: italic;
-  border-left: 3px solid #d32f2f;
+  border-left: 3px solid var(--color-falcor);
   padding-left: 10px;
 }
 
@@ -127,7 +117,7 @@ body {
 .right-panel {
   flex: 1;
   padding: 40px;
-  background: #ffffff;
+  background: var(--bg-card);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,12 +127,12 @@ body {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #000000;
+  color: var(--text-primary);
 }
 
 .description {
   margin-bottom: 10px;
-  color: #000000;
+  color: var(--text-primary);
   font-size: 15px;
 }
 
@@ -174,7 +164,7 @@ body {
 .custom-input-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #000000;
+  border: 1px solid var(--text-primary);
   border-radius: 8px;
   background: transparent;
   font-size: 15px;
@@ -187,7 +177,7 @@ body {
   position: absolute;
   left: 12px;
   top: -10px;
-  background: #ffffff;
+  background: var(--bg-card);
   padding: 0 5px;
   font-size: 13px;
   font-weight: 600;
@@ -201,26 +191,26 @@ body {
 
 .custom-input-group:hover input,
 .custom-input-group:focus-within input {
-  border: 1px solid #e1750f;
-  box-shadow: 0 0 0 1px #e1750f;
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 .custom-input-group:hover .floating-label,
 .custom-input-group:focus-within .floating-label {
-  color: #e1750f;
+  color: var(--color-accent);
 }
 
 /* Estado de Error */
 .custom-input-group.input-error input {
-  border: 1px solid #b71c1c;
+  border: 1px solid var(--color-error);
 }
 
 .custom-input-group.input-error .floating-label {
-  color: #d32f2f;
+  color: var(--color-falcor);
 }
 
 .error-text {
-  color: #d32f2f;
+  color: var(--color-falcor);
   font-size: 12px;
   font-weight: 600;
   display: flex;
@@ -235,46 +225,49 @@ body {
 
 .forgot-link {
   font-size: 12px;
-  color: #000000;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .forgot-link:hover {
-  color: #e1750f;
+  color: var(--color-accent);
 }
 
 .btn-login {
   width: 100%;
-  background: #e1750f;
-  color: #ffffff;
+  background: var(--bg-card);
+  color: var(--text-primary);
   padding: 12px;
-  border: none;
+  border: 1px solid var(--text-primary);
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
   margin-top: 5px;
   transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #e1750f;
-  box-shadow: 0 1px 5px #000000;
+  color: var(--bg-card);
+  background-color: var(--color-accent);
+  border: none;
+  box-shadow: 0 1px 5px var(--text-primary);
 }
 
 .btn-login:disabled {
-  background: #cccccc;
+  color: var(--bg-card);
+  background: var(--bg-disabled);
   cursor: not-allowed;
+  border: none;
 }
 
 /* Estado Válido (Color Naranja) */
 .custom-input-group.input-valid input {
-  border-color: #e1750f;
-  box-shadow: 0 0 0 1px #e1750f;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 .custom-input-group.input-valid .floating-label {
-  color: #e1750f;
+  color: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -288,7 +281,7 @@ body {
   text-align: center;
   margin: 8px 0;
   width: 100%;
-  color: #000000;
+  color: var(--text-primary);
   font-size: 13px;
 }
 
@@ -296,7 +289,7 @@ body {
 .divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid var(--bg-main);
 }
 
 .divider span {
@@ -314,8 +307,8 @@ body {
   height: 44px;
   margin: 5px 0;
   border-radius: 8px;
-  background-color: #ffffff;
-  border: 1px solid #000000;
+  background-color: var(--bg-card);
+  border: 1px solid var(--text-primary);
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -338,7 +331,7 @@ body {
 
 /* Texto del botón */
 .google-text {
-  color: #000000;
+  color: var(--text-primary);
   /* font-weight: bold; */
   font-size: 14px;
   z-index: 1;
@@ -347,9 +340,9 @@ body {
 
 /* --- ESTADO HOVER (AL PASAR EL MOUSE) --- */
 .google-container:hover {
-  border-color: #e1750f;
-  background-color: #e1750f;
-  box-shadow: 0 1px 5px #000000;
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 1px 5px var(--text-primary);
 }
 
 .google-container:hover::before {
@@ -357,7 +350,7 @@ body {
 }
 
 .google-container:hover .google-text {
-  color: #ffffff; /* El texto se vuelve blanco */
+  color: var(--bg-card); /* El texto se vuelve blanco */
 }
 
 /* --- ESTADO ACTIVE (AL HACER CLIC) --- */
@@ -389,14 +382,14 @@ body {
 .register-section {
   text-align: center;
   margin-top: 10px;
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid var(--bg-main);
   padding-top: 20px;
   width: 100%;
 }
 
 .register-section p {
   font-size: 14px;
-  color: #000000;
+  color: var(--text-primary);
   margin-bottom: 12px;
   font-weight: 500;
 }
@@ -405,8 +398,8 @@ body {
   width: 100%;
   padding: 12px;
   background: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
   border-radius: 8px;
   font-size: 14px;
   /* font-weight: 700; */
@@ -415,10 +408,10 @@ body {
 }
 
 .btn-register:hover {
-  border-color: #e1750f;
-  background: #e1750f;
-  color: #E0E0E0;
-  box-shadow: 0 1px 5px #000000;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--bg-main);
+  box-shadow: 0 1px 5px var(--text-primary);
 }
 
 /* ==========================================================================
@@ -427,14 +420,28 @@ body {
 @media (max-width: 768px) {
   .container { 
     flex-direction: column; 
-    width: 90%; 
+    width: 85%; 
     min-height: auto; 
   }
-  .left-panel { 
-    display: none; 
+
+  .left-panel {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .left-panel .brand {
+    margin-bottom: 0;
+  }
+  
+  .left-panel .text { 
+    display: none;
+  }
+
   .right-panel { 
     padding: 40px 25px; 
     border-radius: 20px;
+    padding: 20px;
   }
 }
