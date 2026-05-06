@@ -1,22 +1,23 @@
-<link rel="stylesheet" href="home.css">
 <div>
-  <h1>Bienvenido a Falcor (Home)</h1>
+  <h1 class="title">Bienvenido a Falcor (Home)</h1>
 </div>
+<div class="test-container">
+  <h2>Prueba de Input Automático</h2>
+  <p>Intenta escribir en MAYÚSCULAS aquí abajo:</p>
 
-<div class="input-container">
-  <!-- Input de Usuario -->
-  <fieldset class="outlined-input">
-    <legend>Usuario</legend>
-    <div class="input-wrapper">
-      <input type="text" placeholder="Ingrese su usuario">
+  <form [formGroup]="formPrueba">
+    <div class="input-box">
+      <label>Usuario:</label>
+      <input 
+        type="text" 
+        formControlName="usuario" 
+        (input)="transformarMinusculas($event)"
+        placeholder="Escribe algo...">
     </div>
-  </fieldset>
+  </form>
 
-  <!-- Input de Contraseña -->
-  <fieldset class="outlined-input">
-    <legend>Contraseña</legend>
-    <div class="input-wrapper">
-      <input type="password" placeholder="Ingrese su contraseña">
-    </div>
-  </fieldset>
+  <div class="resultado">
+    <strong>Valor real en el formulario:</strong> 
+    {{ formPrueba.value.usuario }}
+  </div>
 </div>

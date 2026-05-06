@@ -4,57 +4,37 @@
   font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
-
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaciado entre bloques */
-  width: 100%;
+.title {
+  padding-top: 100px;
+  text-align: center;
 }
 
-.outlined-input {
-  border: 1px solid #000000; /* Borde negro como tus otros inputs */
-  border-radius: 8px;
-  padding: 0 12px;
-  margin: 0;
-  transition: all 0.3s ease;
-  background: #ffffff;
+.test-container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
 }
 
-/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */
-.outlined-input legend {
-  font-size: 13px;
-  font-weight: 600;
-  color: #333333;
-  padding: 0 5px;   /* Pequeño espacio para que el borde no pegue al texto */
-  margin-left: 5px; /* Alineación a la izquierda */
-  text-align: left; /* Asegura la posición a la izquierda */
+.input-box {
+  margin-bottom: 20px;
 }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
+input {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  /* Esta línea es el truco visual clave */
+  text-transform: lowercase; 
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
-.outlined-input input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  padding: 10px 0;
-  font-size: 15px;
-  outline: none;
-  color: #000000;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* Efecto Focus para mantener el estilo Falcor */
-.outlined-input:focus-within {
-  border-color: #e1750f; /* Color naranja de tus otros inputs */
-  box-shadow: 0 0 0 1px #e1750f;
-}
-
-.outlined-input:focus-within legend {
-  color: #e1750f;
+.resultado {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #d32f2f;
 }

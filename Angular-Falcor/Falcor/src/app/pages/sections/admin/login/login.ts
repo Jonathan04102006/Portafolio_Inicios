@@ -28,7 +28,8 @@ export class Login implements OnInit, AfterViewInit {
       usuario: ['', [
         Validators.required,
         Validators.minLength(6),
-        Validators.pattern('^[a-zA-Z0-9.]*$')
+        Validators.pattern('^[a-z0-9.]*$')
+        /* Validators.pattern('^[a-zA-Z0-9.]*$') VALIDACION CON MAYUSCULAS */
       ]],
       password: ['', [
         Validators.required,
@@ -89,7 +90,7 @@ export class Login implements OnInit, AfterViewInit {
     if (control?.touched && control.errors) {
       if (control.errors['required']) return 'El usuario es obligatorio.';
       if (control.errors['minlength']) return 'Debe tener al menos 6 caracteres.';
-      if (control.errors['pattern']) return 'Solo letras, números y puntos.';
+      if (control.errors['pattern']) return 'Solo letras minúsculas, números y puntos.';
     }
     return '';
   }
