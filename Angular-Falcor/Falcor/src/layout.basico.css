@@ -1,0 +1,12 @@
+:root {
+  --bg-main: #E0E0E0;
+  --bg-card: #ffffff;
+  --bg-disabled: #cccccc;
+  --color-falcor: #d32f2f;
+  --color-error: #b71c1c;
+  --color-accent: #FF6B36;
+  --text-primary: #0D1117;
+  --text-dark: #333333;
+  --text-medium: #444444;
+  --text-light: #666666;
+}
