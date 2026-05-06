@@ -1,3 +1,16 @@
+:host {
+  --bg-main: #E0E0E0;
+  --bg-card: #ffffff;
+  --bg-disabled: #cccccc;
+  --color-falcor: #d32f2f;
+  --color-error: #b71c1c;
+  --color-accent: #FF6B36;
+  --text-primary: #0D1117;
+  --text-dark: #333333;
+  --text-medium: #444444;
+  --text-light: #666666;
+}
+
 * {
   padding: 0px;
   font-family: 'Georgia', 'Times New Roman', 'Times';
@@ -35,35 +48,35 @@
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 2px;
-  color: #333;
+  color: var(--text-dark);
   margin: 0;
 }
 
 .register-title {
   font-size: 20px;
-  color: #d32f2f;
+  color: var(--text-dark);
   margin-bottom: 5px;
 }
 
 /* FALCOR TITLE */
 .register-header h1 {
   font-size: 42px;
-  color: #d32f2f;
+  color: var(--color-falcor);
   margin-bottom: 5px;
 }
 
 .register-header p {
-  color: #666;
+  color: var(--text-dark);
   font-size: 14px;
 }
 
 /* Card */
 .register-card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 1px 2px var(--text-primary);
+  border: 1px solid var(--bg-main);
 }
 
 /* Sections */
@@ -75,19 +88,40 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid #f09494; /* Color rojo suave */
+  border-bottom: 1px solid var(--text-primary);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.section-icon {
+.usuario-icon {
   width: 24px;
   height: 24px;
-}
+  background-color: var(--color-accent) ; /* El nuevo color deseado */
+  -webkit-mask-image: url('/usuario.png'); /* Ruta a tu imagen original */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('/usuario.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  display: inline-block;
+}  
+
+.padlock-icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent); /* El nuevo color deseado */
+  -webkit-mask-image: url('/candado.png'); /* Ruta a tu imagen original */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('/candado.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  display: inline-block;
+}   
 
 .section-title h2 {
   font-size: 18px;
-  color: #d32f2f; /* Rojo Falcor */
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -111,16 +145,16 @@
 .form-group label {
   font-size: 13px;
   font-weight: 600;
-  color: #444;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 /* INPUT-REGISTER */
 .form-group input {
   padding: 12px 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--bg-main);
   border-radius: 8px;
-  background-color: #fafafa;
+  background-color: var(--bg-card);
   font-size: 14px;
   transition: 0.3s;
 }
@@ -128,8 +162,8 @@
 /* FOCUS-REGISTER */
 .form-group input:focus {
   outline: none;
-  border-color: #ff8f0f;
-  background-color: #fff;
+  border-color: var(--color-accent);
+  background-color: var(--bg-card);
 }
 
 /* INPUTS-CON-ICONOS */
@@ -160,7 +194,7 @@
 
 .help-text {
   font-size: 11px;
-  color: #888;
+  color: var(--text-light);
   margin-top: 5px;
 }
 
@@ -168,24 +202,23 @@
 .btn-submit {
   width: 100%;
   padding: 16px;
-  background-color: #d32f2f;
-  color: white;
-  border: none;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
   border-radius: 10px;
   font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: 0.3s;
   margin-top: 20px;
 }
 
 .btn-submit:hover {
-  background-color: #b71c1c;
-  transform: translateY(-2px);
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 1px 5px var(--text-primary);
 }
 
 .btn-icon {
@@ -196,11 +229,17 @@
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
-  color: #666;
+  color: var(--text-dark);
 }
 
 .login-footer a {
-  color: #d32f2f;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer :hover {
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: bold;
 }

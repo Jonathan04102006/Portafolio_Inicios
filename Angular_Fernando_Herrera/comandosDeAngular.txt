@@ -10,8 +10,8 @@
 4- Genera el esqueleto del proyecto:
 (ng new mi-proyecto-angular)
 
-4- Navega a la carpeta del proyecto:
+5- Navega a la carpeta del proyecto:
 (cd mi-proyecto-angular.)
 
-5- Inicia el servidor de desarrollo y abre el navegador:
+6- Inicia el servidor de desarrollo y abre el navegador:
 (ng serve -o.)

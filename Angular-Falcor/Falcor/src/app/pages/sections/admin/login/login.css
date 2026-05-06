@@ -7,8 +7,8 @@
   --bg-disabled: #cccccc;
   --color-falcor: #d32f2f;
   --color-error: #b71c1c;
-  --color-accent: #e1750f;
-  --text-primary: #000000;
+  --color-accent: #FF6B36;
+  --text-primary: #0D1117;
   --text-dark: #333333;
   --text-medium: #444444;
   --text-light: #666666;
@@ -70,7 +70,7 @@
 .subtitle {
   font-size: 18px;
   margin-bottom: 25px;
-  color: #444444;
+  color: var(--text-medium);
   line-height: 1.5;
 }
 
@@ -96,7 +96,7 @@
 
 .tagline {
   font-size: 14px;
-  color: #666666;
+  color: var(--text-light);
   font-style: italic;
   border-left: 3px solid var(--color-falcor);
   padding-left: 10px;
@@ -140,7 +140,7 @@
   display: block;
   font-weight: 600;
   margin-top: 10px;
-  color: #333333;
+  color: var(--text-dark);
   font-size: 14px;
 }
 
@@ -172,7 +172,7 @@
   padding: 0 5px;
   font-size: 13px;
   font-weight: 600;
-  color: #333333;
+  color: var(--text-dark);
   z-index: 1;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -226,9 +226,10 @@
 }
 
 .btn-login {
+  font-size: 14px;
   width: 100%;
-  background: var(--bg-card);
-  color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--bg-card);
   padding: 12px;
   border: 1px solid var(--text-primary);
   border-radius: 8px;
@@ -240,7 +241,7 @@
 .btn-login:hover {
   color: var(--bg-card);
   background-color: var(--color-accent);
-  border: none;
+  border: 1px solid var(--color-accent);
   box-shadow: 0 1px 5px var(--text-primary);
 }
 
