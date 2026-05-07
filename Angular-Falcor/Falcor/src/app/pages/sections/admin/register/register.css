@@ -1,72 +1,62 @@
 * {
-  padding: 0px;
-  font-family: 'Georgia', 'Times New Roman', 'Times';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times;
+}
+
+body {
+  background-color: var(--bg-main);
+  padding: 40px 20px;
+}
+
+/* --- CLASE MAESTRA DE ICONOS --- */
+.icon-tint {
+  background-color: var(--color-accent);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
 }
 
 .register-container {
   max-width: 850px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto;
 }
 
-/* Header */
 .register-header {
   text-align: center;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 30px;
 }
 
 .brand-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 15px;
+  gap: 15px;
 }
 
 .main-logo {
-  height: 75px;
-  width: auto;
+  height: 60px;
 }
 
 .brand-name {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-.register-title {
-  font-size: 20px;
-  color: var(--text-dark);
-  margin-bottom: 5px;
-}
-
-/* FALCOR TITLE */
-.register-header h1 {
-  font-size: 42px;
+  font-size: 32px;
   color: var(--color-falcor);
-  margin-bottom: 5px;
+  letter-spacing: 2px;
 }
 
-.register-header p {
-  color: var(--text-dark);
-  font-size: 14px;
-}
-
-/* Card */
 .register-card {
   background: var(--bg-card);
   border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 1px 2px var(--text-primary);
+  padding: 30px;
+  box-shadow: 0 10px 25px var(--text-primary);
   border: 1px solid var(--bg-main);
 }
 
-/* Sections */
 .form-section {
   margin-bottom: 35px;
 }
@@ -74,45 +64,17 @@
 .section-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid var(--text-primary);
+  gap: 12px;
+  border-bottom: 2px solid var(--bg-main);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.usuario-icon {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-accent) ; /* El nuevo color deseado */
-  -webkit-mask-image: url('/usuario.png'); /* Ruta a tu imagen original */
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-image: url('/usuario.png');
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  display: inline-block;
-}  
-
-.padlock-icon {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-accent); /* El nuevo color deseado */
-  -webkit-mask-image: url('/candado.png'); /* Ruta a tu imagen original */
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-image: url('/candado.png');
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  display: inline-block;
-}   
-
 .section-title h2 {
   font-size: 18px;
-  color: var(--text-primary);
-  font-weight: 600;
+  color: var(--text-dark);
 }
 
-/* Grid System */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -126,7 +88,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -136,46 +98,44 @@
   margin-bottom: 8px;
 }
 
-/* INPUT-REGISTER */
 .form-group input {
-  padding: 12px 15px;
-  border: 1px solid var(--bg-main);
+  padding: 12px;
+  border: 1px solid var(--bg-disabled);
   border-radius: 8px;
-  background-color: var(--bg-card);
   font-size: 14px;
-  transition: 0.3s;
+  transition: border-color 0.3s;
 }
 
-/* FOCUS-REGISTER */
 .form-group input:focus {
   outline: none;
   border-color: var(--color-accent);
-  background-color: var(--bg-card);
 }
 
-/* INPUTS-CON-ICONOS */
+/* Inputs con Iconos Internos */
 .input-with-icon {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.inner-icon {
-  position: absolute;
-  left: 12px;
-  width: 18px;
-  opacity: 0.6;
+.input-with-icon input {
+  padding-left: 45px;
+  width: 100%;
 }
 
-.input-with-icon input {
-  padding-left: 40px;
-  width: 100%;
+.inner-icon {
+  position: absolute;
+  left: 15px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
 }
 
 .eye-icon {
   position: absolute;
-  right: 12px;
+  right: 15px;
   width: 18px;
+  height: 18px;
   cursor: pointer;
 }
 
@@ -185,58 +145,42 @@
   margin-top: 5px;
 }
 
-/* Botón Final */
 .btn-submit {
   width: 100%;
   padding: 16px;
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--text-primary);
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
   border-radius: 10px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 .btn-submit:hover {
-  border: 1px solid var(--color-accent);
-  background-color: var(--color-accent);
-  box-shadow: 0 1px 5px var(--text-primary);
-}
-
-.btn-icon {
-  width: 20px;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .login-footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 14px;
-  color: var(--text-dark);
 }
 
 .login-footer a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-footer :hover {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
-  }
-  .register-card {
-    padding: 20px;
   }
 }

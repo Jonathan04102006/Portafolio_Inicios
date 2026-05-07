@@ -1,119 +1,129 @@
-<link rel="stylesheet" href="register.css">
 <div class="register-container">
   <header class="register-header">
     <div class="brand-container">
       <img src="falcor.png" alt="Falcor Logo" class="main-logo">
       <h1 class="brand-name">FALCOR</h1>
     </div>
+    
     <h2 class="register-title">Crea tu cuenta como Gerente o Propietario</h2>
     <p>Completa los datos para comenzar a usar Falcor</p>
   </header>
-
+  
   <form class="register-card">
     
-    <section class="form-section">
+    <!-- Sección: Datos Personales -->
+      <section class="form-section">
       <div class="section-title">
-        <img src="usuario.png" alt="" class="usuario-icon">
+        <span class="icon-tint" style="mask-image: url('usuario.png'); -webkit-mask-image: url('usuario.png');"></span>
         <h2>Datos personales</h2>
       </div>
 
       <div class="form-grid">
         <div class="form-group">
           <label>Primer nombre *</label>
-          <input type="text" placeholder="Ingresa tu primer nombre">
+          <input type="text" placeholder="Ingresa tu primer nombre" required>
         </div>
+
         <div class="form-group">
           <label>Segundo nombre</label>
           <input type="text" placeholder="Ingresa tu segundo nombre">
         </div>
+
         <div class="form-group">
           <label>Tercer nombre</label>
           <input type="text" placeholder="Ingresa tu tercer nombre">
         </div>
-        <div class="form-group">
-          <label>Primer apellido *</label>
-          <input type="text" placeholder="Ingresa tu primer apellido">
-        </div>
-        <div class="form-group">
-          <label>Segundo apellido</label>
-          <input type="text" placeholder="Ingresa tu segundo apellido">
-        </div>
-        <div class="form-group">
-          <label>Apellido de casada</label>
-          <input type="text" placeholder="Ingresa tu apellido de casada">
-        </div>
-      </div>
-    </section>
 
-    <section class="form-section">
-      <div class="section-title">
-        <img class="padlock-icon">
-        <h2>Datos de usuario</h2>
-      </div>
-
-      <div class="form-group full-width">
-        <label>Nombre de usuario *</label>
-        <div class="input-with-icon password-box">
-            <img src="usuario.png" class="inner-icon">
-            <input type="password" placeholder="Crea una contrase&ntilde;a">
+        <div class="form-group">
+            <label>Primer apellido *</label>
+            <input type="text" placeholder="Ingresa tu primer apellido" required>
           </div>
-        <small class="help-text">Ser&aacute; tu identificador para iniciar sesi&oacute;n en Falcor.</small>
-      </div>
 
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Clave *</label>
-          <div class="input-with-icon password-box">
-            <img src="candado.png" class="inner-icon">
-            <input type="password" placeholder="Crea una contrase&ntilde;a">
-            <img src="ojo-abierto.png" class="eye-icon">
+          <div class="form-group">
+            <label>Segundo apellido</label>
+            <input type="text" placeholder="Ingresa tu segundo apellido">
+          </div>
+          
+          <div class="form-group">
+            <label>Apellido de casada</label>
+            <input type="text" placeholder="Ingresa tu apellido de casada">
           </div>
         </div>
-        <div class="form-group">
-          <label>Confirmación de clave *</label>
-          <div class="input-with-icon password-box">
-            <img src="candado.png" class="inner-icon">
-            <input type="password" placeholder="Confirma tu contrase&ntilde;a">
-            <img src="ojo-abierto.png" class="eye-icon">
-          </div>
+      </section>
+      
+      <!-- Sección: Datos de Usuario -->
+       <section class="form-section">
+        <div class="section-title">
+          <span class="icon-tint" style="mask-image: url('candado.png'); -webkit-mask-image: url('candado.png');"></span>
+          <h2>Datos de usuario</h2>
         </div>
-      </div>
-      <small class="help-text">M&iacute;nimo 8 caracteres, con letras, n&uacute;meros y s&iacute;mbolos.</small>
-    </section>
-
-    <section class="form-section">
-      <div class="section-title">
-        <img src="correo.png" alt="" class="section-icon">
-        <h2>Contacto</h2>
-      </div>
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Correo electr&oacute;nico *</label>
+        
+        <div class="form-group full-width">
+          <label>Nombre de usuario *</label>
           <div class="input-with-icon">
-            <img src="correo.png" class="inner-icon">
-            <input type="email" placeholder="ejemplo@correo.com">
+            <span class="icon-tint inner-icon" style="mask-image: url('usuario.png'); -webkit-mask-image: url('usuario.png');"></span>
+            <input type="text" placeholder="Crea un nombre de usuario" required>
+          </div>
+          <small class="help-text">Será tu identificador para iniciar sesión.</small>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Clave *</label>
+            <div class="input-with-icon">
+              <span class="icon-tint inner-icon" style="mask-image: url('candado.png'); -webkit-mask-image: url('candado.png');"></span>
+              <input type="password" placeholder="Crea una contraseña" required>
+              <span class="icon-tint eye-icon" style="mask-image: url('ojo-abierto.png'); -webkit-mask-image: url('ojo-abierto.png');"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Confirmación de clave *</label>
+            <div class="input-with-icon">
+              <span class="icon-tint inner-icon" style="mask-image: url('candado.png'); -webkit-mask-image: url('candado.png');"></span>
+              <input type="password" placeholder="Confirma tu contraseña" required>
+              <span class="icon-tint eye-icon" style="mask-image: url('ojo-abierto.png'); -webkit-mask-image: url('ojo-abierto.png');"></span>
+            </div>
+          </div>
+        
+        </div>
+        <small class="help-text">Mínimo 8 caracteres, con letras, números y símbolos.</small>
+      </section>
+      
+      <!-- Sección: Contacto -->
+       <section class="form-section">
+        <div class="section-title">
+          <span class="icon-tint" style="mask-image: url('correo.png'); -webkit-mask-image: url('correo.png');"></span>
+          <h2>Contacto</h2>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Correo electrónico *</label>
+            <div class="input-with-icon">
+              <span class="icon-tint inner-icon" style="mask-image: url('correo.png'); -webkit-mask-image: url('correo.png');"></span>
+              <input type="email" placeholder="ejemplo@correo.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Número de teléfono *</label>
+            <div class="input-with-icon">
+              <span class="icon-tint inner-icon" style="mask-image: url('telefono-conectado.png'); -webkit-mask-image: url('telefono-conectado.png');"></span>
+              <input type="tel" placeholder="(503) 7000-0000" required>
+            </div>
+            <small class="help-text">Incluye el código de tu país.</small>
           </div>
         </div>
-        <div class="form-group">
-          <label>Número de tel&eacute;fono *</label>
-          <div class="input-with-icon">
-            <img src="telefono-conectado.png" class="inner-icon">
-            <input type="tel" placeholder="(503) 7000-0000">
-          </div>
-          <small class="help-text">Incluye el c&oacute;digo de tu pa&iacute;s.</small>
-        </div>
-      </div>
-    </section>
-
-    <button type="submit" class="btn-submit">
-      <img src="usuariomas.png" class="btn-icon">
-      Crear mi cuenta
-    </button>
-
-    <p class="login-footer">
-      ¿Ya tienes una cuenta? <a routerLink="/">Iniciar sesi&oacute;n</a>
-    </p>
-
+      </section>
+      
+      <button type="submit" class="btn-submit">
+        <span class="icon-tint" style="mask-image: url('usuariomas.png'); -webkit-mask-image: url('usuariomas.png'); background-color: white;"></span>
+        Crear mi cuenta
+      </button>
+      
+      <p class="login-footer">
+        ¿Ya tienes una cuenta? <a href="#">Iniciar sesión</a>
+      </p>
   </form>
 </div>
