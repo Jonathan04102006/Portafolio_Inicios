@@ -19,7 +19,11 @@ declare const google: any;
 })
 export class Login implements OnInit, AfterViewInit {
   loginForm: FormGroup;
-  
+
+  // Credenciales de acceso únicas
+  private readonly USER_DB = 'jona.123';
+  private readonly PASS_DB = 'JonPlayFox503@';
+
   // Tu ID de cliente verificado
   private clientId = '863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com';
 
@@ -29,7 +33,6 @@ export class Login implements OnInit, AfterViewInit {
         Validators.required,
         Validators.minLength(6),
         Validators.pattern('^[a-z0-9.]*$')
-        /* Validators.pattern('^[a-zA-Z0-9.]*$') VALIDACION CON MAYUSCULAS */
       ]],
       password: ['', [
         Validators.required,
@@ -105,10 +108,28 @@ export class Login implements OnInit, AfterViewInit {
     return '';
   }
 
+  // SECCIÓN DE VALIDACIÓN DE CREDENCIALES
   onSubmit() {
+    // 1. Primero verificamos que el formulario cumpla con los requisitos técnicos (máscaras)
     if (this.loginForm.valid) {
-      this.router.navigate(['/home']);
+      const { usuario, password } = this.loginForm.value;
+
+      // 2. Comparamos los valores ingresados contra nuestra "Base de Datos" local
+      if (usuario === this.USER_DB && password === this.PASS_DB) {
+        
+        // CASO ÉXITO: Los datos coinciden exactamente
+        alert("Usuario y contraseña correcta");
+        this.router.navigate(['/home']); // SOLO aquí se permite el paso al home
+        
+      } else {
+        
+        // CASO ERROR: El formato es válido (ej. nombre.123) pero no es el usuario registrado
+        alert("Usuario y contraseña incorrecta");
+        // No hay código de navegación aquí, por lo tanto el usuario SE QUEDA en el login
+        
+      }
     } else {
+      // Si ni siquiera cumple con los requisitos del formulario (máscaras/minúsculas)
       this.loginForm.markAllAsTouched();
     }
   }

@@ -33,7 +33,7 @@
          [class.input-error]="getUsuarioError()"
          [class.input-valid]="loginForm.get('usuario')?.valid && loginForm.get('usuario')?.touched">
          <label class="floating-label">Usuario</label>
-         <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
+         <input type="text" formControlName="usuario" placeholder="Ingrese su usuario" class="input-lowercase">
         </div>
         <!-- Mensaje de error dinámico -->
          <div class="error-text" *ngIf="getUsuarioError()">
