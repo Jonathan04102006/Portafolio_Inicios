@@ -1,0 +1,4 @@
+/* Para el primer símbolo (Soporte vertical de concha de tortuga) */
+h1::before {
+    content: "\1F464";
+}
