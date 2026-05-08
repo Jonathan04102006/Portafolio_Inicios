@@ -267,6 +267,68 @@
 }
 
 /* ==========================================================================
+   ALERT DISEÑO PERSONALIZADO
+   ========================================================================== */
+/* Contenedor que cubre toda la pantalla y desenfoca el fondo */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-alert); /* Capa oscura semitransparente */
+  /* backdrop-filter: blur(8px); */ /* EL EFECTO BORROSO */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* El cuadro de la alerta */
+.modal-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 25px var(--text-primary);
+  border: 1px solid var(--text-primary);
+}
+
+/* Estilo de los iconos */
+.modal-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-success { color: #4CAF50; } /* Verde para la palomita */
+.icon-error { color: #f44336; }   /* Rojo para la X */
+
+.modal-message {
+  color: var(--text-primary);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-modal {
+  background: var(--text-primary);
+  color: var(--bg-card);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-modal:hover {
+  background: var(--color-accent);
+}
+
+/* ==========================================================================
    6. DIVISOR Y GOOGLE (VERSIÓN FINAL FALCOR)
    ========================================================================== */
 

@@ -24,6 +24,10 @@ export class Login implements OnInit, AfterViewInit {
   private readonly USER_DB = 'jona.123';
   private readonly PASS_DB = 'JonPlayFox503@';
 
+  mostrarModal: boolean = false;
+modalMensaje: string = '';
+modalTipo: 'success' | 'error' = 'success';
+
   // Tu ID de cliente verificado
   private clientId = '863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com';
 
@@ -110,29 +114,34 @@ export class Login implements OnInit, AfterViewInit {
 
   // SECCIÓN DE VALIDACIÓN DE CREDENCIALES
   onSubmit() {
-    // 1. Primero verificamos que el formulario cumpla con los requisitos técnicos (máscaras)
     if (this.loginForm.valid) {
       const { usuario, password } = this.loginForm.value;
-
-      // 2. Comparamos los valores ingresados contra nuestra "Base de Datos" local
+      
       if (usuario === this.USER_DB && password === this.PASS_DB) {
-        
-        // CASO ÉXITO: Los datos coinciden exactamente
-        alert("Usuario y contraseña correcta");
-        this.router.navigate(['/home']); // SOLO aquí se permite el paso al home
-        
+      // ÉXITO
+        this.modalMensaje = 'Usuario y contraseña correcta';
+        this.modalTipo = 'success';
+        this.mostrarModal = true;
       } else {
-        
-        // CASO ERROR: El formato es válido (ej. nombre.123) pero no es el usuario registrado
-        alert("Usuario y contraseña incorrecta");
-        // No hay código de navegación aquí, por lo tanto el usuario SE QUEDA en el login
-        
+      // ERROR
+        this.modalMensaje = 'Usuario y contraseña incorrecta';
+        this.modalTipo = 'error';
+        this.mostrarModal = true;
       }
     } else {
-      // Si ni siquiera cumple con los requisitos del formulario (máscaras/minúsculas)
       this.loginForm.markAllAsTouched();
     }
   }
+
+  cerrarModal() {
+    if (this.modalTipo === 'success') {
+      this.mostrarModal = false;
+      this.router.navigate(['/home']);
+    } else {
+      // Esto funciona directo y limpia todo el login de Falcor
+      window.location.reload(); 
+    }
+}
 }
 
 /* 863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com */

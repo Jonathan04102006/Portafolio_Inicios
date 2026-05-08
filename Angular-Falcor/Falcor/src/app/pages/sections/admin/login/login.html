@@ -56,6 +56,19 @@
           <a href="#" class="forgot-link">¿Has olvidado la contrase&ntilde;a?</a>
         </div>
         
+        <!-- Modal de Alerta Personalizado -->
+        <div class="modal-overlay" *ngIf="mostrarModal">
+          <div class="modal-card">
+            <div class="modal-icon" [ngClass]="modalTipo === 'success' ? 'icon-success' : 'icon-error'">
+              {{ modalTipo === 'success' ? '✔' : '✖' }}
+            </div>
+            <h3 class="modal-message">{{ modalMensaje }}</h3>
+            <button type="button" (click)="cerrarModal()" class="btn-modal">
+              Aceptar
+            </button>
+          </div>
+        </div>
+        
         <!-- Botón de acción principal con clase de utilidad .text-white -->
          <button type="submit" class="btn-login text-white" [disabled]="loginForm.invalid">
           Iniciar sesi&oacute;n

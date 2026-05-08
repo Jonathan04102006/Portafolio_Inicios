@@ -9,4 +9,5 @@
   --text-dark: #333333;
   --text-medium: #444444;
   --text-light: #666666;
+  --color-alert: rgba(0, 0, 0, 0.4);
 }
