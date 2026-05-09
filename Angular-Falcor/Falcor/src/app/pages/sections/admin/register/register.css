@@ -148,8 +148,8 @@ body {
 .btn-submit {
   width: 100%;
   padding: 16px;
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--text-primary);
+  color: var(--bg-card);
   border: none;
   border-radius: 10px;
   font-size: 16px;
@@ -159,12 +159,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: transform 0.2s, opacity 0.2s;
 }
 
 .btn-submit:hover {
   opacity: 0.9;
-  transform: translateY(-1px);
+  background-color: var(--color-accent);
+  box-shadow: 1px solid var(--text-primary);
 }
 
 .login-footer {

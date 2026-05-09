@@ -121,7 +121,7 @@ export class Login implements OnInit, AfterViewInit {
     if (tipo === 'success') {
       this.router.navigate(['/home']);
     }
-  }, 2000);
+  },);
 }
 
   onSubmit() {
