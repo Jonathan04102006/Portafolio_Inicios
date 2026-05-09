@@ -20,13 +20,12 @@ declare const google: any;
 export class Login implements OnInit, AfterViewInit {
   loginForm: FormGroup;
 
-  // Credenciales de acceso únicas
   private readonly USER_DB = 'jona.123';
   private readonly PASS_DB = 'JonPlayFox503@';
 
-  mostrarModal: boolean = false;
-modalMensaje: string = '';
-modalTipo: 'success' | 'error' = 'success';
+  mostrarToast: boolean = false;
+  toastMensaje: string = '';
+  toastTipo: 'success' | 'error' = 'success';
 
   // Tu ID de cliente verificado
   private clientId = '863566525491-09aud05dghk6n1182vfm7u6phcca66fe.apps.googleusercontent.com';
@@ -112,35 +111,31 @@ modalTipo: 'success' | 'error' = 'success';
     return '';
   }
 
-  // SECCIÓN DE VALIDACIÓN DE CREDENCIALES
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const { usuario, password } = this.loginForm.value;
-      
-      if (usuario === this.USER_DB && password === this.PASS_DB) {
-      // ÉXITO
-        this.modalMensaje = 'Usuario y contraseña correcta';
-        this.modalTipo = 'success';
-        this.mostrarModal = true;
-      } else {
-      // ERROR
-        this.modalMensaje = 'Usuario y contraseña incorrecta';
-        this.modalTipo = 'error';
-        this.mostrarModal = true;
-      }
-    } else {
-      this.loginForm.markAllAsTouched();
-    }
-  }
+  private lanzarToast(mensaje: string, tipo: 'success' | 'error') {
+  this.toastMensaje = mensaje;
+  this.toastTipo = tipo;
+  this.mostrarToast = true;
 
-  cerrarModal() {
-    if (this.modalTipo === 'success') {
-      this.mostrarModal = false;
+  setTimeout(() => {
+    this.mostrarToast = false;
+    if (tipo === 'success') {
       this.router.navigate(['/home']);
-    } else {
-      // Esto funciona directo y limpia todo el login de Falcor
-      window.location.reload(); 
     }
+  }, 2000);
+}
+
+  onSubmit() {
+  if (this.loginForm.valid) {
+    const { usuario, password } = this.loginForm.value;
+
+    if (usuario === this.USER_DB && password === this.PASS_DB) {
+      this.lanzarToast('¡Bienvenido! Usuario y contraseña correctas', 'success');
+    } else {
+      this.lanzarToast('Usuario o contraseña son incorrectas', 'error');
+    }
+  } else {
+    this.loginForm.markAllAsTouched();
+  }
 }
 }
 
