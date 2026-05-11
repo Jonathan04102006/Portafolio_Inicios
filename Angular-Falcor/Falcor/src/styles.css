@@ -1,8 +1,10 @@
 <<<<<<< HEAD
+*{
+}
+
 body {
   margin: 0;
   padding-top: 0px;
-  background: var(--bg-main);
   min-height: 100vh;
   font-family: 'Times New Roman', 'Times New Roman', Times;
 }   

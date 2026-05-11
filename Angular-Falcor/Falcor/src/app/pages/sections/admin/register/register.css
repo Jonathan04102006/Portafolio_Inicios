@@ -4,10 +4,18 @@
   box-sizing: border-box;
   font-family: 'Times New Roman', Times;
 }
-
-body {
-  background-color: var(--bg-main);
-  padding: 40px 20px;
+body, .login-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/fondo.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* --- CLASE MAESTRA DE ICONOS --- */
